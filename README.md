@@ -1,7 +1,5 @@
 # React Native Animation
 
-![Demo](https://github.com/Rakha112/react-native-animation/blob/main/ImageDemo.png)
-
 This repository is a collection of results from the React Native Animation Tutorial on my YouTube Channel [Rakha Wibowo](https://www.youtube.com/@rakhawibowo) using :
 
 - [Reanimated 2](https://docs.swmansion.com/react-native-reanimated/docs)
@@ -15,3 +13,7 @@ This repository is a collection of results from the React Native Animation Tutor
 - [React Native Custom Image Carousel with Pagination and Auto Play using Reanimated 2](https://youtu.be/1XDMJI93p0I)
 - [React Native Bottom Sheet with Back Drop from Scratch using Reanimated 2 and Gesture Handler](https://youtu.be/r_cng3a6K70)
 - [React Native Custom Range Slider using Reanimated 2](https://youtu.be/sZ0BDG9PAd4)
+
+## The app
+
+![Demo](https://github.com/Rakha112/react-native-animation/blob/main/ImageDemo.png)
