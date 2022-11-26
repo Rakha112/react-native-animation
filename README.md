@@ -14,6 +14,50 @@ This repository is a collection of results from the React Native Animation Tutor
 - [React Native Bottom Sheet with Back Drop from Scratch using Reanimated 2 and Gesture Handler](https://youtu.be/r_cng3a6K70)
 - [React Native Custom Range Slider using Reanimated 2](https://youtu.be/sZ0BDG9PAd4)
 
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/Rakha112/react-native-animation.git
+```
+
+Go to the project directory
+
+```bash
+cd react-native-animation
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+For iOS
+
+```bash
+npx pod-install
+```
+
+Start the server
+
+```bash
+npm start -- --reset-cache
+```
+
+Run on IOS
+
+```bash
+npx react-native run-ios
+```
+
+Run on ANDROID
+
+```bash
+npx react-native run-android
+```
+
 ## The app
 
 ![Demo](https://github.com/Rakha112/react-native-animation/blob/main/ImageDemo.png)
