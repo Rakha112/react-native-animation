@@ -8,19 +8,19 @@ Image Assets - https://drive.google.com/drive/folders/166lND4ag_dfFkQyDenwbeINbg
 
 Custom Image Carousel (Square) Demo
 
-![Demo1](https://github.com/Rakha112/react-native-animation/tree/main/src/03-React-Native-Custom-Image-Carousel/Demo1.gif)
+![Demo1](https://github.com/Rakha112/react-native-animation/blob/main/src/03-React-Native-Custom-Image-Carousel/Demo1.gif)
 
 Custom Image Carousel (Landscape) Demo
 
-![Demo1](https://github.com/Rakha112/react-native-animation/tree/main/src/03-React-Native-Custom-Image-Carousel/Demo2.gif)
+![Demo1](https://github.com/Rakha112/react-native-animation/blob/main/src/03-React-Native-Custom-Image-Carousel/Demo2.gif)
 
 Pagination Demo
 
-![Demo1](https://github.com/Rakha112/react-native-animation/tree/main/src/03-React-Native-Custom-Image-Carousel/Demo4.gif)
+![Demo1](https://github.com/Rakha112/react-native-animation/blob/main/src/03-React-Native-Custom-Image-Carousel/Demo4.gif)
 
 Demo on Android (Left) and Ios (Rigth)
 
-![Demo2](https://github.com/Rakha112/react-native-animation/tree/main/src/03-React-Native-Custom-Image-Carousel/Demo3.gif)
+![Demo2](https://github.com/Rakha112/react-native-animation/blob/main/src/03-React-Native-Custom-Image-Carousel/Demo3.gif)
 
 ## Properties
 

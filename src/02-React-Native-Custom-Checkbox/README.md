@@ -12,11 +12,11 @@ SVG File - https://drive.google.com/file/d/1sWZKS20aU26DzxllgVFidqc4tIP5OM3j/vie
 
 Custom Switch Component Demo
 
-![Demo1](https://github.com/Rakha112/react-native-animation/tree/main/src/02-React-Native-Custom-Checkbox/Demo1.gif)
+![Demo1](https://github.com/Rakha112/react-native-animation/blob/main/src/02-React-Native-Custom-Checkbox/Demo1.gif)
 
 Demo on Android and Ios
 
-![Demo2](https://github.com/Rakha112/react-native-animation/tree/main/src/02-React-Native-Custom-Checkbox/Demo2.gif)
+![Demo2](https://github.com/Rakha112/react-native-animation/blob/main/src/02-React-Native-Custom-Checkbox/Demo2.gif)
 
 ## Run Locally
 

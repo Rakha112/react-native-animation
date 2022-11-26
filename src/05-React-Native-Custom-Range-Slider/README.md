@@ -6,11 +6,11 @@ Create Custom Range Slider in React Native using [Reanimated 2](https://docs.swm
 
 Custom Range Slider Demo
 
-![Demo1](https://github.com/Rakha112/react-native-animation/tree/main/src/05-React-Native-Custom-Range-Slider/Demo1.gif)
+![Demo1](https://github.com/Rakha112/react-native-animation/blob/main/src/05-React-Native-Custom-Range-Slider/Demo1.gif)
 
 Demo on Android (Left) and Ios (Rigth)
 
-![Demo2](https://github.com/Rakha112/react-native-animation/tree/main/src/05-React-Native-Custom-Range-Slider/Demo2.gif)
+![Demo2](https://github.com/Rakha112/react-native-animation/blob/main/src/05-React-Native-Custom-Range-Slider/Demo2.gif)
 
 ## Properties
 

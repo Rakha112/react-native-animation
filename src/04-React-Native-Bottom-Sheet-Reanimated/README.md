@@ -1,38 +1,29 @@
-# React Native Custom Range Slider
+# React Native Bottom Sheet Using Reanimated 2
 
-Create Custom Range Slider in React Native using [Reanimated 2](https://docs.swmansion.com/react-native-reanimated/)
+Create Custom Bottom Sheet in react native using [Reanimated 2](https://docs.swmansion.com/react-native-reanimated/)
 
 ## Demo
 
-Custom Range Slider Demo
+Bottom Sheet Demo
 
-![Demo1](https://github.com/Rakha112/react-native-animation/tree/main/src/04-React-Native-Bottom-Sheet-Reanimated/Demo1.gif)
+![Demo1](https://github.com/Rakha112/react-native-animation/blob/main/src/04-React-Native-Bottom-Sheet-Reanimated/Demo1.gif)
 
 Demo on Android (Left) and Ios (Rigth)
 
-![Demo2](https://github.com/Rakha112/react-native-animation/tree/main/src/04-React-Native-Bottom-Sheet-Reanimated/Demo2.gif)
-
-## Properties
-
-| Name            | Description                       | Type                                                                       | Default Value |
-| :-------------- | :-------------------------------- | :------------------------------------------------------------------------- | :------------ |
-| `min`           | Minimum value of slider           | number                                                                     | **Required**  |
-| `max`           | Maximum value of slider           | number                                                                     | **Required**  |
-| `step`          | Step of slider                    | number                                                                     | **Required**  |
-| `onValueChange` | Will be called when a slider stop | onValueChange={range => {setMinValue(range.min); setMaxValue(range.max);}} | **Required**  |
+![Demo2](https://github.com/Rakha112/react-native-animation/blob/main/src/04-React-Native-Bottom-Sheet-Reanimated/Demo2.gif)
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/Rakha112/react-native-custom-range-slider.git
+  git clone https://github.com/Rakha112/react-native-bottom-sheet-reanimated.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd react-native-custom-range-slider
+  cd react-native-bottom-sheet-reanimated
 ```
 
 Install dependencies
