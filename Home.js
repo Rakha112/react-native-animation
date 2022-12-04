@@ -40,11 +40,19 @@ const Home = () => {
       navigate: 'BasicRevealAnimation',
       title: 'Basic Reveal Animation Using Moti',
     },
+    {
+      navigate: 'FlatlistRevealAnimation',
+      title: 'Flatlist Reveal Animation Using Moti',
+    },
+    {
+      navigate: 'OnboardingScreen',
+      title: 'Onboarding Screen',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <MotiView
             from={{opacity: 0, translateY: 50}}
             animate={{opacity: 1, translateY: 0}}

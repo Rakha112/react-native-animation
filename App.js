@@ -8,6 +8,8 @@ import CustomCheckboxScreen from './src/02-React-Native-Custom-Checkbox/CustomCh
 import BottomSheetScreen from './src/04-React-Native-Bottom-Sheet-Reanimated/BottomSheetScreen';
 import ImageCarouselScreen from './src/03-React-Native-Custom-Image-Carousel/ImageCarouselScreen';
 import RangeSliderScreen from './src/05-React-Native-Custom-Range-Slider/RangeSliderScreen';
+import FlatlistRevealAnimationScreen from './src/07-React-Native-Flatlist-Reveal-Animation/FlatlistRevealAnimationScreen';
+import OnboardingScreen from './src/08-React-Native-Onboarding-Screen/OnboardingScreen';
 const App = () => {
   const Stack = createStackNavigator();
   return (
@@ -62,6 +64,20 @@ const App = () => {
         <Stack.Screen
           name="BasicRevealAnimation"
           component={BasicRevealAnimation}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="FlatlistRevealAnimation"
+          component={FlatlistRevealAnimationScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="OnboardingScreen"
+          component={OnboardingScreen}
           options={{
             headerShown: false,
           }}
