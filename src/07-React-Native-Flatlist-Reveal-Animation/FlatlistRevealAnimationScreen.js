@@ -6,6 +6,7 @@ import {
   FlatList,
   Image,
   TouchableWithoutFeedback,
+  Dimensions,
 } from 'react-native';
 import React from 'react';
 import data from './src/data';
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F9FD',
   },
   listContainer: {
-    flex: 1 / 2,
+    width: Dimensions.get('window').width / 2 - 20,
     backgroundColor: 'white',
     margin: 10,
     borderRadius: 20,
