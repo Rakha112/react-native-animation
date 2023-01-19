@@ -9,7 +9,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import {MotiView, MotiImage} from 'moti';
+import {useNavigation} from '@react-navigation/native';
 const App = () => {
+  const navigation = useNavigation();
   const {width} = useWindowDimensions();
   return (
     <SafeAreaView style={styles.container}>
@@ -32,7 +34,7 @@ const App = () => {
       </MotiView>
       <TouchableWithoutFeedback
         onPress={() => {
-          console.log('PRESS');
+          navigation.navigate('Home');
         }}>
         <MotiView
           style={[styles.button, {width: width * 0.8}]}

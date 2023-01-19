@@ -1,7 +1,9 @@
 import {StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import React, {useEffect} from 'react';
 import {MotiImage, MotiText, MotiView, useAnimationState} from 'moti';
+import {useNavigation} from '@react-navigation/native';
 const CustomButton = ({flatlistRef, flatListIndex, dataLength}) => {
+  const navigation = useNavigation();
   const buttonAnimationState = useAnimationState({
     from: {
       width: 60,
@@ -59,7 +61,7 @@ const CustomButton = ({flatlistRef, flatListIndex, dataLength}) => {
         if (flatListIndex < dataLength - 1) {
           flatlistRef.current.scrollToIndex({index: flatListIndex + 1});
         } else {
-          console.log('GET STARTED');
+          navigation.navigate('Home');
         }
       }}>
       <MotiView style={styles.container} state={buttonAnimationState}>
