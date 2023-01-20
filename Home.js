@@ -48,6 +48,10 @@ const Home = () => {
       navigate: 'OnboardingScreen',
       title: 'Onboarding Screen',
     },
+    {
+      navigate: 'CustomToast',
+      title: 'Custom Toast',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>

@@ -10,6 +10,7 @@ import ImageCarouselScreen from './src/03-React-Native-Custom-Image-Carousel/Ima
 import RangeSliderScreen from './src/05-React-Native-Custom-Range-Slider/RangeSliderScreen';
 import FlatlistRevealAnimationScreen from './src/07-React-Native-Flatlist-Reveal-Animation/FlatlistRevealAnimationScreen';
 import OnboardingScreen from './src/08-React-Native-Onboarding-Screen/OnboardingScreen';
+import CustomToastScreen from './src/09-React-Native-Custom-Toast/CustomToastScreen';
 const App = () => {
   const Stack = createStackNavigator();
   return (
@@ -72,7 +73,7 @@ const App = () => {
           name="FlatlistRevealAnimation"
           component={FlatlistRevealAnimationScreen}
           options={{
-            headerShown: false,
+            headerShown: true,
           }}
         />
         <Stack.Screen
@@ -80,6 +81,13 @@ const App = () => {
           component={OnboardingScreen}
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CustomToast"
+          component={CustomToastScreen}
+          options={{
+            headerShown: true,
           }}
         />
       </Stack.Navigator>
