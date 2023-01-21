@@ -63,12 +63,7 @@ const ToastComponent = forwardRef(({}, ref) => {
       ctx.startY = toastTopAnimation.value;
     },
     onActive: (event, ctx) => {
-      if (event.translationY < 0) {
-        toastTopAnimation.value = withSpring(ctx.startY + event.translationY, {
-          damping: 600,
-          stiffness: 100,
-        });
-      } else if (event.translationY > 0 && event.translationY < 100) {
+      if (event.translationY < 100) {
         toastTopAnimation.value = withSpring(ctx.startY + event.translationY, {
           damping: 600,
           stiffness: 100,
@@ -76,7 +71,7 @@ const ToastComponent = forwardRef(({}, ref) => {
       }
     },
     onEnd: event => {
-      if (event.translationY < 10) {
+      if (event.translationY < 0) {
         toastTopAnimation.value = withTiming(-100, finish => {
           if (finish) {
             runOnJS(setShowing)(false);
