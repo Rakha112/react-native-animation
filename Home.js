@@ -42,15 +42,15 @@ const Home = () => {
     },
     {
       navigate: 'FlatlistRevealAnimation',
-      title: 'Flatlist Reveal Animation Using Moti',
+      title: 'Flatlist Grid Reveal Animation Using Moti',
     },
     {
       navigate: 'OnboardingScreen',
-      title: 'Onboarding Screen',
+      title: 'Onboarding Screen Using Reanimated 2',
     },
     {
       navigate: 'CustomToast',
-      title: 'Custom Toast',
+      title: 'Custom Toast Using Reanimeted 2 and Gesture Handler',
     },
   ];
   return (
