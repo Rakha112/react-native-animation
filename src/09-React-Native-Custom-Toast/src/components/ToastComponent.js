@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text} from 'react-native';
+import {Image, Platform, StyleSheet, Text} from 'react-native';
 import React, {
   useState,
   useCallback,
@@ -22,7 +22,7 @@ const ToastComponent = forwardRef(({}, ref) => {
   const [toastType, setToastType] = useState('success');
   const [toastText, setToastText] = useState('');
   const [toastDuration, setToastDuration] = useState(0);
-
+  const TOP_VALUE = Platform.OS === 'ios' ? 60 : 20;
   useImperativeHandle(
     ref,
     () => ({
@@ -35,7 +35,7 @@ const ToastComponent = forwardRef(({}, ref) => {
     ({type, text, duration}) => {
       setShowing(true);
       toastTopAnimation.value = withSequence(
-        withTiming(10),
+        withTiming(TOP_VALUE),
         withDelay(
           duration,
           withTiming(-100, finish => {
@@ -49,7 +49,7 @@ const ToastComponent = forwardRef(({}, ref) => {
       setToastText(text);
       setToastDuration(duration);
     },
-    [toastTopAnimation],
+    [TOP_VALUE, toastTopAnimation],
   );
 
   const animatedTopStyles = useAnimatedStyle(() => {
@@ -79,7 +79,7 @@ const ToastComponent = forwardRef(({}, ref) => {
         });
       } else if (event.translationY > 0) {
         toastTopAnimation.value = withSequence(
-          withTiming(10),
+          withTiming(TOP_VALUE),
           withDelay(
             toastDuration,
             withTiming(-100, finish => {
