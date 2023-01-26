@@ -87,7 +87,7 @@ const App = () => {
           name="CustomToast"
           component={CustomToastScreen}
           options={{
-            headerShown: true,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>
