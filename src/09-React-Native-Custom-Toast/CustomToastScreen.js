@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   StyleSheet,
   Text,
@@ -6,50 +7,53 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import React, {useRef} from 'react';
-import ToastComponent from './src/components/ToastComponent';
+import Toast from './src/components/Toast';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const CustomToastScreen = () => {
   const toastRef = useRef();
   return (
-    <SafeAreaView style={styles.container}>
-      <ToastComponent ref={toastRef} />
-      <TouchableWithoutFeedback
-        onPress={() => {
-          toastRef.current.show({
-            type: 'success',
-            text: 'Success Toast',
-            duration: 2000,
-          });
-        }}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Success Toast</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback
-        onPress={() => {
-          toastRef.current.show({
-            type: 'error',
-            text: 'Error Toast',
-            duration: 2000,
-          });
-        }}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Error Toast</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback
-        onPress={() => {
-          toastRef.current.show({
-            type: 'warning',
-            text: 'Warning Toast',
-            duration: 2000,
-          });
-        }}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Warning Toast</Text>
-        </View>
-      </TouchableWithoutFeedback>
-    </SafeAreaView>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView style={styles.container}>
+        <Toast ref={toastRef} />
+        <TouchableWithoutFeedback
+          onPress={() => {
+            toastRef.current.show({
+              type: 'success',
+              text: 'Success Toast',
+              duration: 2000,
+            });
+          }}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Success Toast</Text>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            toastRef.current.show({
+              type: 'error',
+              text: 'Error Toast',
+              duration: 2000,
+            });
+          }}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Error Toast</Text>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            toastRef.current.show({
+              type: 'warning',
+              text: 'Warning Toast',
+              duration: 2000,
+            });
+          }}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Warning Toast</Text>
+          </View>
+        </TouchableWithoutFeedback>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 

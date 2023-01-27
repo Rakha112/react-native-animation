@@ -16,7 +16,7 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 import {PanGestureHandler} from 'react-native-gesture-handler';
-const ToastComponent = forwardRef(({}, ref) => {
+const Toast = forwardRef(({}, ref) => {
   const toastTopAnimation = useSharedValue(-100);
   const [showing, setShowing] = useState(false);
   const [toastType, setToastType] = useState('success');
@@ -34,6 +34,9 @@ const ToastComponent = forwardRef(({}, ref) => {
   const show = useCallback(
     ({type, text, duration}) => {
       setShowing(true);
+      setToastType(type);
+      setToastText(text);
+      setToastDuration(duration);
       toastTopAnimation.value = withSequence(
         withTiming(TOP_VALUE),
         withDelay(
@@ -45,9 +48,6 @@ const ToastComponent = forwardRef(({}, ref) => {
           }),
         ),
       );
-      setToastType(type);
-      setToastText(text);
-      setToastDuration(duration);
     },
     [TOP_VALUE, toastTopAnimation],
   );
@@ -99,7 +99,7 @@ const ToastComponent = forwardRef(({}, ref) => {
         <PanGestureHandler onGestureEvent={gestureHandler}>
           <Animated.View
             style={[
-              styles.toastContiner,
+              styles.toastContainer,
               toastType === 'success'
                 ? styles.successToastContainer
                 : toastType === 'warning'
@@ -135,10 +135,10 @@ const ToastComponent = forwardRef(({}, ref) => {
   );
 });
 
-export default ToastComponent;
+export default Toast;
 
 const styles = StyleSheet.create({
-  toastContiner: {
+  toastContainer: {
     position: 'absolute',
     top: 0,
     width: '90%',
@@ -157,14 +157,6 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     resizeMode: 'contain',
-    // aspectRatio: 1,
-  },
-  closeIcon: {
-    width: 12,
-    height: undefined,
-    aspectRatio: 1,
-    marginRight: 15,
-    marginLeft: 15,
   },
   successToastContainer: {
     backgroundColor: '#def1d7',
