@@ -4,122 +4,122 @@ import {
   Text,
   View,
   SafeAreaView,
-  Image,
   useWindowDimensions,
 } from 'react-native';
-import React, {useState, useRef} from 'react';
-import {MotiView, useAnimationState} from 'moti';
+import React from 'react';
 import Animated, {
   useSharedValue,
   useAnimatedScrollHandler,
   useAnimatedRef,
-  runOnJS,
+  useAnimatedStyle,
+  interpolate,
+  Extrapolate,
 } from 'react-native-reanimated';
+import data from './src/data/data';
 import Pagination from './src/components/Pagination';
 import CustomButton from './src/components/CustomButton';
-const data = [
-  {
-    id: 1,
-    image: require('./src/assets/image1.png'),
-    title: 'Lorem Ipsum',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 2,
-    image: require('./src/assets/image2.png'),
-    title: 'Lorem Ipsum',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 3,
-    image: require('./src/assets/image3.png'),
-    title: 'Lorem Ipsum',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-];
+
 const OnboardingScreen = () => {
-  const {width} = useWindowDimensions();
-  const flatlistRef = useAnimatedRef(null);
+  const {width: SCREEN_WIDTH} = useWindowDimensions();
+  const flatListRef = useAnimatedRef(null);
   const x = useSharedValue(0);
-  const [flatListIndex, setFlatListIndex] = useState(0);
+  const flatListIndex = useSharedValue(0);
 
-  const animationState0 = useAnimationState({
-    from: {
-      opacity: 0,
-      translateY: 100,
-    },
-    to: {
-      opacity: 1,
-      translateY: 0,
-      transition: {delay: 500},
-    },
-  });
-
-  const animationState1 = useAnimationState({
-    from: {
-      opacity: 0,
-      translateY: 100,
-    },
-    active: {
-      opacity: 1,
-      translateY: 0,
-    },
-  });
-
-  const animationState2 = useAnimationState({
-    from: {
-      opacity: 0,
-      translateY: 100,
-    },
-    active: {
-      opacity: 1,
-      translateY: 0,
-    },
-  });
-  const animationStateArr = [animationState0, animationState1, animationState2];
-
-  const changeAnimationState = event => {
-    if (event.contentOffset.x / width >= 1.5) {
-      animationState2.transitionTo('active');
-    } else if (event.contentOffset.x / width >= 0.5) {
-      animationState1.transitionTo('active');
-    }
+  const onViewableItemsChanged = ({viewableItems}) => {
+    flatListIndex.value = viewableItems[0].index;
   };
-  const onViewableItemsChanged = useRef(({viewableItems}) => {
-    setFlatListIndex(viewableItems[0].index);
-  }).current;
-  const onScroll = useAnimatedScrollHandler(e => {
-    x.value = e.contentOffset.x;
-    runOnJS(changeAnimationState)(e);
+
+  const onScroll = useAnimatedScrollHandler({
+    onScroll: event => {
+      x.value = event.contentOffset.x;
+    },
   });
-  const renderItem = ({item, index}) => (
-    <MotiView
-      state={animationStateArr[index]}
-      key={index}
-      style={{
-        flex: 1,
-        width: width,
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        backgroundColor: '#F8E9B0',
-      }}>
-      <Image
-        source={item.image}
-        style={{width: width * 0.8, height: width * 0.8}}
-      />
-      <View>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.text}>{item.text}</Text>
-      </View>
-    </MotiView>
-  );
+
+  const RenderItem = ({item, index}) => {
+    const imageAnimationStyle = useAnimatedStyle(() => {
+      const opacityAnimation = interpolate(
+        x.value,
+        [
+          (index - 1) * SCREEN_WIDTH,
+          index * SCREEN_WIDTH,
+          (index + 1) * SCREEN_WIDTH,
+        ],
+        [0, 1, 0],
+        Extrapolate.CLAMP,
+      );
+      const translateYAnimation = interpolate(
+        x.value,
+        [
+          (index - 1) * SCREEN_WIDTH,
+          index * SCREEN_WIDTH,
+          (index + 1) * SCREEN_WIDTH,
+        ],
+        [100, 0, 100],
+        Extrapolate.CLAMP,
+      );
+      return {
+        opacity: opacityAnimation,
+        width: SCREEN_WIDTH * 0.8,
+        height: SCREEN_WIDTH * 0.8,
+        transform: [{translateY: translateYAnimation}],
+      };
+    });
+    const textAnimationStyle = useAnimatedStyle(() => {
+      const opacityAnimation = interpolate(
+        x.value,
+        [
+          (index - 1) * SCREEN_WIDTH,
+          index * SCREEN_WIDTH,
+          (index + 1) * SCREEN_WIDTH,
+        ],
+        [0, 1, 0],
+        Extrapolate.CLAMP,
+      );
+      const translateYAnimation = interpolate(
+        x.value,
+        [
+          (index - 1) * SCREEN_WIDTH,
+          index * SCREEN_WIDTH,
+          (index + 1) * SCREEN_WIDTH,
+        ],
+        [100, 0, 100],
+        Extrapolate.CLAMP,
+      );
+
+      return {
+        opacity: opacityAnimation,
+        transform: [{translateY: translateYAnimation}],
+      };
+    });
+    return (
+      <Animated.View
+        style={[
+          {
+            flex: 1,
+            width: SCREEN_WIDTH,
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            backgroundColor: '#F8E9B0',
+          },
+        ]}>
+        <Animated.Image source={item.image} style={imageAnimationStyle} />
+        <Animated.View style={textAnimationStyle}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.text}>{item.text}</Text>
+        </Animated.View>
+      </Animated.View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Animated.FlatList
-        ref={flatlistRef}
+        ref={flatListRef}
         onScroll={onScroll}
         data={data}
-        renderItem={renderItem}
+        renderItem={({item, index}) => {
+          return <RenderItem item={item} index={index} />;
+        }}
         keyExtractor={item => item.id}
         scrollEventThrottle={16}
         horizontal={true}
@@ -127,9 +127,6 @@ const OnboardingScreen = () => {
         pagingEnabled={true}
         showsHorizontalScrollIndicator={false}
         onViewableItemsChanged={onViewableItemsChanged}
-        viewabilityConfig={{
-          itemVisiblePercentThreshold: 50,
-        }}
       />
       <View
         style={{
@@ -139,9 +136,9 @@ const OnboardingScreen = () => {
           marginHorizontal: 20,
           paddingVertical: 20,
         }}>
-        <Pagination data={data} x={x} size={width} />
+        <Pagination data={data} x={x} screenWidth={SCREEN_WIDTH} />
         <CustomButton
-          flatlistRef={flatlistRef}
+          flatListRef={flatListRef}
           flatListIndex={flatListIndex}
           dataLength={data.length}
         />

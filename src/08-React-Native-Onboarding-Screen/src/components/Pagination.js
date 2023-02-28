@@ -5,32 +5,33 @@ import Animated, {
   interpolate,
   Extrapolate,
 } from 'react-native-reanimated';
-const Pagination = ({data, x, size}) => {
+const Pagination = ({data, x, screenWidth}) => {
+  const PaginationComp = ({i}) => {
+    const animatedDotStyle = useAnimatedStyle(() => {
+      const widthAnimation = interpolate(
+        x.value,
+        [(i - 1) * screenWidth, i * screenWidth, (i + 1) * screenWidth],
+        [10, 20, 10],
+        Extrapolate.CLAMP,
+      );
+      const opacityAnimation = interpolate(
+        x.value,
+        [(i - 1) * screenWidth, i * screenWidth, (i + 1) * screenWidth],
+        [0.5, 1, 0.5],
+        Extrapolate.CLAMP,
+      );
+      return {
+        width: widthAnimation,
+        opacity: opacityAnimation,
+      };
+    });
+    return <Animated.View style={[styles.dots, animatedDotStyle]} />;
+  };
+
   return (
     <View style={styles.paginationContainer}>
       {data.map((_, i) => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const animatedDotStyle = useAnimatedStyle(() => {
-          const widthAnimation = interpolate(
-            x.value,
-            [(i - 1) * size, i * size, (i + 1) * size],
-            [10, 20, 10],
-            Extrapolate.CLAMP,
-          );
-          const opacityAnimation = interpolate(
-            x.value,
-            [(i - 1) * size, i * size, (i + 1) * size],
-            [0.5, 1, 0.5],
-            Extrapolate.CLAMP,
-          );
-          return {
-            width: widthAnimation,
-            opacity: opacityAnimation,
-          };
-        });
-        return (
-          <Animated.View style={[styles.dots, animatedDotStyle]} key={i} />
-        );
+        return <PaginationComp i={i} key={i} />;
       })}
     </View>
   );

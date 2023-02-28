@@ -1,83 +1,72 @@
 import {StyleSheet, TouchableWithoutFeedback} from 'react-native';
-import React, {useEffect} from 'react';
-import {MotiImage, MotiText, MotiView, useAnimationState} from 'moti';
+import React from 'react';
+import Animated, {
+  useAnimatedStyle,
+  withSpring,
+  withTiming,
+} from 'react-native-reanimated';
 import {useNavigation} from '@react-navigation/native';
-const CustomButton = ({flatlistRef, flatListIndex, dataLength}) => {
+const CustomButton = ({flatListRef, flatListIndex, dataLength}) => {
   const navigation = useNavigation();
-  const buttonAnimationState = useAnimationState({
-    from: {
-      width: 60,
+
+  const buttonAnimationStyle = useAnimatedStyle(() => {
+    return {
+      width:
+        flatListIndex.value === dataLength - 1
+          ? withSpring(140)
+          : withSpring(60),
       height: 60,
-    },
-    getStarted: {
-      width: 140,
-      transition: {duration: 2000},
-    },
+    };
   });
-
-  const arrowAnimationState = useAnimationState({
-    from: {
-      opacity: 1,
-      translateX: 0,
-    },
-    getStarted: {
-      opacity: 0,
-      translateX: 100,
-    },
+  const arrowAnimationStyle = useAnimatedStyle(() => {
+    return {
+      width: 30,
+      height: 30,
+      opacity:
+        flatListIndex.value === dataLength - 1 ? withTiming(0) : withTiming(1),
+      transform: [
+        {
+          translateX:
+            flatListIndex.value === dataLength - 1
+              ? withTiming(100)
+              : withTiming(0),
+        },
+      ],
+    };
   });
-
-  const textAnimationState = useAnimationState({
-    from: {
-      opacity: 0,
-      translateX: -100,
-    },
-    getStarted: {
-      opacity: 1,
-      translateX: 0,
-    },
+  const textAnimationStyle = useAnimatedStyle(() => {
+    return {
+      opacity:
+        flatListIndex.value === dataLength - 1 ? withTiming(1) : withTiming(0),
+      transform: [
+        {
+          translateX:
+            flatListIndex.value === dataLength - 1
+              ? withTiming(0)
+              : withTiming(-100),
+        },
+      ],
+    };
   });
-
-  useEffect(() => {
-    if (flatListIndex === dataLength - 1) {
-      buttonAnimationState.transitionTo('getStarted');
-      arrowAnimationState.transitionTo('getStarted');
-      textAnimationState.transitionTo('getStarted');
-    } else {
-      buttonAnimationState.transitionTo('from');
-      arrowAnimationState.transitionTo('from');
-      textAnimationState.transitionTo('from');
-    }
-  }, [
-    arrowAnimationState,
-    buttonAnimationState,
-    dataLength,
-    flatListIndex,
-    textAnimationState,
-  ]);
-
   return (
     <TouchableWithoutFeedback
       onPress={() => {
-        if (flatListIndex < dataLength - 1) {
-          flatlistRef.current.scrollToIndex({index: flatListIndex + 1});
+        if (flatListIndex.value < dataLength - 1) {
+          flatListRef.current.scrollToIndex({index: flatListIndex.value + 1});
         } else {
           navigation.navigate('Home');
         }
       }}>
-      <MotiView style={styles.container} state={buttonAnimationState}>
-        <MotiText
-          style={styles.textButton}
-          state={textAnimationState}
-          transition={{type: 'timing'}}>
+      <Animated.View style={[styles.container, buttonAnimationStyle]}>
+        <Animated.Text style={[styles.textButton, textAnimationStyle]}>
           Get Started
-        </MotiText>
-        <MotiImage
+        </Animated.Text>
+        <Animated.Image
           source={require('../assets/ArrowIcon.png')}
-          style={styles.arrow}
-          state={arrowAnimationState}
+          style={[styles.arrow, arrowAnimationStyle]}
           transition={{type: 'timing'}}
         />
-      </MotiView>
+      </Animated.View>
     </TouchableWithoutFeedback>
   );
 };
@@ -94,8 +83,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   arrow: {
-    width: 30,
-    height: 30,
     position: 'absolute',
   },
   textButton: {color: 'white', fontSize: 16, position: 'absolute'},
