@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {
   StyleSheet,
   Text,
@@ -92,22 +91,13 @@ const OnboardingScreen = () => {
       };
     });
     return (
-      <Animated.View
-        style={[
-          {
-            flex: 1,
-            width: SCREEN_WIDTH,
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            backgroundColor: '#F8E9B0',
-          },
-        ]}>
+      <View style={[styles.itemContainer, {width: SCREEN_WIDTH}]}>
         <Animated.Image source={item.image} style={imageAnimationStyle} />
         <Animated.View style={textAnimationStyle}>
-          <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.text}>{item.text}</Text>
+          <Text style={styles.itemTitle}>{item.title}</Text>
+          <Text style={styles.itemText}>{item.text}</Text>
         </Animated.View>
-      </Animated.View>
+      </View>
     );
   };
 
@@ -128,14 +118,7 @@ const OnboardingScreen = () => {
         showsHorizontalScrollIndicator={false}
         onViewableItemsChanged={onViewableItemsChanged}
       />
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginHorizontal: 20,
-          paddingVertical: 20,
-        }}>
+      <View style={styles.bottomContainer}>
         <Pagination data={data} x={x} screenWidth={SCREEN_WIDTH} />
         <CustomButton
           flatListRef={flatListRef}
@@ -154,17 +137,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F8E9B0',
   },
-  title: {
+  itemContainer: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#F8E9B0',
+  },
+  itemTitle: {
     textAlign: 'center',
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
     color: 'black',
   },
-  text: {
+  itemText: {
     textAlign: 'center',
     marginHorizontal: 35,
     color: 'black',
     lineHeight: 20,
+  },
+  bottomContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    paddingVertical: 20,
   },
 });
