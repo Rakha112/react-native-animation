@@ -64,7 +64,6 @@ const CustomButton = ({flatListRef, flatListIndex, dataLength}) => {
         <Animated.Image
           source={require('../assets/ArrowIcon.png')}
           style={[styles.arrow, arrowAnimationStyle]}
-          transition={{type: 'timing'}}
         />
       </Animated.View>
     </TouchableWithoutFeedback>
