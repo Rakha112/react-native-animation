@@ -117,6 +117,10 @@ const OnboardingScreen = () => {
         pagingEnabled={true}
         showsHorizontalScrollIndicator={false}
         onViewableItemsChanged={onViewableItemsChanged}
+        viewabilityConfig={{
+          minimumViewTime: 300,
+          viewAreaCoveragePercentThreshold: 10,
+        }}
       />
       <View style={styles.bottomContainer}>
         <Pagination data={data} x={x} screenWidth={SCREEN_WIDTH} />
