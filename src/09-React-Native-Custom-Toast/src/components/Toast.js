@@ -41,7 +41,7 @@ const Toast = forwardRef(({}, ref) => {
         withTiming(TOP_VALUE),
         withDelay(
           duration,
-          withTiming(-100, finish => {
+          withTiming(-100, null, finish => {
             if (finish) {
               runOnJS(setShowing)(false);
             }
@@ -72,7 +72,7 @@ const Toast = forwardRef(({}, ref) => {
     },
     onEnd: event => {
       if (event.translationY < 0) {
-        toastTopAnimation.value = withTiming(-100, finish => {
+        toastTopAnimation.value = withTiming(-100, null, finish => {
           if (finish) {
             runOnJS(setShowing)(false);
           }
@@ -82,7 +82,7 @@ const Toast = forwardRef(({}, ref) => {
           withTiming(TOP_VALUE),
           withDelay(
             toastDuration,
-            withTiming(-100, finish => {
+            withTiming(-100, null, finish => {
               if (finish) {
                 runOnJS(setShowing)(false);
               }
