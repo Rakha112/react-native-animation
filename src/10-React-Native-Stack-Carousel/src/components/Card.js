@@ -52,8 +52,10 @@ const Card = ({
         {scale},
       ],
       opacity:
-        index <= currentIndex.value + maxVisibleItems - 1
+        index < currentIndex.value + maxVisibleItems - 1
           ? opacity
+          : index === currentIndex.value + maxVisibleItems - 1
+          ? withTiming(1)
           : withTiming(0),
     };
   });
