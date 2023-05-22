@@ -11,6 +11,7 @@ import RangeSliderScreen from './src/05-React-Native-Custom-Range-Slider/RangeSl
 import FlatlistRevealAnimationScreen from './src/07-React-Native-Flatlist-Reveal-Animation/FlatlistRevealAnimationScreen';
 import OnboardingScreen from './src/08-React-Native-Onboarding-Screen/OnboardingScreen';
 import CustomToastScreen from './src/09-React-Native-Custom-Toast/CustomToastScreen';
+import StackCarouselScreen from './src/10-React-Native-Stack-Carousel/StackCarouselScreen';
 const App = () => {
   const Stack = createStackNavigator();
   return (
@@ -86,6 +87,13 @@ const App = () => {
         <Stack.Screen
           name="CustomToast"
           component={CustomToastScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="StackCarousel"
+          component={StackCarouselScreen}
           options={{
             headerShown: false,
           }}

@@ -52,6 +52,10 @@ const Home = () => {
       navigate: 'CustomToast',
       title: 'Custom Toast Using Reanimeted 2 and Gesture Handler',
     },
+    {
+      navigate: 'StackCarousel',
+      title: 'Stack Carousel',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
