@@ -1,4 +1,4 @@
-# React Native Stack Carousel Using Reanimated 2 and Gesture Handler
+# React Native Stack Carousel
 
 Create Stack Carousel in React Native using [Reanimated](https://docs.swmansion.com/react-native-reanimated/docs) and [Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 
