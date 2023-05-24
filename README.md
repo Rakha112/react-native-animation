@@ -2,7 +2,7 @@
 
 This repository is a collection of results from the React Native Animation Tutorial on my YouTube Channel [Rakha Wibowo](https://www.youtube.com/@rakhawibowo) using :
 
-- [Reanimated 2](https://docs.swmansion.com/react-native-reanimated/docs)
+- [Reanimated](https://docs.swmansion.com/react-native-reanimated/docs)
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 - [Moti](https://moti.fyi/)
 
@@ -16,6 +16,7 @@ This repository is a collection of results from the React Native Animation Tutor
 - [React Native FlatList Grid or FlatList Columns With Reveal Animation Using Moti](https://youtu.be/wFHPaBugFsQ)
 - [React Native Onboarding Screen Using Reanimated 2](https://youtu.be/b9uLJJ3aNjU)
 - [React Native Custom Swipeable Toast From Scratch](https://youtu.be/M2v7vsHcjHk)
+- [React Native Stack Carousel](https://youtu.be/nmcsDXwUDlI)
 
 ## Run Locally
 
