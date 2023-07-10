@@ -34,6 +34,7 @@ const OnboardingScreen = () => {
     },
   });
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const RenderItem = ({item, index}) => {
     const imageAnimationStyle = useAnimatedStyle(() => {
       const opacityAnimation = interpolate(
