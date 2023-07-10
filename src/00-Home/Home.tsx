@@ -15,11 +15,13 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import ArrowIcon from './icons/ArrowIcon.svg';
-import YoutubeIcon from './icons/YoutubeIcon.svg';
+import ArrowIcon from '../assets/icons/ArrowIcon.svg';
+import YoutubeIcon from '../assets/icons/YoutubeIcon.svg';
 import {MotiView} from 'moti';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../navigator/RootNavigator';
 const Home = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const {width} = useWindowDimensions();
   const data = [
     {navigate: 'CustomSwitch', title: 'Custom Switch Using Reanimated 2'},
@@ -85,7 +87,7 @@ const Home = () => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate(v.navigate);
+                  navigation.navigate(v.navigate as keyof RootStackParamList);
                 }}
                 key={i}>
                 <MotiView

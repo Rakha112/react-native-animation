@@ -22,6 +22,7 @@ const AnimatedCheckMarkPath = memo(props => {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeDasharray={length}
+      fill="none"
     />
   );
 });

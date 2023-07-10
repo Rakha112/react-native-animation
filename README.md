@@ -2,9 +2,19 @@
 
 This repository is a collection of results from the React Native Animation Tutorial on my YouTube Channel [Rakha Wibowo](https://www.youtube.com/@rakhawibowo) using :
 
+- [React Native](https://reactnative.dev/)
 - [Reanimated](https://docs.swmansion.com/react-native-reanimated/docs)
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 - [Moti](https://moti.fyi/)
+
+## Version
+
+The version used in this repository:
+
+- React Native v0.72.1
+- Reanimated v3.3.0
+- React Native Gesture Handler v2.12.0
+- Moti v0.25.3
 
 ## Available Tutorials
 
