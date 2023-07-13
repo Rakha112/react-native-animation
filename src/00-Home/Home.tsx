@@ -58,6 +58,10 @@ const Home = () => {
       navigate: 'StackCarousel',
       title: 'Stack Carousel',
     },
+    {
+      navigate: 'Accordion',
+      title: 'Accordion Using Reanimated',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>

@@ -11,6 +11,7 @@ import FlatlistRevealAnimationScreen from '../07-React-Native-Flatlist-Reveal-An
 import OnboardingScreen from '../08-React-Native-Onboarding-Screen/OnboardingScreen';
 import CustomToastScreen from '../09-React-Native-Custom-Toast/CustomToastScreen';
 import StackCarouselScreen from '../10-React-Native-Stack-Carousel/StackCarouselScreen';
+import AccordionScreen from '../11-React-Native-Accordion/AccordionScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -24,6 +25,7 @@ export type RootStackParamList = {
   OnboardingScreen: undefined;
   CustomToast: undefined;
   StackCarousel: undefined;
+  Accordion: undefined;
 };
 const RootNavigator = () => {
   const Stack = createStackNavigator<RootStackParamList>();
@@ -109,6 +111,13 @@ const RootNavigator = () => {
         component={StackCarouselScreen}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Accordion"
+        component={AccordionScreen}
+        options={{
+          title: 'Accordion',
         }}
       />
     </Stack.Navigator>
