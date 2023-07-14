@@ -30,7 +30,7 @@ const Accordion = ({value}: Props) => {
     height: interpolate(
       progress.value,
       [0, 1],
-      [0.1, heightValue.value],
+      [0, heightValue.value],
       Extrapolate.CLAMP,
     ),
   }));
@@ -52,11 +52,11 @@ const Accordion = ({value}: Props) => {
         <Chevron progress={progress} />
       </Pressable>
       <Animated.View style={heightAnimationStyle}>
-        <Animated.View ref={listRef}>
+        <Animated.View style={styles.contentContainer} ref={listRef}>
           {value.content.map((v, i) => {
             return (
-              <View key={i} style={styles.subContainer}>
-                <Text style={styles.textSub}>{v}</Text>
+              <View key={i} style={styles.content}>
+                <Text style={styles.textContent}>{v}</Text>
               </View>
             );
           })}
@@ -70,32 +70,35 @@ export default Accordion;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#E3EDFB',
     marginHorizontal: 10,
     marginVertical: 10,
     borderRadius: 14,
-    backgroundColor: '#E2EDFB',
-    overflow: 'hidden',
     borderWidth: 1,
     borderColor: '#0F56B3',
+    overflow: 'hidden',
+  },
+  textTitle: {
+    fontSize: 16,
+    color: 'black',
   },
   titleContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     padding: 20,
-  },
-  textTitle: {fontSize: 16, color: 'black'},
-  subContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  contentContainer: {
+    position: 'absolute',
+    width: '100%',
+    top: 0,
+  },
+  content: {
     padding: 20,
     backgroundColor: '#D6E1F0',
   },
-  textSub: {
-    alignSelf: 'center',
+  textContent: {
     fontSize: 14,
     color: 'black',
-    height: '100%',
   },
 });
