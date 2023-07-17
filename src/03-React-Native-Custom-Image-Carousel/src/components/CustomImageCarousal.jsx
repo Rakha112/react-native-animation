@@ -1,30 +1,38 @@
-import {StyleSheet, View, Image, useWindowDimensions} from 'react-native';
+import {View, useWindowDimensions} from 'react-native';
 import React, {useState, useEffect, useRef} from 'react';
 import Animated, {
   useSharedValue,
   useAnimatedScrollHandler,
-  useAnimatedStyle,
-  interpolate,
   useAnimatedRef,
 } from 'react-native-reanimated';
 import Pagination from './Pagination';
+import CustomImage from './CustomImage';
 const CustomImageCarousal = ({data, autoPlay, pagination}) => {
   const scrollViewRef = useAnimatedRef(null);
   const interval = useRef();
   const [isAutoPlay, setIsAutoPlay] = useState(autoPlay);
-  const [newData] = useState([
+  const [newData, setNewData] = useState([
     {key: 'spacer-left'},
     ...data,
     {key: 'spacer-right'},
   ]);
   const {width} = useWindowDimensions();
-  const SIZE = width * 0.8;
+  const SIZE = width * 0.7;
   const SPACER = (width - SIZE) / 2;
   const x = useSharedValue(0);
   const offSet = useSharedValue(0);
+
+  // Update newData if data change
+  useEffect(() => {
+    setNewData([{key: 'spacer-left'}, ...data, {key: 'spacer-right'}]);
+  }, [data]);
+
   const onScroll = useAnimatedScrollHandler({
     onScroll: event => {
       x.value = event.contentOffset.x;
+    },
+    onMomentumEnd: e => {
+      offSet.value = e.contentOffset.x;
     },
   });
 
@@ -42,6 +50,9 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
     } else {
       clearInterval(interval.current);
     }
+    return () => {
+      clearInterval(interval.current);
+    };
   }, [SIZE, SPACER, isAutoPlay, data.length, offSet.value, scrollViewRef]);
 
   return (
@@ -49,11 +60,10 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
       <Animated.ScrollView
         ref={scrollViewRef}
         onScroll={onScroll}
-        onScrollBeginDrag={() => {
+        onScrollBeginDrag={e => {
           setIsAutoPlay(false);
         }}
-        onMomentumScrollEnd={e => {
-          offSet.value = e.nativeEvent.contentOffset.x;
+        onMomentumScrollEnd={() => {
           setIsAutoPlay(autoPlay);
         }}
         scrollEventThrottle={16}
@@ -63,26 +73,15 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
         bounces={false}
         showsHorizontalScrollIndicator={false}>
         {newData.map((item, index) => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const style = useAnimatedStyle(() => {
-            const scale = interpolate(
-              x.value,
-              [(index - 2) * SIZE, (index - 1) * SIZE, index * SIZE],
-              [0.88, 1, 0.88],
-            );
-            return {
-              transform: [{scale}],
-            };
-          });
-          if (!item.image) {
-            return <View style={{width: SPACER}} key={index} />;
-          }
           return (
-            <View style={{width: SIZE}} key={index}>
-              <Animated.View style={[styles.imageContainer, style]}>
-                <Image source={item.image} style={styles.image} />
-              </Animated.View>
-            </View>
+            <CustomImage
+              key={index}
+              index={index}
+              item={item}
+              x={x}
+              size={SIZE}
+              spacer={SPACER}
+            />
           );
         })}
       </Animated.ScrollView>
@@ -92,16 +91,3 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
 };
 
 export default CustomImageCarousal;
-
-const styles = StyleSheet.create({
-  imageContainer: {
-    borderRadius: 18,
-    overflow: 'hidden',
-    backgroundColor: 'pink',
-  },
-  image: {
-    width: '100%',
-    height: undefined,
-    aspectRatio: 16 / 9,
-  },
-});
