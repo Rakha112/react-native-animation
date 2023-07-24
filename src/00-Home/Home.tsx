@@ -62,6 +62,10 @@ const Home = () => {
       navigate: 'Accordion',
       title: 'Accordion Using Reanimated',
     },
+    {
+      navigate: 'Fab',
+      title: 'Floating Action Button (FAB)',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
