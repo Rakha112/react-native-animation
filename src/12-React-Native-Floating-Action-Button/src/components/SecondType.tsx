@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, View, Image} from 'react-native';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import Animated, {
   Easing,
@@ -12,87 +12,18 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-const FirstType = () => {
+const SecondType = () => {
   const firstValue = useSharedValue(30);
-  const firstWidth = useSharedValue(60);
   const secondValue = useSharedValue(30);
-  const secondWidth = useSharedValue(60);
   const thirdValue = useSharedValue(30);
+  const firstWidth = useSharedValue(60);
+  const secondWidth = useSharedValue(60);
   const thirdWidth = useSharedValue(60);
   const isOpen = useSharedValue(false);
   const opacity = useSharedValue(0);
   const progress = useDerivedValue(() =>
     isOpen.value ? withTiming(1) : withTiming(0),
   );
-
-  const firstIcon = useAnimatedStyle(() => {
-    const scale = interpolate(
-      firstValue.value,
-      [30, 130],
-      [0, 1],
-      Extrapolate.CLAMP,
-    );
-    return {
-      bottom: firstValue.value,
-      transform: [{scale: scale}],
-    };
-  });
-
-  const secondIcon = useAnimatedStyle(() => {
-    const scale = interpolate(
-      secondValue.value,
-      [30, 210],
-      [0, 1],
-      Extrapolate.CLAMP,
-    );
-    return {
-      bottom: secondValue.value,
-      transform: [{scale: scale}],
-    };
-  });
-
-  const thirdIcon = useAnimatedStyle(() => {
-    const scale = interpolate(
-      thirdValue.value,
-      [30, 290],
-      [0, 1],
-      Extrapolate.CLAMP,
-    );
-    return {
-      bottom: thirdValue.value,
-      transform: [{scale: scale}],
-    };
-  });
-
-  const plusIcon = useAnimatedStyle(() => {
-    return {
-      transform: [{rotate: `${progress.value * 45}deg`}],
-    };
-  });
-
-  const firstWidhtStyle = useAnimatedStyle(() => {
-    return {
-      width: firstWidth.value,
-    };
-  });
-
-  const secondWidhtStyle = useAnimatedStyle(() => {
-    return {
-      width: secondWidth.value,
-    };
-  });
-
-  const thirdWidhtStyle = useAnimatedStyle(() => {
-    return {
-      width: thirdWidth.value,
-    };
-  });
-
-  const opacityText = useAnimatedStyle(() => {
-    return {
-      opacity: opacity.value,
-    };
-  });
 
   const handlePress = () => {
     const config = {
@@ -128,10 +59,80 @@ const FirstType = () => {
     isOpen.value = !isOpen.value;
   };
 
+  const opacityText = useAnimatedStyle(() => {
+    return {
+      opacity: opacity.value,
+    };
+  });
+
+  const firstWidthStyle = useAnimatedStyle(() => {
+    return {
+      width: firstWidth.value,
+    };
+  });
+  const secondWidthStyle = useAnimatedStyle(() => {
+    return {
+      width: secondWidth.value,
+    };
+  });
+  const thirdWidthStyle = useAnimatedStyle(() => {
+    return {
+      width: thirdWidth.value,
+    };
+  });
+
+  const firstIcon = useAnimatedStyle(() => {
+    const scale = interpolate(
+      firstValue.value,
+      [30, 130],
+      [0, 1],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      bottom: firstValue.value,
+      transform: [{scale: scale}],
+    };
+  });
+
+  const secondIcon = useAnimatedStyle(() => {
+    const scale = interpolate(
+      secondValue.value,
+      [30, 210],
+      [0, 1],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      bottom: secondValue.value,
+      transform: [{scale: scale}],
+    };
+  });
+
+  const thirdIcon = useAnimatedStyle(() => {
+    const scale = interpolate(
+      thirdValue.value,
+      [30, 290],
+      [0, 1],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      bottom: thirdValue.value,
+      transform: [{scale: scale}],
+    };
+  });
+
+  const plusIcon = useAnimatedStyle(() => {
+    return {
+      transform: [{rotate: `${progress.value * 45}deg`}],
+    };
+  });
+
   return (
     <View style={styles.container}>
       <Animated.View
-        style={[styles.contentContainer, firstIcon, firstWidhtStyle]}>
+        style={[styles.contentContainer, thirdIcon, thirdWidthStyle]}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/PenIcon.png')}
@@ -143,7 +144,7 @@ const FirstType = () => {
         </Animated.Text>
       </Animated.View>
       <Animated.View
-        style={[styles.contentContainer, secondIcon, secondWidhtStyle]}>
+        style={[styles.contentContainer, secondIcon, secondWidthStyle]}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/FileIcon.png')}
@@ -155,7 +156,7 @@ const FirstType = () => {
         </Animated.Text>
       </Animated.View>
       <Animated.View
-        style={[styles.contentContainer, thirdIcon, thirdWidhtStyle]}>
+        style={[styles.contentContainer, firstIcon, firstWidthStyle]}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/FolderIcon.png')}
@@ -182,20 +183,20 @@ const FirstType = () => {
   );
 };
 
-export default FirstType;
+export default SecondType;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   contentContainer: {
-    borderRadius: 50,
     backgroundColor: '#0F56B3',
     position: 'absolute',
     bottom: 30,
     right: 30,
-    alignItems: 'center',
+    borderRadius: 50,
     flexDirection: 'row',
+    alignItems: 'center',
     overflow: 'hidden',
   },
   iconContainer: {
@@ -204,7 +205,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  icon: {width: 26, height: 26},
+  icon: {
+    width: 26,
+    height: 26,
+  },
   text: {
     color: 'white',
     fontSize: 18,

@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Button, ScrollView, StyleSheet, View} from 'react-native';
+import {Button, SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import FirstType from './src/components/FirstType';
 import SecondType from './src/components/SecondType';
@@ -9,7 +9,7 @@ import FourthType from './src/components/FourthType';
 const FabScreen = () => {
   const [type, setType] = useState('first');
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <Button title="First Type" onPress={() => setType('first')} />
         <Button title="Second Type" onPress={() => setType('second')} />
@@ -20,7 +20,7 @@ const FabScreen = () => {
       {type === 'second' && <SecondType />}
       {type === 'third' && <ThirdType />}
       {type === 'fourth' && <FourthType />}
-    </View>
+    </SafeAreaView>
   );
 };
 

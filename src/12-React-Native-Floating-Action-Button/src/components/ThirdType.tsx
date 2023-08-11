@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, View, Image} from 'react-native';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import Animated, {
   Easing,
@@ -12,7 +12,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-const FirstType = () => {
+const ThirdType = () => {
   const firstValue = useSharedValue(30);
   const secondValue = useSharedValue(30);
   const thirdValue = useSharedValue(30);
@@ -20,50 +20,6 @@ const FirstType = () => {
   const progress = useDerivedValue(() =>
     isOpen.value ? withTiming(1) : withTiming(0),
   );
-  const firstIcon = useAnimatedStyle(() => {
-    const scale = interpolate(
-      firstValue.value,
-      [30, 110],
-      [0, 1],
-      Extrapolate.CLAMP,
-    );
-    return {
-      bottom: firstValue.value,
-      transform: [{scale: scale}],
-    };
-  });
-  const secondIcon = useAnimatedStyle(() => {
-    const scale = interpolate(
-      secondValue.value,
-      [30, 100],
-      [0, 1],
-      Extrapolate.CLAMP,
-    );
-    return {
-      bottom: secondValue.value,
-      right: secondValue.value,
-      transform: [{scale: scale}],
-    };
-  });
-
-  const thirdIcon = useAnimatedStyle(() => {
-    const scale = interpolate(
-      thirdValue.value,
-      [30, 110],
-      [0, 1],
-      Extrapolate.CLAMP,
-    );
-    return {
-      right: thirdValue.value,
-      transform: [{scale: scale}],
-    };
-  });
-
-  const plusIcon = useAnimatedStyle(() => {
-    return {
-      transform: [{rotate: `${progress.value * 45}deg`}],
-    };
-  });
 
   const handlePress = () => {
     const config = {
@@ -82,9 +38,58 @@ const FirstType = () => {
     isOpen.value = !isOpen.value;
   };
 
+  const firstIcon = useAnimatedStyle(() => {
+    const scale = interpolate(
+      firstValue.value,
+      [30, 110],
+      [0, 1],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      right: firstValue.value,
+      transform: [{scale: scale}],
+    };
+  });
+
+  const secondIcon = useAnimatedStyle(() => {
+    const scale = interpolate(
+      secondValue.value,
+      [30, 100],
+      [0, 1],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      bottom: secondValue.value,
+      right: secondValue.value,
+      transform: [{scale: scale}],
+    };
+  });
+
+  const thirdIcon = useAnimatedStyle(() => {
+    const scale = interpolate(
+      thirdValue.value,
+      [30, 110],
+      [0, 1],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      bottom: thirdValue.value,
+      transform: [{scale: scale}],
+    };
+  });
+
+  const plusIcon = useAnimatedStyle(() => {
+    return {
+      transform: [{rotate: `${progress.value * 45}deg`}],
+    };
+  });
+
   return (
     <View style={styles.container}>
-      <Animated.View style={[styles.circle, firstIcon]}>
+      <Animated.View style={[styles.contentContainer, thirdIcon]}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/PenIcon.png')}
@@ -92,7 +97,7 @@ const FirstType = () => {
           />
         </View>
       </Animated.View>
-      <Animated.View style={[styles.circle, secondIcon]}>
+      <Animated.View style={[styles.contentContainer, secondIcon]}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/FileIcon.png')}
@@ -100,7 +105,7 @@ const FirstType = () => {
           />
         </View>
       </Animated.View>
-      <Animated.View style={[styles.circle, thirdIcon]}>
+      <Animated.View style={[styles.contentContainer, firstIcon]}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/FolderIcon.png')}
@@ -109,7 +114,7 @@ const FirstType = () => {
         </View>
       </Animated.View>
       <Pressable
-        style={styles.circle}
+        style={styles.contentContainer}
         onPress={() => {
           handlePress();
         }}>
@@ -124,21 +129,27 @@ const FirstType = () => {
   );
 };
 
-export default FirstType;
+export default ThirdType;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  circle: {
-    width: 60,
-    height: 60,
-    borderRadius: 50,
+  contentContainer: {
     backgroundColor: '#0F56B3',
     position: 'absolute',
     bottom: 30,
     right: 30,
+    borderRadius: 50,
   },
-  iconContainer: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-  icon: {width: 26, height: 26},
+  iconContainer: {
+    width: 60,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  icon: {
+    width: 26,
+    height: 26,
+  },
 });
