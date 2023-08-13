@@ -13,6 +13,7 @@ import CustomToastScreen from '../09-React-Native-Custom-Toast/CustomToastScreen
 import StackCarouselScreen from '../10-React-Native-Stack-Carousel/StackCarouselScreen';
 import AccordionScreen from '../11-React-Native-Accordion/AccordionScreen';
 import FabScreen from '../12-React-Native-Floating-Action-Button/FabScreen';
+import OnboardingScreen2 from '../13-React-Native-Onboarding-Screen-2/OnboardingScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -28,6 +29,7 @@ export type RootStackParamList = {
   StackCarousel: undefined;
   Accordion: undefined;
   Fab: undefined;
+  OnboardingScreen2: undefined;
 };
 const RootNavigator = () => {
   const Stack = createStackNavigator<RootStackParamList>();
@@ -127,6 +129,13 @@ const RootNavigator = () => {
         component={FabScreen}
         options={{
           title: 'Floating Action Button',
+        }}
+      />
+      <Stack.Screen
+        name="OnboardingScreen2"
+        component={OnboardingScreen2}
+        options={{
+          headerShown: false,
         }}
       />
     </Stack.Navigator>

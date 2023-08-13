@@ -66,6 +66,10 @@ const Home = () => {
       navigate: 'Fab',
       title: 'Floating Action Button (FAB)',
     },
+    {
+      navigate: 'OnboardingScreen2',
+      title: 'Onboarding Screen Using Reanimated',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
