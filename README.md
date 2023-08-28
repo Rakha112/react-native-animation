@@ -6,15 +6,17 @@ This repository is a collection of results from the React Native Animation Tutor
 - [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 - [Moti](https://moti.fyi/)
+- [Lotte](https://github.com/lottie-react-native/lottie-react-native)
 
 ## Version
 
 The version used in this repository:
 
-- React Native v0.72.3
+- React Native v0.72.4
 - Reanimated v3.4.2
 - React Native Gesture Handler v2.12.1
 - Moti v0.26.0
+- Lottie v6.2.0
 
 ## Available Tutorials
 
@@ -29,6 +31,7 @@ The version used in this repository:
 - [React Native Stack Carousel](https://youtu.be/nmcsDXwUDlI)
 - [React Native Accordion](https://youtu.be/qjsNgjXxK24)
 - [React Native Floating Action Button](https://youtu.be/CSQLCAx-tG0)
+- [React Native Onboarding Screen ( Change Color ) Using Reanimated](https://youtu.be/E-y4lCQF6_I)
 
 ## Run Locally
 
