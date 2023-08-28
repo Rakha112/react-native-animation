@@ -14,6 +14,7 @@ import StackCarouselScreen from '../10-React-Native-Stack-Carousel/StackCarousel
 import AccordionScreen from '../11-React-Native-Accordion/AccordionScreen';
 import FabScreen from '../12-React-Native-Floating-Action-Button/FabScreen';
 import OnboardingScreen2 from '../13-React-Native-Onboarding-Screen-2/OnboardingScreen';
+import BottomTabNavigator from '../14-React-Native-Custom-Animated-Bottom-Tab/navigator/BottomTabNavigator';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -30,7 +31,9 @@ export type RootStackParamList = {
   Accordion: undefined;
   Fab: undefined;
   OnboardingScreen2: undefined;
+  BottomTab: undefined;
 };
+
 const RootNavigator = () => {
   const Stack = createStackNavigator<RootStackParamList>();
 
@@ -136,6 +139,13 @@ const RootNavigator = () => {
         component={OnboardingScreen2}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="BottomTab"
+        component={BottomTabNavigator}
+        options={{
+          title: 'Custom Animated Bottom Tab',
         }}
       />
     </Stack.Navigator>

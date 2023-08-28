@@ -70,6 +70,10 @@ const Home = () => {
       navigate: 'OnboardingScreen2',
       title: 'Onboarding Screen Using Reanimated',
     },
+    {
+      navigate: 'BottomTab',
+      title: 'Custom Animated Bottom Tab',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
