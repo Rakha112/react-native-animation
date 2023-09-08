@@ -1,9 +1,9 @@
 import {Image, StyleSheet} from 'react-native';
 import React from 'react';
-import Animated, {useAnimatedStyle} from 'react-native-reanimated';
+import Animated, {SharedValue, useAnimatedStyle} from 'react-native-reanimated';
 
 type Props = {
-  progress: Animated.SharedValue<number>;
+  progress: Readonly<SharedValue<0 | 1>>;
 };
 
 const Chevron = ({progress}: Props) => {

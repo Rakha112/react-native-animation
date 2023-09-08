@@ -8,7 +8,7 @@ const AccordionScreen = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {data.map((value, index) => {
-          return <Accordion value={value} key={index} />;
+          return <Accordion value={value} key={index} type={value.type} />;
         })}
       </ScrollView>
     </SafeAreaView>
