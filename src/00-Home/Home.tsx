@@ -7,6 +7,8 @@ import {
   ScrollView,
   View,
   Linking,
+  Alert,
+  Platform,
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -24,55 +26,62 @@ const Home = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const {width} = useWindowDimensions();
   const data = [
-    {navigate: 'CustomSwitch', title: 'Custom Switch Using Reanimated 2'},
-    {navigate: 'CustomCheckbox', title: 'Custom Checkbox Using Reanimated 2'},
+    {navigate: 'CustomSwitch', title: '01. Custom Switch Using Reanimated 2'},
+    {
+      navigate: 'CustomCheckbox',
+      title: '02. Custom Checkbox Using Reanimated 2',
+    },
     {
       navigate: 'ImageCarousel',
-      title: 'Custom Image Carousel Using Reanimated 2 & ScrollView',
+      title: '03. Custom Image Carousel Using Reanimated 2 & ScrollView',
     },
     {
       navigate: 'BottomSheet',
-      title: 'Bottom Sheet Using Reanimated 2 & GestureHandler',
+      title: '04. Bottom Sheet Using Reanimated 2 & GestureHandler',
     },
     {
       navigate: 'RangeSlider',
-      title: 'Custom Range Slider Using Reanimated 2',
+      title: '05. Custom Range Slider Using Reanimated 2',
     },
     {
       navigate: 'BasicRevealAnimation',
-      title: 'Basic Reveal Animation Using Moti',
+      title: '06. Basic Reveal Animation Using Moti',
     },
     {
       navigate: 'FlatlistRevealAnimation',
-      title: 'Flatlist Grid Reveal Animation Using Moti',
+      title: '07. Flatlist Grid Reveal Animation Using Moti',
     },
     {
       navigate: 'OnboardingScreen',
-      title: 'Onboarding Screen Using Reanimated 2',
+      title: '08. Onboarding Screen Using Reanimated 2',
     },
     {
       navigate: 'CustomToast',
-      title: 'Custom Toast Using Reanimeted 2 and Gesture Handler',
+      title: '09. Custom Toast Using Reanimeted 2 and Gesture Handler',
     },
     {
       navigate: 'StackCarousel',
-      title: 'Stack Carousel',
+      title: '10. Stack Carousel',
     },
     {
       navigate: 'Accordion',
-      title: 'Accordion Using Reanimated',
+      title: '11. Accordion Using Reanimated',
     },
     {
       navigate: 'Fab',
-      title: 'Floating Action Button (FAB)',
+      title: '12. Floating Action Button (FAB)',
     },
     {
       navigate: 'OnboardingScreen2',
-      title: 'Onboarding Screen Using Reanimated',
+      title: '13. Onboarding Screen Using Reanimated',
     },
     {
       navigate: 'BottomTab',
-      title: 'Custom Animated Bottom Tab',
+      title: '14. Custom Animated Bottom Tab',
+    },
+    {
+      navigate: 'OnboardingScreen3D',
+      title: '15. 3D Onboarding Screen',
     },
   ];
   return (
@@ -103,7 +112,26 @@ const Home = () => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate(v.navigate as keyof RootStackParamList);
+                  if (
+                    v.navigate === 'OnboardingScreen3D' &&
+                    Platform.OS === 'ios'
+                  ) {
+                    console.log(v.navigate);
+                    Alert.alert(
+                      '3D Onboarding Screen',
+                      'If you use the iOS simulator, the 3D components will not be rendered, so use the physical iOS device instead',
+                      [
+                        {
+                          text: 'Cancel',
+                          onPress: () => console.log('Cancel Pressed'),
+                          style: 'cancel',
+                        },
+                        {text: 'OK', onPress: () => console.log('OK Pressed')},
+                      ],
+                    );
+                  } else {
+                    navigation.navigate(v.navigate as keyof RootStackParamList);
+                  }
                 }}
                 key={i}>
                 <MotiView

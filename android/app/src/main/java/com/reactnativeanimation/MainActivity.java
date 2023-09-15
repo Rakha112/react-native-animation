@@ -1,4 +1,5 @@
 package com.reactnativeanimation;
+import expo.modules.ReactActivityDelegateWrapper;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -27,11 +28,11 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
-    return new DefaultReactActivityDelegate(
+    return new ReactActivityDelegateWrapper(this, BuildConfig.IS_NEW_ARCHITECTURE_ENABLED, new DefaultReactActivityDelegate(
         this,
         getMainComponentName(),
         // If you opted-in for the New Architecture, we enable the Fabric Renderer.
-        DefaultNewArchitectureEntryPoint.getFabricEnabled());
+        DefaultNewArchitectureEntryPoint.getFabricEnabled()));
   }
 }
 
