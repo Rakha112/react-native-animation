@@ -126,7 +126,13 @@ const Home = () => {
                           onPress: () => console.log('Cancel Pressed'),
                           style: 'cancel',
                         },
-                        {text: 'OK', onPress: () => console.log('OK Pressed')},
+                        {
+                          text: 'OK',
+                          onPress: () =>
+                            navigation.navigate(
+                              v.navigate as keyof RootStackParamList,
+                            ),
+                        },
                       ],
                     );
                   } else {
