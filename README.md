@@ -7,6 +7,7 @@ This repository is a collection of results from the React Native Animation Tutor
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 - [Moti](https://moti.fyi/)
 - [Lotte](https://github.com/lottie-react-native/lottie-react-native)
+- [React Three Fiber](https://github.com/lottie-react-native/lottie-react-native)
 
 ## Version
 
@@ -17,6 +18,7 @@ The version used in this repository:
 - React Native Gesture Handler v2.12.1
 - Moti v0.26.0
 - Lottie v6.2.0
+- React Three Fiber v8.14.1
 
 ## Available Tutorials
 
@@ -32,6 +34,7 @@ The version used in this repository:
 - [React Native Accordion](https://youtu.be/qjsNgjXxK24)
 - [React Native Floating Action Button](https://youtu.be/CSQLCAx-tG0)
 - [React Native Onboarding Screen ( Change Color ) Using Reanimated](https://youtu.be/E-y4lCQF6_I)
+- [React Native 3D Onboarding Screen Using Reanimated and React Three Fiber](https://youtu.be/zs-K4AMRoa0)
 
 ## Run Locally
 
