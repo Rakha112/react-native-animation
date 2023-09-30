@@ -16,6 +16,7 @@ import FabScreen from '../12-React-Native-Floating-Action-Button/FabScreen';
 import OnboardingScreen2 from '../13-React-Native-Onboarding-Screen-2/OnboardingScreen';
 import BottomTabNavigator from '../14-React-Native-Custom-Animated-Bottom-Tab/navigator/BottomTabNavigator';
 import OnboardingScreen3D from '../15-React-Native-3D-Onboarding/OnboardingScreen3D';
+import BottomSheetScreenScroll from '../16-React-Native-Bottom-Sheet-Reanimated-With-Scroll/BottomSheetScreenScroll';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -34,6 +35,7 @@ export type RootStackParamList = {
   OnboardingScreen2: undefined;
   BottomTab: undefined;
   OnboardingScreen3D: undefined;
+  BottomSheetScreenScroll: undefined;
 };
 
 const RootNavigator = () => {
@@ -153,6 +155,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="OnboardingScreen3D"
         component={OnboardingScreen3D}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="BottomSheetScreenScroll"
+        component={BottomSheetScreenScroll}
         options={{
           headerShown: false,
         }}

@@ -83,6 +83,10 @@ const Home = () => {
       navigate: 'OnboardingScreen3D',
       title: '15. 3D Onboarding Screen',
     },
+    {
+      navigate: 'BottomSheetScreenScroll',
+      title: '16. Bottom Sheet Scroll',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
