@@ -87,6 +87,10 @@ const Home = () => {
       navigate: 'BottomSheetScreenScroll',
       title: '16. Bottom Sheet Scroll',
     },
+    {
+      navigate: 'Model3D',
+      title: '17. Loading 3D Model',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
@@ -117,13 +121,14 @@ const Home = () => {
               <TouchableOpacity
                 onPress={() => {
                   if (
-                    v.navigate === 'OnboardingScreen3D' &&
+                    (v.navigate === 'OnboardingScreen3D' ||
+                      v.navigate === 'Model3D') &&
                     Platform.OS === 'ios'
                   ) {
                     console.log(v.navigate);
                     Alert.alert(
-                      '3D Onboarding Screen',
-                      'If you use the iOS simulator, the 3D components will not be rendered, so use the physical iOS device instead',
+                      '3D',
+                      'if you are using iOS simulator, then the 3D Model will not load, use iOS physical device or use Android Emulator instead',
                       [
                         {
                           text: 'Cancel',
