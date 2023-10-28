@@ -91,6 +91,10 @@ const Home = () => {
       navigate: 'Model3D',
       title: '17. Loading 3D Model',
     },
+    {
+      navigate: 'Character3D',
+      title: '18. 3D Character With Animation',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
@@ -122,7 +126,8 @@ const Home = () => {
                 onPress={() => {
                   if (
                     (v.navigate === 'OnboardingScreen3D' ||
-                      v.navigate === 'Model3D') &&
+                      v.navigate === 'Model3D' ||
+                      v.navigate === 'Character3D') &&
                     Platform.OS === 'ios'
                   ) {
                     console.log(v.navigate);

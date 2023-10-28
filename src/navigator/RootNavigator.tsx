@@ -18,6 +18,7 @@ import BottomTabNavigator from '../14-React-Native-Custom-Animated-Bottom-Tab/na
 import OnboardingScreen3D from '../15-React-Native-3D-Onboarding/OnboardingScreen3D';
 import BottomSheetScreenScroll from '../16-React-Native-Bottom-Sheet-Reanimated-With-Scroll/BottomSheetScreenScroll';
 import Model3DScreen from '../17-React-Native-3D-Loading-Model/Model3DScreen';
+import Character3DScreen from '../18-React-Native-3D-Character-With-Animation/Character3DScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -38,6 +39,7 @@ export type RootStackParamList = {
   OnboardingScreen3D: undefined;
   BottomSheetScreenScroll: undefined;
   Model3D: undefined;
+  Character3D: undefined;
 };
 
 const RootNavigator = () => {
@@ -173,6 +175,13 @@ const RootNavigator = () => {
         component={Model3DScreen}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Character3D"
+        component={Character3DScreen}
+        options={{
+          headerShown: true,
         }}
       />
     </Stack.Navigator>
