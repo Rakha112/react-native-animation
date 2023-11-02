@@ -19,6 +19,7 @@ import OnboardingScreen3D from '../15-React-Native-3D-Onboarding/OnboardingScree
 import BottomSheetScreenScroll from '../16-React-Native-Bottom-Sheet-Reanimated-With-Scroll/BottomSheetScreenScroll';
 import Model3DScreen from '../17-React-Native-3D-Loading-Model/Model3DScreen';
 import Character3DScreen from '../18-React-Native-3D-Character-With-Animation/Character3DScreen';
+import SharedElementNavigator from '../19-React-Native-Shared-Element/src/navigator/SharedElementNavigator';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -40,6 +41,7 @@ export type RootStackParamList = {
   BottomSheetScreenScroll: undefined;
   Model3D: undefined;
   Character3D: undefined;
+  SharedElement: undefined;
 };
 
 const RootNavigator = () => {
@@ -182,6 +184,13 @@ const RootNavigator = () => {
         component={Character3DScreen}
         options={{
           headerShown: true,
+        }}
+      />
+      <Stack.Screen
+        name="SharedElement"
+        component={SharedElementNavigator}
+        options={{
+          headerShown: false,
         }}
       />
     </Stack.Navigator>

@@ -95,6 +95,10 @@ const Home = () => {
       navigate: 'Character3D',
       title: '18. 3D Character With Animation',
     },
+    {
+      navigate: 'SharedElement',
+      title: '19. Shared Element Using Reanimated 3',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
