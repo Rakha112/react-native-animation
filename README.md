@@ -15,9 +15,9 @@ The version used in this repository:
 
 - React Native v0.72.6
 - Reanimated v3.4.2
-- React Native Gesture Handler v2.12.1
-- Moti v0.26.0
-- Lottie v6.2.0
+- React Native Gesture Handler v2.13.4
+- Moti v0.26.1
+- Lottie v6.4.0
 - React Three Fiber v8.15.9
 - React Three Drei v9.88.9
 - Three.js v0.158.0
@@ -40,6 +40,7 @@ The version used in this repository:
 - [React Native Scrollable Bottom Sheet with Back Drop using Reanimated and Gesture Handler](https://youtu.be/kWrC4i0DorE)
 - [React Native 3D Loading 3D Model Using React Three Fiber and Drei](https://youtu.be/O8q8H9c9XZ4)
 - [React Native 3D Character With Animation](https://youtu.be/SP0O5o9BJVA)
+- [React Native Shared Element Transition With Reanimated 3](https://youtu.be/fNIIaUUac7k)
 
 ## Run Locally
 
