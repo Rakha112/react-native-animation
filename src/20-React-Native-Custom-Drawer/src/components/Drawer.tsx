@@ -6,7 +6,6 @@ import Animated, {
   SharedValue,
   interpolate,
   useAnimatedReaction,
-  useAnimatedRef,
   useAnimatedStyle,
   withSpring,
   withTiming,
@@ -26,7 +25,6 @@ const Drawer = ({active, translateX, drawerWidth}: Props) => {
   const insets = useSafeAreaInsets();
 
   const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
-  const aref = useAnimatedRef();
 
   useAnimatedReaction(
     () => active.value,
@@ -100,7 +98,6 @@ const Drawer = ({active, translateX, drawerWidth}: Props) => {
     <>
       <GestureDetector gesture={pan}>
         <Animated.View
-          ref={aref}
           style={[
             styles.container,
             animatedStyle,
