@@ -99,6 +99,10 @@ const Home = () => {
       navigate: 'SharedElement',
       title: '19. Shared Element Using Reanimated 3',
     },
+    {
+      navigate: 'CustomDrawer',
+      title: '20. Custom Drawer Using Reanimated and Gesturehandler',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>

@@ -20,6 +20,7 @@ import BottomSheetScreenScroll from '../16-React-Native-Bottom-Sheet-Reanimated-
 import Model3DScreen from '../17-React-Native-3D-Loading-Model/Model3DScreen';
 import Character3DScreen from '../18-React-Native-3D-Character-With-Animation/Character3DScreen';
 import SharedElementNavigator from '../19-React-Native-Shared-Element/src/navigator/SharedElementNavigator';
+import CustomDrawerScreen from '../20-React-Native-Custom-Drawer/CustomDrawerScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -42,6 +43,8 @@ export type RootStackParamList = {
   Model3D: undefined;
   Character3D: undefined;
   SharedElement: undefined;
+  CustomDrawer: undefined;
+  DragAndDrop: undefined;
 };
 
 const RootNavigator = () => {
@@ -189,6 +192,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="SharedElement"
         component={SharedElementNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CustomDrawer"
+        component={CustomDrawerScreen}
         options={{
           headerShown: false,
         }}
