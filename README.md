@@ -13,13 +13,13 @@ This repository is a collection of results from the React Native Animation Tutor
 
 The version used in this repository:
 
-- React Native v0.72.6
+- React Native v0.72.7
 - Reanimated v3.4.2
 - React Native Gesture Handler v2.13.4
-- Moti v0.26.1
-- Lottie v6.4.0
-- React Three Fiber v8.15.9
-- React Three Drei v9.88.9
+- Moti v0.27.2
+- Lottie v6.4.1
+- React Three Fiber v8.15.11
+- React Three Drei v9.88.17
 - Three.js v0.158.0
 
 ## Available Tutorials
@@ -41,6 +41,7 @@ The version used in this repository:
 - [React Native 3D Loading 3D Model Using React Three Fiber and Drei](https://youtu.be/O8q8H9c9XZ4)
 - [React Native 3D Character With Animation](https://youtu.be/SP0O5o9BJVA)
 - [React Native Shared Element Transition With Reanimated 3](https://youtu.be/fNIIaUUac7k)
+- [React Native Custom Drawer With Reanimated 3 and Gesture Handler From Scratch](https://youtu.be/bwHh-qTjU1g)
 
 ## Run Locally
 
