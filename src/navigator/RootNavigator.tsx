@@ -21,6 +21,7 @@ import Model3DScreen from '../17-React-Native-3D-Loading-Model/Model3DScreen';
 import Character3DScreen from '../18-React-Native-3D-Character-With-Animation/Character3DScreen';
 import SharedElementNavigator from '../19-React-Native-Shared-Element/src/navigator/SharedElementNavigator';
 import CustomDrawerScreen from '../20-React-Native-Custom-Drawer/CustomDrawerScreen';
+import DonutChartScreen from '../21-React-Native-Donut-Chart/DonutChartScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -45,6 +46,7 @@ export type RootStackParamList = {
   SharedElement: undefined;
   CustomDrawer: undefined;
   DragAndDrop: undefined;
+  DonutChart: undefined;
 };
 
 const RootNavigator = () => {
@@ -199,6 +201,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="CustomDrawer"
         component={CustomDrawerScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="DonutChart"
+        component={DonutChartScreen}
         options={{
           headerShown: false,
         }}

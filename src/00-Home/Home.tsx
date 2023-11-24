@@ -103,6 +103,10 @@ const Home = () => {
       navigate: 'CustomDrawer',
       title: '20. Custom Drawer Using Reanimated and Gesturehandler',
     },
+    {
+      navigate: 'DonutChart',
+      title: '21. Animated Donut Chart Using Reanimated 3 and Skia',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
