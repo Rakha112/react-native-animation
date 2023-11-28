@@ -21,6 +21,7 @@ The version used in this repository:
 - React Three Fiber v8.15.11
 - React Three Drei v9.88.17
 - Three.js v0.158.0
+- Skia v0.1.221
 
 ## Available Tutorials
 
@@ -42,6 +43,7 @@ The version used in this repository:
 - [React Native 3D Character With Animation](https://youtu.be/SP0O5o9BJVA)
 - [React Native Shared Element Transition With Reanimated 3](https://youtu.be/fNIIaUUac7k)
 - [React Native Custom Drawer With Reanimated 3 and Gesture Handler From Scratch](https://youtu.be/bwHh-qTjU1g)
+- [React Native Animated Donut Chart using Reanimated 3 and Skia](https://youtu.be/Zgz1baxJslg)
 
 ## Run Locally
 
