@@ -10,15 +10,15 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withSpring,
-  useAnimatedGestureHandler,
   interpolate,
 } from 'react-native-reanimated';
-import {PanGestureHandler} from 'react-native-gesture-handler';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 const BottomSheet = forwardRef(
   ({activeHeight, children, backgroundColor, backDropColor}, ref) => {
     const {height} = useWindowDimensions();
     const newActiveHeight = height - activeHeight;
     const topAnimation = useSharedValue(height);
+    const context = useSharedValue(0);
 
     const expand = useCallback(() => {
       'worklet';
@@ -64,24 +64,24 @@ const BottomSheet = forwardRef(
       };
     });
 
-    const gestureHandler = useAnimatedGestureHandler({
-      onStart: (_, ctx) => {
-        ctx.startY = topAnimation.value;
-      },
-      onActive: (event, ctx) => {
+    const pan = Gesture.Pan()
+      .onBegin(() => {
+        context.value = topAnimation.value;
+      })
+      .onUpdate(event => {
         if (event.translationY < 0) {
           topAnimation.value = withSpring(newActiveHeight, {
             damping: 100,
             stiffness: 400,
           });
         } else {
-          topAnimation.value = withSpring(ctx.startY + event.translationY, {
+          topAnimation.value = withSpring(context.value + event.translationY, {
             damping: 100,
             stiffness: 400,
           });
         }
-      },
-      onEnd: _ => {
+      })
+      .onEnd(() => {
         if (topAnimation.value > newActiveHeight + 50) {
           topAnimation.value = withSpring(height, {
             damping: 100,
@@ -93,8 +93,7 @@ const BottomSheet = forwardRef(
             stiffness: 400,
           });
         }
-      },
-    });
+      });
 
     return (
       <>
@@ -110,7 +109,7 @@ const BottomSheet = forwardRef(
             ]}
           />
         </TouchableWithoutFeedback>
-        <PanGestureHandler onGestureEvent={gestureHandler}>
+        <GestureDetector gesture={pan}>
           <Animated.View
             style={[
               styles.container,
@@ -122,7 +121,7 @@ const BottomSheet = forwardRef(
             </View>
             {children}
           </Animated.View>
-        </PanGestureHandler>
+        </GestureDetector>
       </>
     );
   },

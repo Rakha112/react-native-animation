@@ -1,13 +1,13 @@
 import {StyleSheet, View, TextInput} from 'react-native';
 import React from 'react';
-import {PanGestureHandler} from 'react-native-gesture-handler';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  useAnimatedGestureHandler,
   useAnimatedProps,
   runOnJS,
 } from 'react-native-reanimated';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+
 const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
   const position = useSharedValue(0);
   const position2 = useSharedValue(sliderWidth);
@@ -15,24 +15,27 @@ const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
   const opacity2 = useSharedValue(0);
   const zIndex = useSharedValue(0);
   const zIndex2 = useSharedValue(0);
+  const context = useSharedValue(0);
+  const context2 = useSharedValue(0);
 
-  const gestureHandler = useAnimatedGestureHandler({
-    onStart: (_, ctx) => {
-      ctx.startX = position.value;
-    },
-    onActive: (e, ctx) => {
+  // Using new Gesture API
+  const pan = Gesture.Pan()
+    .onBegin(() => {
+      context.value = position.value;
+    })
+    .onUpdate(e => {
       opacity.value = 1;
-      if (ctx.startX + e.translationX < 0) {
+      if (context.value + e.translationX < 0) {
         position.value = 0;
-      } else if (ctx.startX + e.translationX > position2.value) {
+      } else if (context.value + e.translationX > position2.value) {
         position.value = position2.value;
         zIndex.value = 1;
         zIndex2.value = 0;
       } else {
-        position.value = ctx.startX + e.translationX;
+        position.value = context.value + e.translationX;
       }
-    },
-    onEnd: () => {
+    })
+    .onEnd(() => {
       opacity.value = 0;
       runOnJS(onValueChange)({
         min:
@@ -44,26 +47,25 @@ const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
           Math.floor(position2.value / (sliderWidth / ((max - min) / step))) *
             step,
       });
-    },
-  });
+    });
 
-  const gestureHandler2 = useAnimatedGestureHandler({
-    onStart: (_, ctx) => {
-      ctx.startX = position2.value;
-    },
-    onActive: (e, ctx) => {
+  const pan2 = Gesture.Pan()
+    .onBegin(() => {
+      context2.value = position2.value;
+    })
+    .onUpdate(e => {
       opacity2.value = 1;
-      if (ctx.startX + e.translationX > sliderWidth) {
+      if (context2.value + e.translationX > sliderWidth) {
         position2.value = sliderWidth;
-      } else if (ctx.startX + e.translationX < position.value) {
+      } else if (context2.value + e.translationX < position.value) {
         position2.value = position.value;
         zIndex.value = 0;
         zIndex2.value = 1;
       } else {
-        position2.value = ctx.startX + e.translationX;
+        position2.value = context2.value + e.translationX;
       }
-    },
-    onEnd: () => {
+    })
+    .onEnd(() => {
       opacity2.value = 0;
       runOnJS(onValueChange)({
         min:
@@ -75,8 +77,7 @@ const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
           Math.floor(position2.value / (sliderWidth / ((max - min) / step))) *
             step,
       });
-    },
-  });
+    });
 
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [{translateX: position.value}],
@@ -101,7 +102,10 @@ const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
     width: position2.value - position.value,
   }));
 
+  // Add this line for Reanimated from v3.5.0
+  Animated.addWhitelistedNativeProps({text: true});
   const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
+
   const minLabelText = useAnimatedProps(() => {
     return {
       text: `$${
@@ -119,34 +123,47 @@ const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
       }`,
     };
   });
+
   return (
     <View style={[styles.sliderContainer, {width: sliderWidth}]}>
       <View style={[styles.sliderBack, {width: sliderWidth}]} />
       <Animated.View style={[sliderStyle, styles.sliderFront]} />
-      <PanGestureHandler onGestureEvent={gestureHandler}>
+      <GestureDetector gesture={pan}>
         <Animated.View style={[animatedStyle, styles.thumb]}>
           <Animated.View style={[opacityStyle, styles.label]}>
             <AnimatedTextInput
               style={styles.labelText}
               animatedProps={minLabelText}
               editable={false}
-              defaultValue={'0'}
+              defaultValue={`$${
+                min +
+                Math.floor(
+                  position.value / (sliderWidth / ((max - min) / step)),
+                ) *
+                  step
+              }`}
             />
           </Animated.View>
         </Animated.View>
-      </PanGestureHandler>
-      <PanGestureHandler onGestureEvent={gestureHandler2}>
+      </GestureDetector>
+      <GestureDetector gesture={pan2}>
         <Animated.View style={[animatedStyle2, styles.thumb]}>
           <Animated.View style={[opacityStyle2, styles.label]}>
             <AnimatedTextInput
               style={styles.labelText}
               animatedProps={maxLabelText}
               editable={false}
-              defaultValue={'0'}
+              defaultValue={`$${
+                min +
+                Math.floor(
+                  position2.value / (sliderWidth / ((max - min) / step)),
+                ) *
+                  step
+              }`}
             />
           </Animated.View>
         </Animated.View>
-      </PanGestureHandler>
+      </GestureDetector>
     </View>
   );
 };

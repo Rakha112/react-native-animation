@@ -8,16 +8,16 @@ import React, {
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  useAnimatedGestureHandler,
   withSequence,
   withDelay,
   withTiming,
   withSpring,
   runOnJS,
 } from 'react-native-reanimated';
-import {PanGestureHandler} from 'react-native-gesture-handler';
+import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 const Toast = forwardRef(({}, ref) => {
   const toastTopAnimation = useSharedValue(-100);
+  const context = useSharedValue(0);
   const [showing, setShowing] = useState(false);
   const [toastType, setToastType] = useState('success');
   const [toastText, setToastText] = useState('');
@@ -58,19 +58,22 @@ const Toast = forwardRef(({}, ref) => {
     };
   });
 
-  const gestureHandler = useAnimatedGestureHandler({
-    onStart: (_, ctx) => {
-      ctx.startY = toastTopAnimation.value;
-    },
-    onActive: (event, ctx) => {
+  const pan = Gesture.Pan()
+    .onBegin(() => {
+      context.value = toastTopAnimation.value;
+    })
+    .onUpdate(event => {
       if (event.translationY < 100) {
-        toastTopAnimation.value = withSpring(ctx.startY + event.translationY, {
-          damping: 600,
-          stiffness: 100,
-        });
+        toastTopAnimation.value = withSpring(
+          context.value + event.translationY,
+          {
+            damping: 600,
+            stiffness: 100,
+          },
+        );
       }
-    },
-    onEnd: event => {
+    })
+    .onEnd(event => {
       if (event.translationY < 0) {
         toastTopAnimation.value = withTiming(-100, null, finish => {
           if (finish) {
@@ -90,13 +93,12 @@ const Toast = forwardRef(({}, ref) => {
           ),
         );
       }
-    },
-  });
+    });
 
   return (
     <>
       {showing && (
-        <PanGestureHandler onGestureEvent={gestureHandler}>
+        <GestureDetector gesture={pan}>
           <Animated.View
             style={[
               styles.toastContainer,
@@ -129,7 +131,7 @@ const Toast = forwardRef(({}, ref) => {
               {toastText}
             </Text>
           </Animated.View>
-        </PanGestureHandler>
+        </GestureDetector>
       )}
     </>
   );
