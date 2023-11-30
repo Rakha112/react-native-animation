@@ -12,7 +12,7 @@ import Animated, {
   useAnimatedRef,
   useAnimatedStyle,
   interpolate,
-  Extrapolate,
+  Extrapolation,
 } from 'react-native-reanimated';
 import data from './src/data/data';
 import Pagination from './src/components/Pagination';
@@ -45,7 +45,7 @@ const OnboardingScreen = () => {
           (index + 1) * SCREEN_WIDTH,
         ],
         [0, 1, 0],
-        Extrapolate.CLAMP,
+        Extrapolation.CLAMP,
       );
       const translateYAnimation = interpolate(
         x.value,
@@ -55,7 +55,7 @@ const OnboardingScreen = () => {
           (index + 1) * SCREEN_WIDTH,
         ],
         [100, 0, 100],
-        Extrapolate.CLAMP,
+        Extrapolation.CLAMP,
       );
       return {
         opacity: opacityAnimation,
@@ -73,7 +73,7 @@ const OnboardingScreen = () => {
           (index + 1) * SCREEN_WIDTH,
         ],
         [0, 1, 0],
-        Extrapolate.CLAMP,
+        Extrapolation.CLAMP,
       );
       const translateYAnimation = interpolate(
         x.value,
@@ -83,7 +83,7 @@ const OnboardingScreen = () => {
           (index + 1) * SCREEN_WIDTH,
         ],
         [100, 0, 100],
-        Extrapolate.CLAMP,
+        Extrapolation.CLAMP,
       );
 
       return {

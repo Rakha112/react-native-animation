@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
 import React from 'react';
 import Animated, {
-  Extrapolate,
+  Extrapolation,
   SharedValue,
   interpolate,
   useAnimatedStyle,
@@ -27,7 +27,7 @@ const RenderItem = ({index, x, item}: Props) => {
         (index + 1) * SCREEN_WIDTH,
       ],
       [200, 0, -200],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
 
     return {
@@ -44,7 +44,7 @@ const RenderItem = ({index, x, item}: Props) => {
         (index + 1) * SCREEN_WIDTH,
       ],
       [1, 4, 4],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
 
     return {

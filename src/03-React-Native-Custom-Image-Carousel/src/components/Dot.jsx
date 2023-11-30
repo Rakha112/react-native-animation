@@ -3,7 +3,7 @@ import React from 'react';
 import Animated, {
   useAnimatedStyle,
   interpolate,
-  Extrapolate,
+  Extrapolation,
 } from 'react-native-reanimated';
 
 const Dot = ({x, index, size}) => {
@@ -12,13 +12,13 @@ const Dot = ({x, index, size}) => {
       x.value,
       [(index - 1) * size, index * size, (index + 1) * size],
       [10, 20, 10],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
     const opacityAnimation = interpolate(
       x.value,
       [(index - 1) * size, index * size, (index + 1) * size],
       [0.5, 1, 0.5],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
     return {
       width: widthAnimation,

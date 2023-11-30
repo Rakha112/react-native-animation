@@ -2,7 +2,7 @@ import {Image, Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import Animated, {
   Easing,
-  Extrapolate,
+  Extrapolation,
   interpolate,
   useAnimatedStyle,
   useDerivedValue,
@@ -43,7 +43,7 @@ const FirstType = () => {
       firstValue.value,
       [30, 130],
       [0, 1],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
 
     return {
@@ -57,7 +57,7 @@ const FirstType = () => {
       secondValue.value,
       [30, 210],
       [0, 1],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
 
     return {
@@ -71,7 +71,7 @@ const FirstType = () => {
       thirdValue.value,
       [30, 290],
       [0, 1],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
 
     return {

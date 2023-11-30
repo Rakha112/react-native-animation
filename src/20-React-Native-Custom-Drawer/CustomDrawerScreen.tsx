@@ -2,7 +2,7 @@
 import {FlatList, StyleSheet} from 'react-native';
 import React from 'react';
 import Animated, {
-  Extrapolate,
+  Extrapolation,
   interpolate,
   useAnimatedStyle,
   useSharedValue,
@@ -24,7 +24,7 @@ const CustomDrawerScreen = () => {
       drawerTranslateX.value,
       [-drawerWidth.value, 0],
       [0, 100],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
     return {
       transform: [{translateX: containerTranslateX}],

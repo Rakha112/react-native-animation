@@ -1,7 +1,7 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
 import React from 'react';
 import Animated, {
-  Extrapolate,
+  Extrapolation,
   SharedValue,
   interpolate,
   interpolateColor,
@@ -25,7 +25,7 @@ const Dot = ({index, x}: Props) => {
         (index + 1) * SCREEN_WIDTH,
       ],
       [10, 30, 10],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
 
     const opacityAnimation = interpolate(
@@ -36,7 +36,7 @@ const Dot = ({index, x}: Props) => {
         (index + 1) * SCREEN_WIDTH,
       ],
       [0.5, 1, 0.5],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
     return {
       width: widthAnimation,

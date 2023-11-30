@@ -2,7 +2,7 @@
 import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Animated, {
-  Extrapolate,
+  Extrapolation,
   SharedValue,
   interpolate,
   useAnimatedReaction,
@@ -51,7 +51,7 @@ const Drawer = ({active, translateX, drawerWidth}: Props) => {
       translateX.value,
       [-drawerWidth.value, 0],
       [0, 0.7],
-      Extrapolate.CLAMP,
+      Extrapolation.CLAMP,
     );
     return {
       opacity: opacity,
