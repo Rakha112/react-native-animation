@@ -12,14 +12,13 @@ import Animated, {
   withTiming,
   useAnimatedScrollHandler,
   AnimatedScrollViewProps,
-  AnimateProps,
   runOnJS,
 } from 'react-native-reanimated';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import BackDrop from './BackDrop';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-interface Props extends AnimateProps<AnimatedScrollViewProps> {
+interface Props extends AnimatedScrollViewProps {
   snapTo: string;
   backgroundColor: string;
   backDropColor: string;

@@ -4,9 +4,9 @@ import Animated, {FadeIn, FadeInDown} from 'react-native-reanimated';
 import Header from '../components/Header';
 import Button from '../components/Button';
 import {RouteProp} from '@react-navigation/native';
-import {RootStackParamList} from '../navigator/SharedElementNavigator';
+import {SharedElementStackParamList} from '../navigator/SharedElementNavigator';
 
-type DetailsScreenRouteProp = RouteProp<RootStackParamList, 'Detail'>;
+type DetailsScreenRouteProp = RouteProp<SharedElementStackParamList, 'Detail'>;
 
 type Props = {
   route: DetailsScreenRouteProp;

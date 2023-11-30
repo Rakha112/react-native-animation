@@ -3,7 +3,7 @@ import React from 'react';
 import {Data} from '../data/data';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../navigator/SharedElementNavigator';
+import {SharedElementStackParamList} from '../navigator/SharedElementNavigator';
 import Animated, {FadeInDown} from 'react-native-reanimated';
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 
 const RenderItem = ({item, index}: Props) => {
   const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+    useNavigation<NativeStackNavigationProp<SharedElementStackParamList>>();
   return (
     <Animated.View entering={FadeInDown.delay(200 * index)}>
       <Pressable

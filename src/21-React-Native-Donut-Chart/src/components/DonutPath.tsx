@@ -35,7 +35,6 @@ const DonutPath = ({
       return gap;
     }
     const decimal = decimals.value.slice(0, index);
-    console.log({decimals, decimal});
 
     const sum = decimal.reduce(
       (accumulator, currentValue) => accumulator + currentValue,

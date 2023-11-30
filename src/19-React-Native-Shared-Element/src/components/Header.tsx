@@ -5,12 +5,12 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {FadeIn} from 'react-native-reanimated';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../navigator/SharedElementNavigator';
+import {SharedElementStackParamList} from '../navigator/SharedElementNavigator';
 
 const Header = () => {
   const inset = useSafeAreaInsets();
   const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+    useNavigation<NativeStackNavigationProp<SharedElementStackParamList>>();
   return (
     <Animated.View
       style={[styles.container, {top: Platform.OS === 'ios' ? inset.top : 20}]}
