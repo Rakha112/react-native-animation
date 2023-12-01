@@ -22,6 +22,7 @@ import Character3DScreen from '../18-React-Native-3D-Character-With-Animation/Ch
 import SharedElementNavigator from '../19-React-Native-Shared-Element/src/navigator/SharedElementNavigator';
 import CustomDrawerScreen from '../20-React-Native-Custom-Drawer/CustomDrawerScreen';
 import DonutChartScreen from '../21-React-Native-Donut-Chart/DonutChartScreen';
+import CircularProgressBar from '../22-React-Native-Circular-Progress-Bar/CircularProgressBarScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -47,6 +48,7 @@ export type RootStackParamList = {
   CustomDrawer: undefined;
   DragAndDrop: undefined;
   DonutChart: undefined;
+  CircularProgressBar: undefined;
 };
 
 const RootNavigator = () => {
@@ -208,6 +210,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="DonutChart"
         component={DonutChartScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CircularProgressBar"
+        component={CircularProgressBar}
         options={{
           headerShown: false,
         }}

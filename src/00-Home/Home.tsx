@@ -107,6 +107,10 @@ const Home = () => {
       navigate: 'DonutChart',
       title: '21. Animated Donut Chart Using Reanimated 3 and Skia',
     },
+    {
+      navigate: 'CircularProgressBar',
+      title: '22. Animated Circular Progress Bar Using Reanimated 3 and Skia',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
