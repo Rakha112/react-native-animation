@@ -12,9 +12,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		5188902D622B48838D953F78 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A3086DDBDF4BBBBC170F79 /* Roboto-Bold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-ReactNativeAnimation-ReactNativeAnimationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReactNativeAnimation-ReactNativeAnimationTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9D280FBD49D13C2A2F2248E4 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180842BC7227D05E53789CB8 /* ExpoModulesProvider.swift */; };
+		D6F6164294D14A93A7B271A2 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00ADEED58A344F32A3FAD2EE /* Roboto-Light.ttf */; };
 		F3417CBAC83F4BC290247A41 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20B9291E5BC1F04895EAE2 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00ADEED58A344F32A3FAD2EE /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* ReactNativeAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeAnimationTests.m; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeAnimation/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ReactNativeAnimation-ReactNativeAnimationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeAnimation-ReactNativeAnimationTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeAnimation-ReactNativeAnimationTests/Pods-ReactNativeAnimation-ReactNativeAnimationTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F9A3086DDBDF4BBBBC170F79 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
 				111F797A9B9DCB68BFFD0745 /* ExpoModulesProviders */,
+				8D1871AF273A4D198AEDAD16 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +154,16 @@
 				00E356EE1AD99517003FC87E /* ReactNativeAnimationTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8D1871AF273A4D198AEDAD16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3086DDBDF4BBBBC170F79 /* Roboto-Bold.ttf */,
+				00ADEED58A344F32A3FAD2EE /* Roboto-Light.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		A029C81E2432723E11F0DD63 /* ReactNativeAnimationTests */ = {
@@ -276,6 +291,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5188902D622B48838D953F78 /* Roboto-Bold.ttf in Resources */,
+				D6F6164294D14A93A7B271A2 /* Roboto-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V94JAM3B7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ReactNativeAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -588,6 +606,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V94JAM3B7;
 				INFOPLIST_FILE = ReactNativeAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
