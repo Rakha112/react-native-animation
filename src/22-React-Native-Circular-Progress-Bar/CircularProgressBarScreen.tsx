@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
   textButton: {
     color: 'white',
     fontSize: 36,
-    textAlign: 'left',
     fontFamily: 'Roboto-Bold',
   },
 });
