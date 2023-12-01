@@ -36,7 +36,7 @@ const CircularProgressBar = ({
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={{width: radius * 2, height: radius * 2}}>
       <Canvas style={styles.container}>
         <Path
           path={path}
@@ -74,7 +74,6 @@ export default CircularProgressBar;
 
 const styles = StyleSheet.create({
   container: {
-    width: 120 * 2,
-    height: 120 * 2,
+    flex: 1,
   },
 });
