@@ -14,14 +14,14 @@ This repository is a collection of results from the React Native Animation Tutor
 The version used in this repository:
 
 - React Native v0.72.7
-- Reanimated v3.4.2
-- React Native Gesture Handler v2.13.4
+- Reanimated v3.6.0
+- React Native Gesture Handler v2.14.0
 - Moti v0.27.2
 - Lottie v6.4.1
 - React Three Fiber v8.15.11
-- React Three Drei v9.88.17
+- React Three Drei v9.89.0
 - Three.js v0.158.0
-- Skia v0.1.221
+- Skia v0.1.222
 
 ## Available Tutorials
 
@@ -44,6 +44,7 @@ The version used in this repository:
 - [React Native Shared Element Transition With Reanimated 3](https://youtu.be/fNIIaUUac7k)
 - [React Native Custom Drawer With Reanimated 3 and Gesture Handler From Scratch](https://youtu.be/bwHh-qTjU1g)
 - [React Native Animated Donut Chart using Reanimated 3 and Skia](https://youtu.be/Zgz1baxJslg)
+- [React Native Animated Circular Progress Bar With Reanimated 3 and Skia](https://youtu.be/Uohkd-cef8E)
 
 ## Run Locally
 
