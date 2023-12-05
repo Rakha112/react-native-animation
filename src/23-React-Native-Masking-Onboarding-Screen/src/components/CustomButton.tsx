@@ -1,7 +1,6 @@
 import {
   StyleSheet,
   TouchableWithoutFeedback,
-  View,
   useWindowDimensions,
 } from 'react-native';
 import React from 'react';
@@ -80,10 +79,8 @@ const CustomButton = ({handlePress, buttonVal}: Props) => {
 
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
-      <View style={styles.container}>
-        <Animated.View
-          style={[styles.circle, animatedColor, buttonAnimationStyle]}
-        />
+      <Animated.View
+        style={[styles.container, animatedColor, buttonAnimationStyle]}>
         <Animated.Text style={[styles.textButton, textAnimationStyle]}>
           Get Started
         </Animated.Text>
@@ -91,7 +88,7 @@ const CustomButton = ({handlePress, buttonVal}: Props) => {
           source={require('../assets/images/ArrowIcon.png')}
           style={arrowAnimationStyle}
         />
-      </View>
+      </Animated.View>
     </TouchableWithoutFeedback>
   );
 };
@@ -108,13 +105,6 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  circle: {
-    position: 'absolute',
-    width: 120,
-    height: 120,
-    borderRadius: 100,
-    backgroundColor: '#fd94b2',
   },
   textButton: {color: 'white', fontSize: 20, position: 'absolute'},
 });

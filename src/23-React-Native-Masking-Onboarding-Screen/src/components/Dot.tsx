@@ -24,7 +24,7 @@ const Dot = ({index, buttonVal}: Props) => {
         index * SCREEN_HEIGHT,
         (index + 1) * SCREEN_HEIGHT,
       ],
-      [10, 40, 10],
+      [10, 30, 10],
       Extrapolation.CLAMP,
     );
 
