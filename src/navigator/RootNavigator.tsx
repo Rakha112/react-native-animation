@@ -23,6 +23,7 @@ import SharedElementNavigator from '../19-React-Native-Shared-Element/src/naviga
 import CustomDrawerScreen from '../20-React-Native-Custom-Drawer/CustomDrawerScreen';
 import DonutChartScreen from '../21-React-Native-Donut-Chart/DonutChartScreen';
 import CircularProgressBar from '../22-React-Native-Circular-Progress-Bar/CircularProgressBarScreen';
+import MaskingOnboardingScreen from '../23-React-Native-Masking-Onboarding-Screen/MaskingOnboardingScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -49,6 +50,7 @@ export type RootStackParamList = {
   DragAndDrop: undefined;
   DonutChart: undefined;
   CircularProgressBar: undefined;
+  MaskingOnboardingScreen: undefined;
 };
 
 const RootNavigator = () => {
@@ -217,6 +219,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="CircularProgressBar"
         component={CircularProgressBar}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="MaskingOnboardingScreen"
+        component={MaskingOnboardingScreen}
         options={{
           headerShown: false,
         }}

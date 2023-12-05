@@ -111,6 +111,11 @@ const Home = () => {
       navigate: 'CircularProgressBar',
       title: '22. Animated Circular Progress Bar Using Reanimated 3 and Skia',
     },
+    {
+      navigate: 'MaskingOnboardingScreen',
+      title:
+        '23. Animated Masking Onboarding Screen With Reanimated 3 and Skia',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
