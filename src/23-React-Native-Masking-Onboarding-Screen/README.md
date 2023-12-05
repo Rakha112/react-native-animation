@@ -2,6 +2,8 @@
 
 Create Onboarding Screen in React Native with [Reanimated](https://docs.swmansion.com/react-native-reanimated/docs) and [Skia](https://shopify.github.io/react-native-skia/docs/getting-started/installation)
 
+Illustration by <a href="https://icons8.com/illustrations/author/wsla8vwyVKgS">OlFi</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
 ## Demo
 
 Demo on Android and iOS
