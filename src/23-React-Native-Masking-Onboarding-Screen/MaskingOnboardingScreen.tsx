@@ -20,8 +20,13 @@ import {
 } from '@shopify/react-native-skia';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
 import Pagination from './src/components/Pagination';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../navigator/RootNavigator';
 
 const OnboardingScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const pd = PixelRatio.get();
   const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = useWindowDimensions();
   const ref = useRef(null);
@@ -37,6 +42,7 @@ const OnboardingScreen = () => {
   const handlePress = async () => {
     if (currentIndex === data.length - 1 && !active) {
       console.log('END');
+      navigation.navigate('Home');
       return;
     }
     if (!active) {
@@ -58,7 +64,7 @@ const OnboardingScreen = () => {
   };
   return (
     <View style={styles.container}>
-      <View style={StyleSheet.absoluteFillObject} ref={ref} collapsable={false}>
+      <View ref={ref} collapsable={false}>
         {data.map((item, index) => {
           return (
             currentIndex === index && <RenderItem item={item} key={index} />
