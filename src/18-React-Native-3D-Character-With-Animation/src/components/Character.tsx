@@ -57,4 +57,4 @@ export default function Character(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload(require('../assets/Character.glb'));
+// useGLTF.preload(require('../assets/Character.glb'));

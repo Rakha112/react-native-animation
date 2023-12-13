@@ -78,4 +78,4 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload(require('../assets/Model.glb'));
+// useGLTF.preload(require('../assets/Model.glb'));
