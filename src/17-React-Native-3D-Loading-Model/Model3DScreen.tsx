@@ -6,6 +6,9 @@ import useControls from 'r3f-native-orbitcontrols';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../navigator/RootNavigator';
+import Trigger from './src/components/Trigger';
+import Loader from './src/components/Loader';
+import {LoaderProvider} from './src/context/LoaderProvider';
 
 const Model3DScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -13,42 +16,45 @@ const Model3DScreen = () => {
   const [OrbitControls, events] = useControls();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.modelContainer} {...events}>
-        <Canvas>
-          <OrbitControls enablePan={false} />
-          <directionalLight position={[1, 0, 0]} args={['white', 5]} />
-          <directionalLight position={[-1, 0, 0]} args={['white', 5]} />
-          <directionalLight position={[0, 0, 1]} args={['white', 5]} />
-          <directionalLight position={[0, 0, -1]} args={['white', 5]} />
-          <directionalLight position={[0, 1, 0]} args={['white', 5]} />
-          <directionalLight position={[0, -1, 0]} args={['white', 5]} />
-          <Suspense fallback={null}>
-            <Model />
-          </Suspense>
-        </Canvas>
-      </View>
-      <View style={styles.bottomContainer}>
-        <View style={styles.textContainer}>
-          <Text style={styles.textTitle}>Grey Chair</Text>
-          <Text style={styles.textPrice}>$80.00</Text>
-          <Text style={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            mattis maximus eros, eu ullamcorper ante ullamcorper a. Phasellus
-            turpis tellus, tempus at feugiat at, facilisis ac sem.
-          </Text>
+    <LoaderProvider>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.modelContainer} {...events}>
+          <Loader />
+          <Canvas>
+            <OrbitControls enablePan={false} />
+            <directionalLight position={[1, 0, 0]} args={['white', 5]} />
+            <directionalLight position={[-1, 0, 0]} args={['white', 5]} />
+            <directionalLight position={[0, 0, 1]} args={['white', 5]} />
+            <directionalLight position={[0, 0, -1]} args={['white', 5]} />
+            <directionalLight position={[0, 1, 0]} args={['white', 5]} />
+            <directionalLight position={[0, -1, 0]} args={['white', 5]} />
+            <Suspense fallback={<Trigger />}>
+              <Model />
+            </Suspense>
+          </Canvas>
         </View>
-        <View style={styles.buttonContainer}>
-          <Pressable
-            style={styles.button}
-            onPress={() => {
-              navigation.goBack();
-            }}>
-            <Text style={styles.textButton}>Buy Now</Text>
-          </Pressable>
+        <View style={styles.bottomContainer}>
+          <View style={styles.textContainer}>
+            <Text style={styles.textTitle}>Grey Chair</Text>
+            <Text style={styles.textPrice}>$80.00</Text>
+            <Text style={styles.text}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              mattis maximus eros, eu ullamcorper ante ullamcorper a. Phasellus
+              turpis tellus, tempus at feugiat at, facilisis ac sem.
+            </Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <Pressable
+              style={styles.button}
+              onPress={() => {
+                navigation.goBack();
+              }}>
+              <Text style={styles.textButton}>Buy Now</Text>
+            </Pressable>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </LoaderProvider>
   );
 };
 
