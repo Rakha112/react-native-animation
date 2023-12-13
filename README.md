@@ -45,6 +45,7 @@ The version used in this repository:
 - [React Native Custom Drawer With Reanimated 3 and Gesture Handler From Scratch](https://youtu.be/bwHh-qTjU1g)
 - [React Native Animated Donut Chart using Reanimated 3 and Skia](https://youtu.be/Zgz1baxJslg)
 - [React Native Animated Circular Progress Bar With Reanimated 3 and Skia](https://youtu.be/Uohkd-cef8E)
+- [React Native Onboarding Screen (Masking) With Reanimated 3 and Skia](https://youtu.be/XYbVTgDym-U)
 
 ## Run Locally
 
