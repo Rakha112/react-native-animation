@@ -22,10 +22,16 @@ import YoutubeIcon from '../assets/icons/YoutubeIcon.svg';
 import {MotiView} from 'moti';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../navigator/RootNavigator';
+
+interface Data {
+  navigate: keyof RootStackParamList;
+  title: string;
+}
+
 const Home = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const {width} = useWindowDimensions();
-  const data = [
+  const data: Data[] = [
     {navigate: 'CustomSwitch', title: '01. Custom Switch Using Reanimated 2'},
     {
       navigate: 'CustomCheckbox',
@@ -116,6 +122,10 @@ const Home = () => {
       title:
         '23. Animated Masking Onboarding Screen With Reanimated 3 and Skia',
     },
+    {
+      navigate: 'DarkMode',
+      title: '24. Dark Mode With Reanimated 3 and Skia',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
@@ -163,15 +173,12 @@ const Home = () => {
                         },
                         {
                           text: 'OK',
-                          onPress: () =>
-                            navigation.navigate(
-                              v.navigate as keyof RootStackParamList,
-                            ),
+                          onPress: () => navigation.navigate(v.navigate as any),
                         },
                       ],
                     );
                   } else {
-                    navigation.navigate(v.navigate as keyof RootStackParamList);
+                    navigation.navigate(v.navigate as any);
                   }
                 }}
                 key={i}>

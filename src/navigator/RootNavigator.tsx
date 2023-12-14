@@ -24,6 +24,7 @@ import CustomDrawerScreen from '../20-React-Native-Custom-Drawer/CustomDrawerScr
 import DonutChartScreen from '../21-React-Native-Donut-Chart/DonutChartScreen';
 import CircularProgressBar from '../22-React-Native-Circular-Progress-Bar/CircularProgressBarScreen';
 import MaskingOnboardingScreen from '../23-React-Native-Masking-Onboarding-Screen/MaskingOnboardingScreen';
+import DarkModeScreen from '../24-React-Native-Dark-Mode/DarkModeScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -51,6 +52,7 @@ export type RootStackParamList = {
   DonutChart: undefined;
   CircularProgressBar: undefined;
   MaskingOnboardingScreen: undefined;
+  DarkMode: undefined;
 };
 
 const RootNavigator = () => {
@@ -226,6 +228,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="MaskingOnboardingScreen"
         component={MaskingOnboardingScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="DarkMode"
+        component={DarkModeScreen}
         options={{
           headerShown: false,
         }}
