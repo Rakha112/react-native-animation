@@ -1,4 +1,10 @@
-import {FlatList, StyleSheet, View, useWindowDimensions} from 'react-native';
+import {
+  FlatList,
+  PixelRatio,
+  StyleSheet,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import React, {useRef, useState} from 'react';
 import Header from './src/components/Header';
 import {message} from './src/data/data';
@@ -16,6 +22,7 @@ import {
 import {useSharedValue, withTiming} from 'react-native-reanimated';
 
 const DarkModeScreen = () => {
+  const pd = PixelRatio.get();
   const ref = useRef(null);
   const [theme, setTheme] = useState('dark');
   const [overlay, setOverlay] = useState<SkImage | null>(null);
@@ -79,8 +86,8 @@ const DarkModeScreen = () => {
               image={overlay}
               x={0}
               y={0}
-              width={SCREEN_WIDTH}
-              height={SCREEN_HEIGHT}
+              width={overlay.width() / pd}
+              height={overlay.height() / pd}
             />
           </Mask>
         </Canvas>
