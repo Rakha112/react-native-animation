@@ -29,8 +29,8 @@ const DarkModeScreen = () => {
   const handlePress = async () => {
     if (!active) {
       setActive(true);
-      const snapshot1 = await makeImageFromView(ref);
-      setOverlay(snapshot1);
+      const snapshot = await makeImageFromView(ref);
+      setOverlay(snapshot);
       await wait(80);
 
       if (theme === 'dark') {
@@ -39,7 +39,7 @@ const DarkModeScreen = () => {
         setTheme('dark');
       }
 
-      mask.value = withTiming(SCREEN_HEIGHT, {duration: 800});
+      mask.value = withTiming(SCREEN_WIDTH, {duration: 800});
       await wait(800);
 
       setOverlay(null);
@@ -51,6 +51,7 @@ const DarkModeScreen = () => {
     <SafeAreaProvider>
       <View
         ref={ref}
+        collapsable={false}
         style={theme === 'dark' ? darkStyles.container : styles.container}>
         <Header handlePress={handlePress} theme={theme} />
         <FlatList
