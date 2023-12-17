@@ -1,8 +1,8 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -19,7 +19,11 @@ import {Canvas} from '@react-three/fiber/native';
 import Trigger from './src/components/Trigger';
 import Loader from './src/components/Loader';
 import Shoe from './src/components/Shoe';
-import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import {
+  Gesture,
+  GestureDetector,
+  GestureHandlerRootView,
+} from 'react-native-gesture-handler';
 
 const ShopUI3DScreen = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -56,69 +60,70 @@ const ShopUI3DScreen = () => {
   }));
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'black'} />
-      <Header handleChangeDirection={handleChangeDirection} rotate={rotate} />
-      <View style={styles.modelContainer}>
-        {loading && <Loader />}
-        <Canvas camera={{fov: 20}}>
-          <directionalLight position={[1, 0, 0]} args={['white', 2]} />
-          <directionalLight position={[-1, 0, 0]} args={['white', 2]} />
-          <directionalLight position={[0, 0, 1]} args={['white', 2]} />
-          <directionalLight position={[0, 0, -1]} args={['white', 2]} />
-          <directionalLight position={[0, 1, 0]} args={['white', 2]} />
-          <directionalLight position={[0, -1, 0]} args={['white', 2]} />
-          <Suspense fallback={<Trigger setLoading={setLoading} />}>
-            <Shoe
-              position={position}
-              direction={direction}
-              baseColor={baseColor}
-              soleColor={soleColor}
-            />
-          </Suspense>
-        </Canvas>
-      </View>
-      <GestureDetector gesture={pan}>
-        <Animated.View style={[styles.sliderContainer, animatedStyle]}>
-          <Image
-            source={require('./src/assets/Slider.png')}
-            style={styles.slider}
-          />
-        </Animated.View>
-      </GestureDetector>
-      <ScrollView>
-        <View style={styles.contentContainer}>
-          <Text style={styles.textTitle}>Base Color</Text>
-          <View style={styles.colorsContainer}>
-            {dataColors.map((item, index) => {
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    setBaseColor(item);
-                  }}>
-                  <View style={[styles.color, {backgroundColor: item}]} />
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-          <Text style={styles.textTitle}>Sole Color</Text>
-          <View style={styles.colorsContainer}>
-            {dataColors.map((item, index) => {
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    setSoleColor(item);
-                  }}>
-                  <View style={[styles.color, {backgroundColor: item}]} />
-                </TouchableOpacity>
-              );
-            })}
-          </View>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView style={styles.container}>
+        <Header handleChangeDirection={handleChangeDirection} rotate={rotate} />
+        <View style={styles.modelContainer}>
+          {loading && <Loader />}
+          <Canvas camera={{fov: 20}}>
+            <directionalLight position={[1, 0, 0]} args={['white', 2]} />
+            <directionalLight position={[-1, 0, 0]} args={['white', 2]} />
+            <directionalLight position={[0, 0, 1]} args={['white', 2]} />
+            <directionalLight position={[0, 0, -1]} args={['white', 2]} />
+            <directionalLight position={[0, 1, 0]} args={['white', 2]} />
+            <directionalLight position={[0, -1, 0]} args={['white', 2]} />
+            <Suspense fallback={<Trigger setLoading={setLoading} />}>
+              <Shoe
+                position={position}
+                direction={direction}
+                baseColor={baseColor}
+                soleColor={soleColor}
+              />
+            </Suspense>
+          </Canvas>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <GestureDetector gesture={pan}>
+          <Animated.View style={[styles.sliderContainer, animatedStyle]}>
+            <Image
+              source={require('./src/assets/Slider.png')}
+              style={styles.slider}
+            />
+          </Animated.View>
+        </GestureDetector>
+        <ScrollView>
+          <View style={styles.contentContainer}>
+            <Text style={styles.textTitle}>Base Color</Text>
+            <View style={styles.colorsContainer}>
+              {dataColors.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    onPress={() => {
+                      setBaseColor(item);
+                    }}>
+                    <View style={[styles.color, {backgroundColor: item}]} />
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+            <Text style={styles.textTitle}>Sole Color</Text>
+            <View style={styles.colorsContainer}>
+              {dataColors.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    onPress={() => {
+                      setSoleColor(item);
+                    }}>
+                    <View style={[styles.color, {backgroundColor: item}]} />
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 
