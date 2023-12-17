@@ -1,15 +1,16 @@
 import React, {useEffect} from 'react';
-import {useLoaderDispatch} from '../context/LoaderProvider';
 
-const Trigger = () => {
-  const setLoader = useLoaderDispatch();
+type Props = {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+const Trigger = ({setLoading}: Props) => {
   useEffect(() => {
-    setLoader(true);
+    setLoading(true);
     return () => {
-      setLoader(false);
+      setLoading(false);
     };
-  }, [setLoader]);
+  }, [setLoading]);
 
   return <></>;
 };

@@ -1,17 +1,11 @@
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import React from 'react';
-import {useLoader} from '../context/LoaderProvider';
 
 const Loader = () => {
-  const loader = useLoader();
   return (
-    <>
-      {loader && (
-        <View style={styles.container}>
-          <ActivityIndicator size={'large'} />
-        </View>
-      )}
-    </>
+    <View style={styles.container}>
+      <ActivityIndicator size={'large'} />
+    </View>
   );
 };
 
