@@ -126,6 +126,10 @@ const Home = () => {
       navigate: 'DarkMode',
       title: '24. Dark Mode With Reanimated 3 and Skia',
     },
+    {
+      navigate: 'ShopUI3D',
+      title: '25. 3D Shop UI With React Three FIber',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
@@ -158,7 +162,8 @@ const Home = () => {
                   if (
                     (v.navigate === 'OnboardingScreen3D' ||
                       v.navigate === 'Model3D' ||
-                      v.navigate === 'Character3D') &&
+                      v.navigate === 'Character3D' ||
+                      v.navigate === 'ShopUI3D') &&
                     Platform.OS === 'ios'
                   ) {
                     console.log(v.navigate);
