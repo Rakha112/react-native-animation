@@ -14,14 +14,14 @@ This repository is a collection of results from the React Native Animation Tutor
 The version used in this repository:
 
 - React Native v0.72.7
-- Reanimated v3.6.0
+- Reanimated v3.6.1
 - React Native Gesture Handler v2.14.0
 - Moti v0.27.2
 - Lottie v6.4.1
-- React Three Fiber v8.15.11
-- React Three Drei v9.89.0
+- React Three Fiber v8.15.12
+- React Three Drei v9.92.4
 - Three.js v0.158.0
-- Skia v0.1.222
+- Skia v0.1.230
 
 ## Available Tutorials
 
