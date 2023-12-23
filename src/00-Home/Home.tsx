@@ -130,6 +130,10 @@ const Home = () => {
       navigate: 'ShopUI3D',
       title: '25. 3D Shop UI With React Three FIber',
     },
+    {
+      navigate: 'CarouselDisney',
+      title: '26. Carausel Disney+ With Reanimated',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>

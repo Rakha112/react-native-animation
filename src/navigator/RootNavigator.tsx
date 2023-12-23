@@ -26,6 +26,7 @@ import CircularProgressBar from '../22-React-Native-Circular-Progress-Bar/Circul
 import MaskingOnboardingScreen from '../23-React-Native-Masking-Onboarding-Screen/MaskingOnboardingScreen';
 import DarkModeScreen from '../24-React-Native-Dark-Mode/DarkModeScreen';
 import ShopUI3DScreen from '../25-React-Native-3D-Shop/ShopUI3DScreen';
+import CarouselDisneyScreen from '../26-React-Native-Carousel-Disney+/CarouselDisneyScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -55,6 +56,7 @@ export type RootStackParamList = {
   MaskingOnboardingScreen: undefined;
   DarkMode: undefined;
   ShopUI3D: undefined;
+  CarouselDisney: undefined;
 };
 
 const RootNavigator = () => {
@@ -244,6 +246,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="ShopUI3D"
         component={ShopUI3DScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CarouselDisney"
+        component={CarouselDisneyScreen}
         options={{
           headerShown: false,
         }}
