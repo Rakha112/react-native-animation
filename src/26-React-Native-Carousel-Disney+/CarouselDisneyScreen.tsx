@@ -29,7 +29,7 @@ const CarouselDisneyScreen = () => {
   const {width} = useWindowDimensions();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [paginationIndex, setPaginationIndex] = useState(0);
-  const scrollViewRef = useAnimatedRef<Animated.FlatList<any>>();
+  const ref = useAnimatedRef<Animated.FlatList<any>>();
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const interval = useRef<NodeJS.Timeout>();
   const offset = useSharedValue(0);
@@ -66,7 +66,7 @@ const CarouselDisneyScreen = () => {
   });
 
   useDerivedValue(() => {
-    scrollTo(scrollViewRef, offset.value, 0, true);
+    scrollTo(ref, offset.value, 0, true);
   });
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const CarouselDisneyScreen = () => {
     return () => {
       clearInterval(interval.current);
     };
-  }, [currentIndex, isAutoPlay, offset, offset.value, scrollViewRef, width]);
+  }, [isAutoPlay, offset, width]);
 
   return (
     <View style={styles.container}>
@@ -96,7 +96,7 @@ const CarouselDisneyScreen = () => {
       })}
       <Gradient />
       <Animated.FlatList
-        ref={scrollViewRef}
+        ref={ref}
         style={{height: width, flexGrow: 0}}
         onScrollBeginDrag={() => {
           setIsAutoPlay(false);

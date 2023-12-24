@@ -8,7 +8,7 @@ type Props = {
 };
 const Pagination = ({paginationIndex}: Props) => {
   return (
-    <View style={styles.paginationContainer}>
+    <View style={styles.container}>
       {movies.map((_, index) => {
         return (
           <Dot index={index} key={index} paginationIndex={paginationIndex} />
@@ -21,7 +21,7 @@ const Pagination = ({paginationIndex}: Props) => {
 export default Pagination;
 
 const styles = StyleSheet.create({
-  paginationContainer: {
+  container: {
     flexDirection: 'row',
     height: 40,
     justifyContent: 'center',
