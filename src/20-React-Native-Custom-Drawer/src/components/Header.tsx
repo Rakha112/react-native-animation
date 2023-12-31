@@ -1,5 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
-import {Image, Platform, Pressable, StyleSheet, View} from 'react-native';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SharedValue} from 'react-native-reanimated';
@@ -14,7 +13,9 @@ const Header = ({active}: Props) => {
     <View
       style={[
         styles.container,
-        {paddingTop: Platform.OS === 'ios' ? insets.top : 20},
+        //If you're not using react-native-bars, you can remove these edges
+        {paddingTop: insets.top},
+        // {paddingTop: Platform.OS === 'ios' ? insets.top : 20},
       ]}>
       <Pressable
         style={styles.ham}

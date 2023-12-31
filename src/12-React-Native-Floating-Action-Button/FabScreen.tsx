@@ -1,15 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Button, SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {Button, ScrollView, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import FirstType from './src/components/FirstType';
 import SecondType from './src/components/SecondType';
 import ThirdType from './src/components/ThirdType';
 import FourthType from './src/components/FourthType';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
 const FabScreen = () => {
   const [type, setType] = useState('first');
   return (
-    <SafeAreaView style={styles.container}>
+    //If you're not using react-native-bars, you can remove these edges
+    // and import SafeAreaView from react-native.
+    <SafeAreaView style={styles.container} edges={['bottom', 'right', 'left']}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <Button title="First Type" onPress={() => setType('first')} />
         <Button title="Second Type" onPress={() => setType('second')} />

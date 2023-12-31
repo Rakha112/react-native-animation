@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import {
   Image,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -24,6 +23,8 @@ import {
   GestureDetector,
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {SystemBars} from 'react-native-bars';
 
 const ShopUI3DScreen = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -58,6 +59,8 @@ const ShopUI3DScreen = () => {
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
+      {/* If you're not using react-native-bars, you can remove SystemBars */}
+      <SystemBars animated={true} barStyle={'light-content'} />
       <SafeAreaView style={styles.container}>
         <Header handleChangeDirection={handleChangeDirection} rotate={rotate} />
         <ScrollView>

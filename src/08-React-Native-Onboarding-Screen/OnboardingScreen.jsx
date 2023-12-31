@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  useWindowDimensions,
-} from 'react-native';
+import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
 import React from 'react';
 import Animated, {
   useSharedValue,
@@ -17,7 +11,7 @@ import Animated, {
 import data from './src/data/data';
 import Pagination from './src/components/Pagination';
 import CustomButton from './src/components/CustomButton';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
 const OnboardingScreen = () => {
   const {width: SCREEN_WIDTH} = useWindowDimensions();
   const flatListRef = useAnimatedRef(null);

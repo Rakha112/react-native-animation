@@ -1,4 +1,4 @@
-import {Pressable, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {Suspense, useState} from 'react';
 import {Canvas} from '@react-three/fiber/native';
 import Model from './src/components/Model';
@@ -8,6 +8,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../navigator/RootNavigator';
 import Trigger from './src/components/Trigger';
 import Loader from './src/components/Loader';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Model3DScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();

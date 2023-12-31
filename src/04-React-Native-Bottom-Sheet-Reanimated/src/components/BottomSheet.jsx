@@ -2,7 +2,7 @@
 import {
   StyleSheet,
   View,
-  useWindowDimensions,
+  Dimensions,
   TouchableWithoutFeedback,
 } from 'react-native';
 import React, {forwardRef, useImperativeHandle, useCallback} from 'react';
@@ -13,9 +13,13 @@ import Animated, {
   interpolate,
 } from 'react-native-reanimated';
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const BottomSheet = forwardRef(
   ({activeHeight, children, backgroundColor, backDropColor}, ref) => {
-    const {height} = useWindowDimensions();
+    // If you're not using react-native-bars or a transparent Android navigation bar
+    // you can remove the inset code below
+    const inset = useSafeAreaInsets();
+    const {height} = Dimensions.get('screen');
     const newActiveHeight = height - activeHeight;
     const topAnimation = useSharedValue(height);
     const context = useSharedValue(0);
@@ -114,7 +118,13 @@ const BottomSheet = forwardRef(
             style={[
               styles.container,
               animationStyle,
-              {height: activeHeight, backgroundColor: backgroundColor},
+              {
+                height: activeHeight,
+                backgroundColor: backgroundColor,
+                // If you're not using react-native-bars or a transparent Android navigation bar
+                // you can remove the paddingBottom code below
+                paddingBottom: inset.bottom,
+              },
             ]}>
             <View style={styles.lineContainer}>
               <View style={styles.line} />

@@ -13,6 +13,7 @@ import {message} from './src/data/data';
 import Message from './src/components/Message';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {SystemBars} from 'react-native-bars';
 
 const CustomDrawerScreen = () => {
   const active = useSharedValue(false);
@@ -34,6 +35,8 @@ const CustomDrawerScreen = () => {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{flex: 1}}>
+        {/* If you're not using react-native-bars, you can remove SystemBars */}
+        <SystemBars animated={true} barStyle={'light-content'} />
         <Drawer
           active={active}
           translateX={drawerTranslateX}

@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Button, SafeAreaView, StyleSheet} from 'react-native';
+import {Button, StyleSheet} from 'react-native';
 import React, {useCallback, useRef} from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import BottomSheet, {BottomSheetMethods} from './src/components/BottomSheet';
@@ -9,7 +9,7 @@ import BottomSheetFlatList from './src/components/BottomSheetFlatList';
 import data from './src/data/data';
 import RenderItem from './src/components/RenderItem';
 import Example from './src/components/Example';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
 const BottomSheetScreenScroll = () => {
   const bottomSheetRef = useRef<BottomSheetMethods>(null);

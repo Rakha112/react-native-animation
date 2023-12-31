@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   FlatList,
   Image,
   TouchableWithoutFeedback,
@@ -11,6 +10,8 @@ import {
 import React from 'react';
 import data from './src/data';
 import {MotiView} from 'moti';
+import {SafeAreaView} from 'react-native-safe-area-context';
+
 const FlatlistRevealAnimationScreen = () => {
   const renderItem = ({item, index}) => {
     return (
@@ -36,7 +37,9 @@ const FlatlistRevealAnimationScreen = () => {
     );
   };
   return (
-    <SafeAreaView style={styles.container}>
+    //If you're not using react-native-bars, you can remove these edges
+    // and import SafeAreaView from react-native.
+    <SafeAreaView style={styles.container} edges={['bottom', 'right', 'left']}>
       <FlatList
         data={data}
         renderItem={renderItem}

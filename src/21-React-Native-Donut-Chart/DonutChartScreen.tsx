@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import DonutChart from './src/components/DonutChart';
 import {useFont} from '@shopify/react-native-skia';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -8,6 +8,7 @@ import {useSharedValue, withTiming} from 'react-native-reanimated';
 import {calculatePercentage} from './src/utils/calculatePercentage';
 import {generateRandomNumbers} from './src/utils/generateRandomNumbers';
 import RenderItem from './src/components/RenderItem';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 interface Data {
   value: number;

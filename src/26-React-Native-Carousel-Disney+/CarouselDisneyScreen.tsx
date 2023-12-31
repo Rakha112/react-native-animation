@@ -1,11 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {
-  StatusBar,
-  StyleSheet,
-  View,
-  ViewToken,
-  useWindowDimensions,
-} from 'react-native';
+import {StyleSheet, View, ViewToken, useWindowDimensions} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {movies} from './src/data/movies';
 import Animated, {
@@ -22,6 +16,7 @@ import WatchNowButton from './src/components/WatchNowButton';
 import PlusButton from './src/components/PlusButton';
 import TextInfo from './src/components/TextInfo';
 import Pagination from './src/components/Pagination';
+import {SystemBars} from 'react-native-bars';
 
 const CarouselDisneyScreen = () => {
   const x = useSharedValue(0);
@@ -84,7 +79,10 @@ const CarouselDisneyScreen = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent backgroundColor={'transparent'} />
+      {/* If you're not using react-native-bars, you can remove SystemBars */}
+      <SystemBars animated={true} barStyle={'light-content'} />
+
+      {/* <StatusBar translucent backgroundColor={'transparent'} /> */}
       {data.map((item, index) => {
         return (
           <View key={index}>

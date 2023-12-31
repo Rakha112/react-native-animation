@@ -1,10 +1,4 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import CircularProgressBar from './src/components/CircularProgressBar';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
@@ -12,6 +6,8 @@ import {useFont} from '@shopify/react-native-skia';
 import {generateRandomNumber} from './src/utils/generateRandomNumbers';
 import {calculatePercentage} from './src/utils/calculatePercentage';
 import {formatNumberWithCommas} from './src/utils/formatNumberWithCommas';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {SystemBars} from 'react-native-bars';
 
 const RADIUS = 120;
 const STROKE_WIDTH = 30;
@@ -37,6 +33,8 @@ const CircularProgressBarScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* If you're not using react-native-bars, you can remove SystemBars */}
+      <SystemBars animated={true} barStyle={'light-content'} />
       <View style={styles.contentContainer}>
         <View style={styles.circularContainer}>
           <CircularProgressBar

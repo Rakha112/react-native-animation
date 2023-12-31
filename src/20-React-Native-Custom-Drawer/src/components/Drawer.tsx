@@ -1,5 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
-import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Animated, {
   Extrapolation,
@@ -101,7 +100,9 @@ const Drawer = ({active, translateX, drawerWidth}: Props) => {
           style={[
             styles.container,
             animatedStyle,
-            {paddingTop: Platform.OS === 'ios' ? insets.top : 20},
+            //If you're not using react-native-bars, you can remove these edges
+            {paddingTop: insets.top},
+            // {paddingTop: Platform.OS === 'ios' ? insets.top : 20},
           ]}
           onLayout={e => {
             drawerWidth.value = e.nativeEvent.layout.width;

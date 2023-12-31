@@ -1,4 +1,4 @@
-import {Image, Platform, StyleSheet, Text} from 'react-native';
+import {Image, StyleSheet, Text} from 'react-native';
 import React, {
   useState,
   useCallback,
@@ -22,7 +22,9 @@ const Toast = forwardRef(({}, ref) => {
   const [toastType, setToastType] = useState('success');
   const [toastText, setToastText] = useState('');
   const [toastDuration, setToastDuration] = useState(0);
-  const TOP_VALUE = Platform.OS === 'ios' ? 60 : 20;
+  // If you're not using react-native-bars, please use the one below by uncommenting it
+  const TOP_VALUE = 60;
+  // const TOP_VALUE = Platform.OS === 'ios' ? 60 : 20;
   useImperativeHandle(
     ref,
     () => ({

@@ -1,10 +1,11 @@
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {Suspense, useState} from 'react';
 import {Canvas} from '@react-three/fiber/native';
 import useControls from 'r3f-native-orbitcontrols';
 import Character from './src/components/Character';
 import Trigger from './src/components/Trigger';
 import Loader from './src/components/Loader';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Character3DScreen = () => {
   const [OrbitControls, events] = useControls();

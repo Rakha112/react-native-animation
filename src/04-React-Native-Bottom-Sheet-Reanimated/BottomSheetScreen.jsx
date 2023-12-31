@@ -1,19 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-  Button,
-  useWindowDimensions,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, Button, Dimensions} from 'react-native';
 import React, {useRef, useCallback} from 'react';
 import BottomSheet from './src/components/BottomSheet';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
 const App = () => {
-  const {height} = useWindowDimensions();
+  const {height} = Dimensions.get('screen');
   const bottomSheetRef = useRef();
   const bottomSheetRef2 = useRef();
   const bottomSheetRef3 = useRef();
