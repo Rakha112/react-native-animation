@@ -2,6 +2,7 @@ package com.reactnativeanimation;
 import expo.modules.ReactActivityDelegateWrapper;
 
 import android.os.Bundle;
+import com.zoontek.rnbars.RNBars;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
@@ -11,6 +12,7 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);
+    RNBars.init(this);
   }
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
