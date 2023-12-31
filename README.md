@@ -9,6 +9,8 @@ This repository is a collection of results from the React Native Animation Tutor
 - [Lottie](https://github.com/lottie-react-native/lottie-react-native)
 - [React Three Fiber](https://github.com/lottie-react-native/lottie-react-native)
 
+This project uses react-native-bars to make the Status Bar and Navigation Bar on Android transparent
+
 ## Version
 
 The version used in this repository:
@@ -17,11 +19,12 @@ The version used in this repository:
 - Reanimated v3.6.1
 - React Native Gesture Handler v2.14.0
 - Moti v0.27.2
-- Lottie v6.4.1
+- Lottie v6.5.0
 - React Three Fiber v8.15.12
-- React Three Drei v9.92.4
+- React Three Drei v9.92.7
 - Three.js v0.158.0
 - Skia v0.1.230
+- React Native Bars v2.4.2
 
 ## Available Tutorials
 
@@ -46,6 +49,8 @@ The version used in this repository:
 - [React Native Animated Donut Chart using Reanimated 3 and Skia](https://youtu.be/Zgz1baxJslg)
 - [React Native Animated Circular Progress Bar With Reanimated 3 and Skia](https://youtu.be/Uohkd-cef8E)
 - [React Native Onboarding Screen (Masking) With Reanimated 3 and Skia](https://youtu.be/XYbVTgDym-U)
+- [React Native 3D Shop App UI With React Three Fiber - ThreeJs](https://youtu.be/quVWBfqwPBA)
+- [React Native Carousel With Pagination, Auto Play and Infinite Loop](https://youtu.be/iqBJ1021m0s)
 
 ## Run Locally
 
