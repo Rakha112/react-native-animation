@@ -27,6 +27,7 @@ import MaskingOnboardingScreen from '../23-React-Native-Masking-Onboarding-Scree
 import DarkModeScreen from '../24-React-Native-Dark-Mode/DarkModeScreen';
 import ShopUI3DScreen from '../25-React-Native-3D-Shop/ShopUI3DScreen';
 import CarouselDisneyScreen from '../26-React-Native-Carousel-Disney+/CarouselDisneyScreen';
+import DarkModeSwitchScreen from '../27-React-Native-Dark-Mode-Switch/DarkModeSwitchScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -57,6 +58,7 @@ export type RootStackParamList = {
   DarkMode: undefined;
   ShopUI3D: undefined;
   CarouselDisney: undefined;
+  DarkModeSwitch: undefined;
 };
 
 const RootNavigator = () => {
@@ -170,7 +172,7 @@ const RootNavigator = () => {
         name="BottomTab"
         component={BottomTabNavigator}
         options={{
-          title: 'Custom Animated Bottom Tab',
+          headerShown: false,
         }}
       />
       <Stack.Screen
@@ -253,6 +255,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="CarouselDisney"
         component={CarouselDisneyScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="DarkModeSwitch"
+        component={DarkModeSwitchScreen}
         options={{
           headerShown: false,
         }}

@@ -134,6 +134,10 @@ const Home = () => {
       navigate: 'CarouselDisney',
       title: '26. Carausel Disney+ With Reanimated',
     },
+    {
+      navigate: 'DarkModeSwitch',
+      title: '27. Dark Mode Switch',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
