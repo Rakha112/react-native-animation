@@ -6,7 +6,7 @@ Dark Mode Switch in React Native using [Reanimated](https://docs.swmansion.com/r
 
 Demo on iOS (Left) and Android (Right)
 
-![Demo](https://github.com/Rakha112/react-native-animation/blob/main/src/22-React-Native-Circular-Progress-Bar/Demo.gif)
+![Demo](https://github.com/Rakha112/react-native-animation/blob/main/src/27-React-Native-Dark-Mode-Switch/Demo.gif)
 
 ## Run Locally
 
