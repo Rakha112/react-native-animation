@@ -15,16 +15,16 @@ This project uses react-native-bars to make the Status Bar and Navigation Bar on
 
 The version used in this repository:
 
-- React Native v0.72.7
+- React Native v0.73.2
 - Reanimated v3.6.1
-- React Native Gesture Handler v2.14.0
+- React Native Gesture Handler v2.14.1
 - Moti v0.27.2
 - Lottie v6.5.0
-- React Three Fiber v8.15.12
-- React Three Drei v9.92.7
-- Three.js v0.158.0
-- Skia v0.1.230
-- React Native Bars v2.4.2
+- React Three Fiber v8.15.14
+- React Three Drei v9.96.1
+- Three.js v0.160.1
+- Skia v0.1.234
+- React Native Bars v2.4.3
 
 ## Available Tutorials
 
@@ -51,6 +51,7 @@ The version used in this repository:
 - [React Native Onboarding Screen (Masking) With Reanimated 3 and Skia](https://youtu.be/XYbVTgDym-U)
 - [React Native 3D Shop App UI With React Three Fiber - ThreeJs](https://youtu.be/quVWBfqwPBA)
 - [React Native Carousel With Pagination, Auto Play and Infinite Loop](https://youtu.be/iqBJ1021m0s)
+- [React Native Dark Mode Switch](https://youtu.be/18Gzlh_HTRw)
 
 ## Run Locally
 
