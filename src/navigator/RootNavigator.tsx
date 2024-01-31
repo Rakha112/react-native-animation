@@ -28,6 +28,7 @@ import DarkModeScreen from '../24-React-Native-Dark-Mode/DarkModeScreen';
 import ShopUI3DScreen from '../25-React-Native-3D-Shop/ShopUI3DScreen';
 import CarouselDisneyScreen from '../26-React-Native-Carousel-Disney+/CarouselDisneyScreen';
 import DarkModeSwitchScreen from '../27-React-Native-Dark-Mode-Switch/DarkModeSwitchScreen';
+import OnboardingScreenCuberto from '../28-React-Native-Onboarding-Screen-Cuberto/OnboardingScreenCuberto';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -51,7 +52,6 @@ export type RootStackParamList = {
   Character3D: undefined;
   SharedElement: undefined;
   CustomDrawer: undefined;
-  DragAndDrop: undefined;
   DonutChart: undefined;
   CircularProgressBar: undefined;
   MaskingOnboardingScreen: undefined;
@@ -59,6 +59,7 @@ export type RootStackParamList = {
   ShopUI3D: undefined;
   CarouselDisney: undefined;
   DarkModeSwitch: undefined;
+  OnboardingScreenCuberto: undefined;
 };
 
 const RootNavigator = () => {
@@ -262,6 +263,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="DarkModeSwitch"
         component={DarkModeSwitchScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="OnboardingScreenCuberto"
+        component={OnboardingScreenCuberto}
         options={{
           headerShown: false,
         }}

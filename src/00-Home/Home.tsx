@@ -138,6 +138,10 @@ const Home = () => {
       navigate: 'DarkModeSwitch',
       title: '27. Dark Mode Switch',
     },
+    {
+      navigate: 'OnboardingScreenCuberto',
+      title: '28. Animated Onboarding Screen (Inspired By Cuberto)',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
