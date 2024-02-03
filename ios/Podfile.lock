@@ -8,16 +8,16 @@ PODS:
     - ExpoModulesCore
   - EXFont (11.10.2):
     - ExpoModulesCore
-  - Expo (50.0.2):
+  - Expo (50.0.4):
     - ExpoModulesCore
-  - ExpoFileSystem (16.0.4):
+  - ExpoFileSystem (16.0.5):
     - ExpoModulesCore
   - ExpoGL (13.6.0):
     - ExpoModulesCore
     - ReactCommon/turbomodule/core
   - ExpoKeepAwake (12.8.2):
     - ExpoModulesCore
-  - ExpoModulesCore (1.11.7):
+  - ExpoModulesCore (1.11.8):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -94,10 +94,10 @@ PODS:
     - hermes-engine/Pre-built (= 0.73.2)
   - hermes-engine/Pre-built (0.73.2)
   - libevent (2.1.12)
-  - lottie-ios (4.3.4)
-  - lottie-react-native (6.5.1):
+  - lottie-ios (4.4.0)
+  - lottie-react-native (6.6.0):
     - glog
-    - lottie-ios (~> 4.3.3)
+    - lottie-ios (~> 4.4.0)
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
   - OpenSSL-Universal (1.1.1100)
@@ -972,9 +972,9 @@ PODS:
   - React-Mapbuffer (0.73.2):
     - glog
     - React-debug
-  - react-native-safe-area-context (4.8.2):
+  - react-native-safe-area-context (4.9.0):
     - React-Core
-  - react-native-skia (0.1.234):
+  - react-native-skia (0.1.237):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React
@@ -1151,7 +1151,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - RNReanimated (3.6.1):
+  - RNReanimated (3.6.2):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1408,11 +1408,11 @@ SPEC CHECKSUMS:
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
   EXConstants: 988aa430ca0f76b43cd46b66e7fae3287f9cc2fc
   EXFont: 21b9c760abd593ce8f0d5386b558ced76018506f
-  Expo: 6c6526e76864e140363431722b22d0fa3cdeafd2
-  ExpoFileSystem: 39e454b8e7f2358ae2c8f8ec255fede4c3039493
+  Expo: 1e3bcf9dd99de57a636127057f6b488f0609681a
+  ExpoFileSystem: 04795dd4d47e76eaf12e38c92091f77d794f9e7f
   ExpoGL: 085542f97b13f2428ac2edb077c9a90f4566944d
   ExpoKeepAwake: 0f5cad99603a3268e50af9a6eb8b76d0d9ac956c
-  ExpoModulesCore: f103ff1346136b2926e1654f32b3f45ab0b74830
+  ExpoModulesCore: 96d1751929ad10622773bb729ab28a8423f0dd0c
   FBLazyVector: fbc4957d9aa695250b55d879c1d86f79d7e69ab4
   FBReactNativeSpec: 86de768f89901ef6ed3207cd686362189d64ac88
   Flipper: c7a0093234c4bdd456e363f2f19b2e4b27652d44
@@ -1427,8 +1427,8 @@ SPEC CHECKSUMS:
   glog: c5d68082e772fa1c511173d6b30a9de2c05a69a2
   hermes-engine: b361c9ef5ef3cda53f66e195599b47e1f84ffa35
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
-  lottie-react-native: c1c6a1fd86e1942d69c2bc2e14212be72b55f3be
+  lottie-ios: ef1be1f90d54255f08e09d767950e43714661178
+  lottie-react-native: 34cfb1db79d0feb7bf7b200d4a4e2f164b0c5f58
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 7169b2b1c44399c76a47b5deaaba715eeeb476c0
   RCTRequired: 9b1e7e262745fb671e33c51c1078d093bd30e322
@@ -1451,8 +1451,8 @@ SPEC CHECKSUMS:
   React-jsinspector: 03644c063fc3621c9a4e8bf263a8150909129618
   React-logger: 66b168e2b2bee57bd8ce9e69f739d805732a5570
   React-Mapbuffer: 9ee041e1d7be96da6d76a251f92e72b711c651d6
-  react-native-safe-area-context: 0ee144a6170530ccc37a0fd9388e28d06f516a89
-  react-native-skia: 1f856f2950d08aed35413f063e993775f4ad7239
+  react-native-safe-area-context: b97eb6f9e3b7f437806c2ce5983f479f8eb5de4b
+  react-native-skia: c7c1d05ed3dd10f1bd37c4d37fcfce45aba9644b
   React-nativeconfig: d753fbbc8cecc8ae413d615599ac378bbf6999bb
   React-NativeModulesApple: 964f4eeab1b4325e8b6a799cf4444c3fd4eb0a9c
   React-perflogger: 29efe63b7ef5fbaaa50ef6eaa92482f98a24b97e
@@ -1474,7 +1474,7 @@ SPEC CHECKSUMS:
   React-utils: f5bc61e7ea3325c0732ae2d755f4441940163b85
   ReactCommon: 45b5d4f784e869c44a6f5a8fad5b114ca8f78c53
   RNGestureHandler: 25b969a1ffc806b9f9ad2e170d4a3b049c6af85e
-  RNReanimated: 57f436e7aa3d277fbfed05e003230b43428157c0
+  RNReanimated: 5589be82dc26b3f94738eb7c6b1f942787532b25
   RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
   RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
