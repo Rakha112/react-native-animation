@@ -10,6 +10,9 @@ import Animated, {
 } from 'react-native-reanimated';
 import {OnboardingData} from '../data/data';
 import Arrow from '../assets/icon/Arrow.svg';
+import {RootStackParamList} from '../../../navigator/RootNavigator';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {useNavigation} from '@react-navigation/native';
 
 type Props = {
   x: SharedValue<number>;
@@ -21,6 +24,8 @@ type Props = {
 const RADIUS = 100;
 
 const Button = ({x, screenWidth, data, currentIndex}: Props) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
   const animatedOpacityButton = useAnimatedStyle(() => {
@@ -47,6 +52,9 @@ const Button = ({x, screenWidth, data, currentIndex}: Props) => {
             2 * screenWidth,
           );
           x.value = withTiming(-clampValue, {duration: 1000});
+          if (currentIndex === 2) {
+            navigation.goBack();
+          }
         }
       }}>
       <Arrow
