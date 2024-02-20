@@ -1,29 +1,23 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {ActivityType, DataType} from '../data/data';
+import {ActivityType} from '../data/data';
 
 type Props = {
   item: ActivityType;
-  data: DataType[];
-  activityIndex: number;
 };
 
-const Activity = ({item, activityIndex, data}: Props) => {
+const Activity = ({item}: Props) => {
   return (
-    <>
-      {data[activityIndex].cardId === item.cardId && (
-        <View style={styles.container}>
-          <View style={styles.imageContainer}>
-            <Image source={item.image} style={styles.image} />
-          </View>
-          <View style={styles.nameContainer}>
-            <Text style={styles.textName}>{item.name}</Text>
-            <Text style={styles.textDate}>{item.date}</Text>
-          </View>
-          <Text style={styles.textPrice}>{item.price}</Text>
-        </View>
-      )}
-    </>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={item.image} style={styles.image} />
+      </View>
+      <View style={styles.nameContainer}>
+        <Text style={styles.textName}>{item.name}</Text>
+        <Text style={styles.textDate}>{item.date}</Text>
+      </View>
+      <Text style={styles.textPrice}>{item.price}</Text>
+    </View>
   );
 };
 

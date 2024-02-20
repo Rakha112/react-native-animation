@@ -74,14 +74,7 @@ const CradSwipeScreen = () => {
             showsVerticalScrollIndicator={false}
             style={[{width: '100%'}, animatedStyle]}>
             {newData[activityIndex].activity.map((item, index) => {
-              return (
-                <Activity
-                  activityIndex={activityIndex}
-                  data={newData}
-                  item={item}
-                  key={index}
-                />
-              );
+              return <Activity item={item} key={index} />;
             })}
           </Animated.ScrollView>
         </View>
