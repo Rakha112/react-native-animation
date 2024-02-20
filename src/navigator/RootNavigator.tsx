@@ -29,6 +29,7 @@ import ShopUI3DScreen from '../25-React-Native-3D-Shop/ShopUI3DScreen';
 import CarouselDisneyScreen from '../26-React-Native-Carousel-Disney+/CarouselDisneyScreen';
 import DarkModeSwitchScreen from '../27-React-Native-Dark-Mode-Switch/DarkModeSwitchScreen';
 import OnboardingScreenCuberto from '../28-React-Native-Onboarding-Screen-Cuberto/OnboardingScreenCuberto';
+import CradSwipeScreen from '../29-React-Native-Card-Swipe/CradSwipeScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -60,6 +61,7 @@ export type RootStackParamList = {
   CarouselDisney: undefined;
   DarkModeSwitch: undefined;
   OnboardingScreenCuberto: undefined;
+  CardSwipe: undefined;
 };
 
 const RootNavigator = () => {
@@ -270,6 +272,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="OnboardingScreenCuberto"
         component={OnboardingScreenCuberto}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CardSwipe"
+        component={CradSwipeScreen}
         options={{
           headerShown: false,
         }}

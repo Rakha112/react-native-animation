@@ -142,6 +142,10 @@ const Home = () => {
       navigate: 'OnboardingScreenCuberto',
       title: '28. Animated Onboarding Screen (Inspired By Cuberto)',
     },
+    {
+      navigate: 'CardSwipe',
+      title: '29. Card Swipe',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
