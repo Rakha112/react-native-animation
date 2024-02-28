@@ -19,7 +19,6 @@ type Props = {
   index: number;
   dataLength: number;
   animatedValue: SharedValue<number>;
-  direction: SharedValue<number>;
   currentIndex: number;
   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -32,12 +31,12 @@ const Card = ({
   index,
   dataLength,
   animatedValue,
-  direction,
   currentIndex,
   setCurrentIndex,
 }: Props) => {
   const {width} = useWindowDimensions();
   const translateX = useSharedValue(0);
+  const direction = useSharedValue(0);
 
   const pan = Gesture.Pan()
     .onUpdate(e => {
@@ -64,21 +63,16 @@ const Card = ({
         // If the swipe distance is greater than 150 or the swipe velocity is greater than 1000
         // go to the next card
         if (Math.abs(e.translationX) > 150 || Math.abs(e.velocityX) > 1000) {
-          translateX.value = withTiming(500 * direction.value, {}, () => {
+          translateX.value = withTiming(width * direction.value, {}, () => {
             runOnJS(setNewData)([...newData, newData[currentIndex]]);
-            direction.value = 0;
             runOnJS(setCurrentIndex)(currentIndex + 1);
           });
-          animatedValue.value = withTiming(Math.ceil(animatedValue.value));
+          animatedValue.value = withTiming(currentIndex + 1);
           // If the swipe distance is less than 150 or the swipe velocity is less than 1000
           // go back to the original position
         } else {
-          translateX.value = withTiming(0, {duration: 500}, () => {
-            direction.value = 0;
-          });
-          animatedValue.value = withTiming(Math.floor(animatedValue.value), {
-            duration: 500,
-          });
+          translateX.value = withTiming(0, {duration: 500});
+          animatedValue.value = withTiming(currentIndex, {duration: 500});
         }
       }
     });

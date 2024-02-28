@@ -25,11 +25,11 @@ export default Activity;
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 14,
     flexDirection: 'row',
+    marginVertical: 14,
+    marginHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginHorizontal: 16,
   },
   imageContainer: {
     backgroundColor: '#222222',
@@ -38,23 +38,21 @@ const styles = StyleSheet.create({
   image: {
     width: 44,
     height: 44,
-    resizeMode: 'contain',
     margin: 14,
+    resizeMode: 'contain',
   },
   textName: {
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    marginHorizontal: 16,
   },
   textDate: {
     color: 'white',
     fontSize: 14,
-    marginHorizontal: 16,
   },
   nameContainer: {
-    justifyContent: 'flex-start',
     flex: 1,
+    marginHorizontal: 16,
   },
   textPrice: {
     color: 'white',

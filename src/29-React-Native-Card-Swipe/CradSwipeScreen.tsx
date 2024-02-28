@@ -20,7 +20,6 @@ const CradSwipeScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activityIndex, setActivityIndex] = useState(0);
   const animatedValue = useSharedValue(0);
-  const direction = useSharedValue(0);
   const MAX = 3;
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -60,7 +59,6 @@ const CradSwipeScreen = () => {
                 index={index}
                 dataLength={newData.length}
                 animatedValue={animatedValue}
-                direction={direction}
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
                 key={index}
