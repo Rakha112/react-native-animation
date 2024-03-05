@@ -146,6 +146,10 @@ const Home = () => {
       navigate: 'CardSwipe',
       title: '29. Card Swipe',
     },
+    {
+      navigate: 'BarChart',
+      title: '30. Bar Chart With Skia and Reanimated',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
