@@ -7,7 +7,7 @@ import {
 } from 'react-native-reanimated';
 
 type Props = {
-  x: number | undefined;
+  x: number;
   y: number;
   barWidth: number;
   progress: SharedValue<number>;
@@ -40,7 +40,7 @@ const BarPath = ({
 
     barPath.addRRect({
       rect: {
-        x: x! - barWidth / 2,
+        x: x - barWidth / 2,
         y: graphHeight,
         width: barWidth,
         height: y * progress.value * -1,

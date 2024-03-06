@@ -10,15 +10,14 @@ type Props = {
   x: number;
   y: number;
   text: string;
-  label: string;
   selectedBar: SharedValue<string | null>;
 };
 
-const XAxisText = ({x, y, text, label, selectedBar}: Props) => {
+const XAxisText = ({x, y, text, selectedBar}: Props) => {
   const font = useFont(require('../assets/fonts/Roboto-Bold.ttf'), 18);
 
   const color = useDerivedValue(() => {
-    if (selectedBar.value === label) {
+    if (selectedBar.value === text) {
       return withTiming('#111111');
     } else if (selectedBar.value === null) {
       return withTiming('#111111');

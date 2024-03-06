@@ -104,7 +104,7 @@ const BarChartScreen = () => {
           <Group key={index}>
             <BarPath
               progress={progress}
-              x={x(dataPoint.label)}
+              x={x(dataPoint.label)!}
               y={y(dataPoint.value)}
               barWidth={barWidth}
               graphHeight={graphHeight}
@@ -115,7 +115,6 @@ const BarChartScreen = () => {
               x={x(dataPoint.label)!}
               y={canvasHeight}
               text={dataPoint.label}
-              label={dataPoint.label}
               selectedBar={selectedBar}
             />
           </Group>
