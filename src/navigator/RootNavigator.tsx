@@ -31,6 +31,7 @@ import DarkModeSwitchScreen from '../27-React-Native-Dark-Mode-Switch/DarkModeSw
 import OnboardingScreenCuberto from '../28-React-Native-Onboarding-Screen-Cuberto/OnboardingScreenCuberto';
 import CradSwipeScreen from '../29-React-Native-Card-Swipe/CradSwipeScreen';
 import BarChartScreen from '../30-React-Native-Bar-Chart/BarChartScreen';
+import CarouselScreen from '../31-React-Native-Carousel/CarouselScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -64,6 +65,7 @@ export type RootStackParamList = {
   OnboardingScreenCuberto: undefined;
   CardSwipe: undefined;
   BarChart: undefined;
+  Carousel: undefined;
 };
 
 const RootNavigator = () => {
@@ -288,6 +290,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="BarChart"
         component={BarChartScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Carousel"
+        component={CarouselScreen}
         options={{
           headerShown: false,
         }}

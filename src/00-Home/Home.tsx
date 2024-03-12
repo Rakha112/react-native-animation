@@ -150,6 +150,10 @@ const Home = () => {
       navigate: 'BarChart',
       title: '30. Bar Chart With Skia and Reanimated',
     },
+    {
+      navigate: 'Carousel',
+      title: '31. Custom Carousel with Reanimated',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>
