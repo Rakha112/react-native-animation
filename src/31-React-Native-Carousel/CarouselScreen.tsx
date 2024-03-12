@@ -57,7 +57,7 @@ const CarouselScreen = () => {
         horizontal
         scrollEventThrottle={16}
         decelerationRate="fast"
-        snapToInterval={ITEM_WIDTH + MARGin_HORIZONTAL * 2}
+        snapToInterval={ITEM_FULL_WIDTH}
       />
       <Button />
     </SafeAreaView>

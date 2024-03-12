@@ -44,6 +44,7 @@ const Item = ({
       transform: [{rotateZ: `${rotateZ}deg`}, {translateY: translateY}],
     };
   });
+
   return (
     <Animated.View
       style={[
@@ -86,7 +87,6 @@ const styles = StyleSheet.create({
   bottomContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   textContainer: {
     justifyContent: 'center',
