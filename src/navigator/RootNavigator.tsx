@@ -32,6 +32,7 @@ import OnboardingScreenCuberto from '../28-React-Native-Onboarding-Screen-Cubert
 import CradSwipeScreen from '../29-React-Native-Card-Swipe/CradSwipeScreen';
 import BarChartScreen from '../30-React-Native-Bar-Chart/BarChartScreen';
 import CarouselScreen from '../31-React-Native-Carousel/CarouselScreen';
+import LineChartScreen from '../32-React-Native-Line-Chart/LineChartScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -66,6 +67,7 @@ export type RootStackParamList = {
   CardSwipe: undefined;
   BarChart: undefined;
   Carousel: undefined;
+  LineChart: undefined;
 };
 
 const RootNavigator = () => {
@@ -297,6 +299,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="Carousel"
         component={CarouselScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="LineChart"
+        component={LineChartScreen}
         options={{
           headerShown: false,
         }}

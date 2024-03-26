@@ -148,11 +148,15 @@ const Home = () => {
     },
     {
       navigate: 'BarChart',
-      title: '30. Bar Chart With Skia and Reanimated',
+      title: '30. Bar Chart With Skia, Reanimated and D3',
     },
     {
       navigate: 'Carousel',
       title: '31. Custom Carousel with Reanimated',
+    },
+    {
+      navigate: 'LineChart',
+      title: '32. Line Chart With Skia, Reanimated and D3',
     },
   ];
   return (
