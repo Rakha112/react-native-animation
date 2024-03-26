@@ -5,9 +5,11 @@ This repository is a collection of results from the React Native Animation Tutor
 - [React Native](https://reactnative.dev/)
 - [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
+- [React Native Skia](https://shopify.github.io/react-native-skia/)
+- [React Three Fiber](https://github.com/lottie-react-native/lottie-react-native)
 - [Moti](https://moti.fyi/)
 - [Lottie](https://github.com/lottie-react-native/lottie-react-native)
-- [React Three Fiber](https://github.com/lottie-react-native/lottie-react-native)
+- [D3](https://d3js.org/)
 
 This project uses react-native-bars to make the Status Bar and Navigation Bar on Android transparent
 
@@ -16,14 +18,15 @@ This project uses react-native-bars to make the Status Bar and Navigation Bar on
 The version used in this repository:
 
 - React Native v0.73.6
-- Reanimated v3.8.0
+- Reanimated v3.8.1
 - React Native Gesture Handler v2.15.0
 - Moti v0.28.1
 - Lottie v6.7.0
-- React Three Fiber v8.15.19
-- React Three Drei v9.101.0
+- React Three Fiber v8.16.0
+- React Three Drei v9.102.6
 - Three.js v0.162.0
-- Skia v1.0.2
+- Skia v1.0.4
+- D3 v7.9.0
 - React Native Bars v2.4.3
 
 ## Available Tutorials
@@ -55,6 +58,7 @@ The version used in this repository:
 - [React Native Animated Onboarding Screen (Inspired By Cuberto)](https://youtu.be/lcqS8uSpHLI)
 - [React Native Card Swipe With Reanimated And Gesture Handler From Scratch](https://youtu.be/-JoQ5Y_unl8)
 - [React Native Bar Chart With Skia And Reanimated From Scratch](https://youtu.be/vIuPJ_KDEz4)
+- [React Native Custom Carousel with Reanimated 3](https://youtu.be/5OkYf2yyrXs)
 
 ## Run Locally
 
