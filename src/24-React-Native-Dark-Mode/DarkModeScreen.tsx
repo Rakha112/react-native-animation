@@ -1,10 +1,4 @@
-import {
-  FlatList,
-  PixelRatio,
-  StyleSheet,
-  View,
-  useWindowDimensions,
-} from 'react-native';
+import {Dimensions, FlatList, PixelRatio, StyleSheet, View} from 'react-native';
 import React, {useRef, useState} from 'react';
 import Header from './src/components/Header';
 import {message} from './src/data/data';
@@ -20,13 +14,14 @@ import {
   makeImageFromView,
 } from '@shopify/react-native-skia';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
+import {SystemBars} from 'react-native-bars';
 
 const DarkModeScreen = () => {
   const pd = PixelRatio.get();
   const ref = useRef(null);
   const [theme, setTheme] = useState('dark');
   const [overlay, setOverlay] = useState<SkImage | null>(null);
-  const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = useWindowDimensions();
+  const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('screen');
   const mask = useSharedValue(0);
   const [active, setActive] = useState(false);
 
@@ -56,6 +51,12 @@ const DarkModeScreen = () => {
   };
   return (
     <SafeAreaProvider>
+      {/* If you're not using react-native-bars, you can remove the SystemBars */}
+      <SystemBars
+        animated={true}
+        barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
+      />
+
       <View
         ref={ref}
         collapsable={false}
@@ -69,7 +70,7 @@ const DarkModeScreen = () => {
         />
       </View>
       {overlay && (
-        <Canvas style={StyleSheet.absoluteFill} pointerEvents={'none'}>
+        <Canvas style={StyleSheet.absoluteFillObject} pointerEvents={'none'}>
           <Mask
             mode="luminance"
             mask={
