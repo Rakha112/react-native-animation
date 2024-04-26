@@ -3,7 +3,7 @@ import React from 'react';
 import Animated, {
   useAnimatedStyle,
   interpolate,
-  Extrapolate,
+  Extrapolation,
 } from 'react-native-reanimated';
 const Pagination = ({data, x, screenWidth}) => {
   // eslint-disable-next-line react/no-unstable-nested-components
@@ -13,13 +13,13 @@ const Pagination = ({data, x, screenWidth}) => {
         x.value,
         [(i - 1) * screenWidth, i * screenWidth, (i + 1) * screenWidth],
         [10, 20, 10],
-        Extrapolate.CLAMP,
+        Extrapolation.CLAMP,
       );
       const opacityAnimation = interpolate(
         x.value,
         [(i - 1) * screenWidth, i * screenWidth, (i + 1) * screenWidth],
         [0.5, 1, 0.5],
-        Extrapolate.CLAMP,
+        Extrapolation.CLAMP,
       );
       return {
         width: widthAnimation,
