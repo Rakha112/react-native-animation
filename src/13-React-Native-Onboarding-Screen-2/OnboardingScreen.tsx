@@ -40,7 +40,7 @@ const OnboardingScreen = () => {
         renderItem={({item, index}) => {
           return <RenderItem item={item} index={index} x={x} />;
         }}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
         scrollEventThrottle={16}
         horizontal={true}
         bounces={false}
