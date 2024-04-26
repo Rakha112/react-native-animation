@@ -17,15 +17,15 @@ This project uses react-native-bars to make the Status Bar and Navigation Bar on
 
 The version used in this repository:
 
-- React Native v0.73.6
+- React Native v0.73.7
 - Reanimated v3.8.1
 - React Native Gesture Handler v2.16.0
 - Moti v0.28.1
-- Lottie v6.7.0
-- React Three Fiber v8.16.1
-- React Three Drei v9.103.1
-- Three.js v0.162.0
-- Skia v1.0.5
+- Lottie v6.7.2
+- React Three Fiber v8.16.2
+- React Three Drei v9.105.4
+- Three.js v0.164.1
+- Skia v1.2.3
 - D3 v7.9.0
 - React Native Bars v2.4.3
 
@@ -60,6 +60,7 @@ The version used in this repository:
 - [React Native Bar Chart With Skia And Reanimated From Scratch](https://youtu.be/vIuPJ_KDEz4)
 - [React Native Custom Carousel with Reanimated 3](https://youtu.be/5OkYf2yyrXs)
 - [React Native Line Chart With Reanimated 3, Skia and D3 From Scratch!!!](https://youtu.be/Wk51crQuqv4)
+- [React Native Dark Mode Curtain Effect Animation With Reanimated and Skia](https://youtu.be/ZNpZOOXy0YY)
 
 ## Run Locally
 
