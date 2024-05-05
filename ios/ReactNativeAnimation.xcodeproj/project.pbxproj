@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		447E91F6FD7446968BE6BD68 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 909DB7D3C2954F51B8586D0E /* Roboto-Regular.ttf */; };
 		5188902D622B48838D953F78 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9A3086DDBDF4BBBBC170F79 /* Roboto-Bold.ttf */; };
+		6132EF182BDFF13200BBE14D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-ReactNativeAnimation-ReactNativeAnimationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReactNativeAnimation-ReactNativeAnimationTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9D280FBD49D13C2A2F2248E4 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180842BC7227D05E53789CB8 /* ExpoModulesProvider.swift */; };
@@ -49,6 +50,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-ReactNativeAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeAnimation.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeAnimation/Pods-ReactNativeAnimation.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-ReactNativeAnimation-ReactNativeAnimationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeAnimation-ReactNativeAnimationTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeAnimation-ReactNativeAnimationTests/Pods-ReactNativeAnimation-ReactNativeAnimationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = RnDiffApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeAnimation/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ReactNativeAnimation-ReactNativeAnimationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeAnimation-ReactNativeAnimationTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeAnimation-ReactNativeAnimationTests/Pods-ReactNativeAnimation-ReactNativeAnimationTests.release.xcconfig"; sourceTree = "<group>"; };
 		909DB7D3C2954F51B8586D0E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */,
 				13B07FAE1A68108700A75B9A /* ReactNativeAnimation */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeAnimationTests */,
@@ -291,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6132EF182BDFF13200BBE14D /* PrivacyInfo.xcprivacy in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				5188902D622B48838D953F78 /* Roboto-Bold.ttf in Resources */,
