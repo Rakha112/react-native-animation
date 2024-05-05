@@ -158,6 +158,10 @@ const Home = () => {
       navigate: 'LineChart',
       title: '32. Line Chart With Skia, Reanimated and D3',
     },
+    {
+      navigate: 'CustomDrawer2',
+      title: '33. Custom Drawer Using Reanimated',
+    },
   ];
   return (
     <GestureHandlerRootView style={{flex: 1}}>

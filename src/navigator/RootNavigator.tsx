@@ -33,6 +33,7 @@ import CradSwipeScreen from '../29-React-Native-Card-Swipe/CradSwipeScreen';
 import BarChartScreen from '../30-React-Native-Bar-Chart/BarChartScreen';
 import CarouselScreen from '../31-React-Native-Carousel/CarouselScreen';
 import LineChartScreen from '../32-React-Native-Line-Chart/LineChartScreen';
+import CustomDrawerRootNavigator from '../33-React-Native-Custom-Drawer-2/src/navigators/CustomDrawerRootNavigator';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -68,6 +69,7 @@ export type RootStackParamList = {
   BarChart: undefined;
   Carousel: undefined;
   LineChart: undefined;
+  CustomDrawer2: undefined;
 };
 
 const RootNavigator = () => {
@@ -306,6 +308,13 @@ const RootNavigator = () => {
       <Stack.Screen
         name="LineChart"
         component={LineChartScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CustomDrawer2"
+        component={CustomDrawerRootNavigator}
         options={{
           headerShown: false,
         }}
