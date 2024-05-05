@@ -18,12 +18,12 @@ This project uses react-native-bars to make the Status Bar and Navigation Bar on
 The version used in this repository:
 
 - React Native v0.73.7
-- Reanimated v3.8.1
+- Reanimated v3.10.0
 - React Native Gesture Handler v2.16.0
 - Moti v0.28.1
 - Lottie v6.7.2
-- React Three Fiber v8.16.2
-- React Three Drei v9.105.4
+- React Three Fiber v8.16.3
+- React Three Drei v9.105.6
 - Three.js v0.164.1
 - Skia v1.2.3
 - D3 v7.9.0
