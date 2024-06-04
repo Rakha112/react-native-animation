@@ -3,8 +3,6 @@
 This repository is a collection of results from the React Native Animation Tutorial on my YouTube Channel [Rakha Wibowo](https://www.youtube.com/@rakhawibowo) using :
 
 - [React Native](https://reactnative.dev/)
-- [Espo](https://docs.expo.dev/)
-- [Skia](https://shopify.github.io/react-native-skia/)
 - [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 - [React Native Skia](https://shopify.github.io/react-native-skia/)
@@ -13,8 +11,23 @@ This repository is a collection of results from the React Native Animation Tutor
 - [Lottie](https://github.com/lottie-react-native/lottie-react-native)
 - [D3](https://d3js.org/)
 
-In [Season 1](https://github.com/Rakha112/react-native-animation/blob/main/season1) using [React Native CLI](https://reactnative.dev/docs/getting-started-without-a-framework)
-In [Season 2](https://github.com/Rakha112/react-native-animation/blob/main/season2) using [Espo](https://docs.expo.dev/)
+This project uses react-native-bars to make the Status Bar and Navigation Bar on Android transparent
+
+## Version
+
+The version used in this repository:
+
+- React Native v0.73.7
+- Reanimated v3.10.0
+- React Native Gesture Handler v2.16.0
+- Moti v0.28.1
+- Lottie v6.7.2
+- React Three Fiber v8.16.3
+- React Three Drei v9.105.6
+- Three.js v0.164.1
+- Skia v1.2.3
+- D3 v7.9.0
+- React Native Bars v2.4.3
 
 ## Available Tutorials Season 1
 
@@ -49,4 +62,50 @@ In [Season 2](https://github.com/Rakha112/react-native-animation/blob/main/seaso
 - [React Native Line Chart With Reanimated 3, Skia and D3 From Scratch!!!](https://youtu.be/Wk51crQuqv4)
 - [React Native Dark Mode Curtain Effect Animation With Reanimated and Skia](https://youtu.be/ZNpZOOXy0YY)
 
-## Available Tutorials Season 2
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/Rakha112/react-native-animation.git
+```
+
+Go to the project directory
+
+```bash
+cd react-native-animation/season1
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+For iOS
+
+```bash
+npx pod-install
+```
+
+Start the server
+
+```bash
+npm start -- --reset-cache
+```
+
+Run on IOS
+
+```bash
+npx react-native run-ios
+```
+
+Run on ANDROID
+
+```bash
+npx react-native run-android
+```
+
+## The app
+
+![Demo](https://github.com/Rakha112/react-native-animation/blob/main/season1/ImageDemo.png)
