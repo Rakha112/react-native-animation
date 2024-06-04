@@ -29,12 +29,7 @@ const Index = () => {
         <Gradient />
         {loading && <Loader />}
         <Canvas>
-          <OrbitControls
-            enablePan={false}
-            enableZoom={false}
-            minPolarAngle={0}
-            maxPolarAngle={Math.PI}
-          />
+          <OrbitControls enablePan={false} enableZoom={false} />
           <directionalLight position={[1, 0, 0]} args={["white", 2]} />
           <directionalLight position={[-1, 0, 0]} args={["white", 2]} />
           <directionalLight position={[0, 0, 1]} args={["white", 2]} />

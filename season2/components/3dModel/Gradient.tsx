@@ -8,9 +8,7 @@ import {
 } from "@shopify/react-native-skia";
 import { useSharedValue, withTiming } from "react-native-reanimated";
 
-type Props = {};
-
-const Gradient = (props: Props) => {
+const Gradient = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const gradient = useSharedValue(0);
