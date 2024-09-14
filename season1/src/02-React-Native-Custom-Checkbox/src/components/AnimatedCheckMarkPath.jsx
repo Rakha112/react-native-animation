@@ -1,15 +1,17 @@
 import React, {useRef, useState, memo} from 'react';
 import Animated, {useAnimatedProps} from 'react-native-reanimated';
 import {Path} from 'react-native-svg';
+
+const AnimatedPath = Animated.createAnimatedComponent(Path);
+
 const AnimatedCheckMarkPath = memo(props => {
   const {progress, checkMarkColor} = props;
   const [length, setLength] = useState(0);
   const pathRef = useRef(null);
-  const AnimatedPath = Animated.createAnimatedComponent(Path);
   const checkMarkAnimation = useAnimatedProps(() => {
     const strokeDashoffset = length - length * progress.value;
-    const opacity = progress.value;
-    return {strokeDashoffset, opacity};
+    const fillOpacity = progress.value;
+    return {strokeDashoffset, fillOpacity};
   });
   return (
     <AnimatedPath

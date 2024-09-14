@@ -1,4 +1,5 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import {Image, Platform, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Data} from '../data/data';
 import Animated, {
@@ -49,7 +50,12 @@ const Item = ({
     <Animated.View
       style={[
         styles.container,
-        {width: width, height: height, marginHorizontal: marginHorizontal},
+        {
+          width: width,
+          height: height,
+          marginHorizontal: marginHorizontal,
+          transformOrigin: Platform.OS === 'android' ? '120px 400px' : 'bottom',
+        },
         animatedStyle,
       ]}>
       <View style={styles.imageContainer}>
@@ -79,7 +85,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     borderRadius: 12,
-    transformOrigin: 'bottom',
     overflow: 'hidden',
   },
   imageContainer: {flex: 4},
