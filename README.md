@@ -3,7 +3,7 @@
 This repository is a collection of results from the React Native Animation Tutorial on my YouTube Channel [Rakha Wibowo](https://www.youtube.com/@rakhawibowo) using :
 
 - [React Native](https://reactnative.dev/)
-- [Espo](https://docs.expo.dev/)
+- [Expo](https://docs.expo.dev/)
 - [Skia](https://shopify.github.io/react-native-skia/)
 - [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
@@ -14,7 +14,7 @@ This repository is a collection of results from the React Native Animation Tutor
 - [D3](https://d3js.org/)
 
 In [Season 1](https://github.com/Rakha112/react-native-animation/blob/main/season1) using [React Native CLI](https://reactnative.dev/docs/getting-started-without-a-framework)
-In [Season 2](https://github.com/Rakha112/react-native-animation/blob/main/season2) using [Espo](https://docs.expo.dev/)
+In [Season 2](https://github.com/Rakha112/react-native-animation/blob/main/season2) using [Expo](https://docs.expo.dev/)
 
 ## Available Tutorials Season 1
 
@@ -50,3 +50,5 @@ In [Season 2](https://github.com/Rakha112/react-native-animation/blob/main/seaso
 - [React Native Dark Mode Curtain Effect Animation With Reanimated and Skia](https://youtu.be/ZNpZOOXy0YY)
 
 ## Available Tutorials Season 2
+
+- [React Native 3D With React Three Fiber | Three.Js](https://youtu.be/iRavet_Zau8)
