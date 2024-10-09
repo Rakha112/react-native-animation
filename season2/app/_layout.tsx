@@ -39,6 +39,7 @@ export default function RootLayout() {
     >
       <StackNavigator.Screen name="index" />
       <StackNavigator.Screen name="3dModel/index" />
+      <StackNavigator.Screen name="Slider/index" />
     </StackNavigator>
   );
 }

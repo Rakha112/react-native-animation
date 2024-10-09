@@ -28,6 +28,10 @@ const Home = () => {
       navigate: "3dModel",
       title: "01. Load 3D Model With React Three Fiber",
     },
+    {
+      navigate: "Slider",
+      title: "02. Custom Slider With Skia, Reanimated and Gesture Handler",
+    },
   ];
 
   return (
