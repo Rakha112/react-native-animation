@@ -1,10 +1,10 @@
-import { StackNavigator } from "@/layouts/StackNavigator";
-import { TransitionPresets } from "@react-navigation/stack";
 import { useFonts } from "expo-font";
+import * as NavigationBar from "expo-navigation-bar";
 import { SplashScreen } from "expo-router";
+import { Stack } from "expo-router/stack";
 import { useEffect } from "react";
 import { Platform } from "react-native";
-import * as NavigationBar from "expo-navigation-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -31,15 +31,17 @@ export default function RootLayout() {
   }
 
   return (
-    <StackNavigator
-      screenOptions={{
-        headerShown: false,
-        ...TransitionPresets.SlideFromRightIOS,
-      }}
-    >
-      <StackNavigator.Screen name="index" />
-      <StackNavigator.Screen name="3dModel/index" />
-      <StackNavigator.Screen name="Slider/index" />
-    </StackNavigator>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: "ios_from_right",
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="3dModel/index" />
+        <Stack.Screen name="Slider/index" />
+      </Stack>
+    </GestureHandlerRootView>
   );
 }
