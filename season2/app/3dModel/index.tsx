@@ -28,7 +28,9 @@ const Index = () => {
       <View style={styles.modelContainer} {...events}>
         <Gradient />
         {loading && <Loader />}
-        <Canvas>
+        {/* events={null} workaround for new Architecture */}
+        {/* for new Architecture currently have to use react three fiber version 8.16.8 */}
+        <Canvas events={null as any}>
           <OrbitControls enablePan={false} enableZoom={false} />
           <directionalLight position={[1, 0, 0]} args={["white", 2]} />
           <directionalLight position={[-1, 0, 0]} args={["white", 2]} />
