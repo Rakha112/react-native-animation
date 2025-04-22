@@ -41,6 +41,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" />
         <Stack.Screen name="3dModel/index" />
         <Stack.Screen name="Slider/index" />
+        <Stack.Screen name="ExpandableBottomTab" />
       </Stack>
     </GestureHandlerRootView>
   );

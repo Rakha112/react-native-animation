@@ -1,24 +1,24 @@
 /* eslint-disable react-native/no-inline-styles */
+import ArrowIcon from "@/assets/icons/ArrowIcon.svg";
+import YoutubeIcon from "@/assets/icons/YoutubeIcon.svg";
+import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { MotiView } from "moti";
+import React from "react";
 import {
+  Linking,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   useWindowDimensions,
-  ScrollView,
   View,
-  Linking,
 } from "react-native";
-import React from "react";
 import {
   GestureHandlerRootView,
   TouchableWithoutFeedback,
 } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ArrowIcon from "@/assets/icons/ArrowIcon.svg";
-import YoutubeIcon from "@/assets/icons/YoutubeIcon.svg";
-import { MotiView } from "moti";
-import { router } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 
 const Home = () => {
   const { width } = useWindowDimensions();
@@ -31,6 +31,10 @@ const Home = () => {
     {
       navigate: "Slider",
       title: "02. Custom Slider With Skia, Reanimated and Gesture Handler",
+    },
+    {
+      navigate: "ExpandableBottomTab",
+      title: "03. Expandable Bottom Tab",
     },
   ];
 
