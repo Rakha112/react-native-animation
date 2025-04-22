@@ -24,7 +24,6 @@ const BottomTabContent = ({
   animatedWidth,
   bottomTabHeight,
 }: Props) => {
-  const contentRef = useAnimatedRef();
   const animatedStyle = useAnimatedStyle(() => {
     return {
       width: animatedWidth.value,
@@ -34,10 +33,9 @@ const BottomTabContent = ({
   });
 
   return (
-    <Animated.View ref={contentRef} style={[styles.container, animatedStyle]}>
+    <Animated.View style={[styles.container, animatedStyle]}>
       {show && (
         <View
-          style={styles.contentContainer}
           onLayout={(e) => {
             animatedHeight.value = withSpring(
               e.nativeEvent.layout.height + bottomTabHeight
@@ -85,7 +83,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#292929",
     overflow: "hidden",
   },
-  contentContainer: { position: "absolute" },
   text: {
     color: "#fcfcfc",
     fontFamily: "Inter-Regular",
