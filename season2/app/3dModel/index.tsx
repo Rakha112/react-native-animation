@@ -49,7 +49,7 @@ const Index = () => {
           router.back();
         }}
       >
-        <Text style={styles.textButton}>Colntinue</Text>
+        <Text style={styles.textButton}>Continue</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
