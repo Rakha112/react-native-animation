@@ -14,7 +14,7 @@ import {
   makeImageFromView,
 } from '@shopify/react-native-skia';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
-import {SystemBars} from 'react-native-bars';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const DarkModeScreen = () => {
   const pd = PixelRatio.get();
@@ -45,18 +45,16 @@ const DarkModeScreen = () => {
       await wait(800);
 
       setOverlay(null);
-      mask.value = 0;
       setActive(false);
+
+      await wait(200);
+      mask.value = 0;
     }
   };
   return (
     <SafeAreaProvider>
-      {/* If you're not using react-native-bars, you can remove the SystemBars */}
-      <SystemBars
-        animated={true}
-        barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
-      />
-
+      {/* If you're not using react-native-edge-to-edge, you can remove the SystemBars */}
+      <SystemBars style={theme === 'dark' ? 'light' : 'dark'} />
       <View
         ref={ref}
         collapsable={false}

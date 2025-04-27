@@ -16,8 +16,6 @@ import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const BottomSheet = forwardRef(
   ({activeHeight, children, backgroundColor, backDropColor}, ref) => {
-    // If you're not using react-native-bars or a transparent Android navigation bar
-    // you can remove the inset code below
     const inset = useSafeAreaInsets();
     const {height} = Dimensions.get('screen');
     const newActiveHeight = height - activeHeight;
@@ -121,8 +119,6 @@ const BottomSheet = forwardRef(
               {
                 height: activeHeight,
                 backgroundColor: backgroundColor,
-                // If you're not using react-native-bars or a transparent Android navigation bar
-                // you can remove the paddingBottom code below
                 paddingBottom: inset.bottom,
               },
             ]}>

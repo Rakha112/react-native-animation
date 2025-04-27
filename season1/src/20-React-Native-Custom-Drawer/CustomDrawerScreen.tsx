@@ -1,19 +1,19 @@
 /* eslint-disable react-native/no-inline-styles */
-import {FlatList, StyleSheet} from 'react-native';
 import React from 'react';
+import {FlatList, StyleSheet} from 'react-native';
+import {SystemBars} from 'react-native-edge-to-edge';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import Animated, {
   Extrapolation,
   interpolate,
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Drawer from './src/components/Drawer';
 import Header from './src/components/Header';
-import {message} from './src/data/data';
 import Message from './src/components/Message';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {SystemBars} from 'react-native-bars';
+import {message} from './src/data/data';
 
 const CustomDrawerScreen = () => {
   const active = useSharedValue(false);
@@ -35,8 +35,8 @@ const CustomDrawerScreen = () => {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{flex: 1}}>
-        {/* If you're not using react-native-bars, you can remove SystemBars */}
-        <SystemBars animated={true} barStyle={'light-content'} />
+        {/* If you're not using react-native-edge-to-edge, you can remove SystemBars */}
+        <SystemBars style={'light'} />
         <Drawer
           active={active}
           translateX={drawerTranslateX}

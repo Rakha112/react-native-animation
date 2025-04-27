@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: '#353E54',
-    zIndex: -9999,
+    zIndex: -99,
+    elevation: -99,
   },
   contentContainer: {
     paddingTop: 120,

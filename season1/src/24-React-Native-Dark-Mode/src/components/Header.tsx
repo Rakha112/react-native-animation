@@ -13,7 +13,7 @@ const Header = ({handlePress, theme}: Props) => {
     <View
       style={[
         theme === 'dark' ? darkStyles.container : styles.container,
-        //If you're not using react-native-bars, you can remove these edges
+        //If you're not using react-native-edge-to-edge, you can remove these edges
         {paddingTop: insets.top + 10},
         // {paddingTop: Platform.OS === 'ios' ? insets.top : 20},
       ]}>

@@ -3,8 +3,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import BottomSheet, {BottomSheetMethods} from '../components/BottomSheet';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {SystemBars} from 'react-native-bars';
 import Button from '../components/Button';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const Setting = () => {
   const colorScheme = useColorScheme();
@@ -33,10 +33,7 @@ const Setting = () => {
         {paddingTop: insets.top},
         backgroundColorAnimation,
       ]}>
-      <SystemBars
-        animated={true}
-        barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
-      />
+      <SystemBars style={theme === 'dark' ? 'light' : 'dark'} />
       <Button bottomSheetRef={bottomSheetRef} theme={theme} />
       <BottomSheet
         ref={bottomSheetRef}

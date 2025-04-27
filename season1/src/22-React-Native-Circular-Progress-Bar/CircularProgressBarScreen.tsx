@@ -7,7 +7,7 @@ import {generateRandomNumber} from './src/utils/generateRandomNumbers';
 import {calculatePercentage} from './src/utils/calculatePercentage';
 import {formatNumberWithCommas} from './src/utils/formatNumberWithCommas';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {SystemBars} from 'react-native-bars';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const RADIUS = 120;
 const STROKE_WIDTH = 30;
@@ -33,8 +33,8 @@ const CircularProgressBarScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* If you're not using react-native-bars, you can remove SystemBars */}
-      <SystemBars animated={true} barStyle={'light-content'} />
+      {/* If you're not using react-native-edge-to-edge, you can remove SystemBars */}
+      <SystemBars style={'light'} />
       <View style={styles.contentContainer}>
         <View style={styles.circularContainer}>
           <CircularProgressBar

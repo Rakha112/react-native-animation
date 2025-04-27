@@ -41,7 +41,7 @@ const OnboardingScreen = () => {
     <View style={styles.container}>
       <Backdrop x={x} />
       <View style={styles.abstractContainer} {...events}>
-        <Canvas>
+        <Canvas events={null as any}>
           <OrbitControls enableZoom={false} enablePan={false} />
           <ambientLight intensity={2} />
           <directionalLight position={[0, 1, 0]} args={['white', 2]} />

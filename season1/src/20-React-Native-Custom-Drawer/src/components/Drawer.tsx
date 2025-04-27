@@ -100,7 +100,7 @@ const Drawer = ({active, translateX, drawerWidth}: Props) => {
           style={[
             styles.container,
             animatedStyle,
-            //If you're not using react-native-bars, you can remove these edges
+            //If you're not using react-native-edge-to-edge, you can remove these edges
             {paddingTop: insets.top},
             // {paddingTop: Platform.OS === 'ios' ? insets.top : 20},
           ]}

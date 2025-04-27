@@ -20,7 +20,7 @@ const Model3DScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.modelContainer} {...events}>
         {loading && <Loader />}
-        <Canvas>
+        <Canvas events={null as any}>
           <OrbitControls enablePan={false} />
           <directionalLight position={[1, 0, 0]} args={['white', 5]} />
           <directionalLight position={[-1, 0, 0]} args={['white', 5]} />

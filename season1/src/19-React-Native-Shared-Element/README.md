@@ -1,4 +1,4 @@
-# React Native Shared Element
+# React Native Shared Element (Currently not working on the new architecture)
 
 Create Shared Element in React Native using [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 

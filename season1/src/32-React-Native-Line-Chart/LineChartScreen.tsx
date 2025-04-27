@@ -2,13 +2,13 @@
 import {StyleSheet, Text, useWindowDimensions} from 'react-native';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {SystemBars} from 'react-native-bars';
 import LineChart from './src/components/LineChart';
 import {data} from './src/data/data';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import AnimatedText from './src/components/AnimatedText';
 import {useSharedValue} from 'react-native-reanimated';
 import {useFont} from '@shopify/react-native-skia';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const LineChartScreen = () => {
   const CHART_MARGIN = 20;
@@ -25,7 +25,7 @@ const LineChartScreen = () => {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
-        <SystemBars animated={true} barStyle={'light-content'} />
+        <SystemBars style={'light'} />
         <Text style={styles.text}>{selectedDate} Expenses</Text>
         <AnimatedText selectedValue={selectedValue} font={font} />
         <LineChart

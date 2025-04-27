@@ -9,7 +9,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 const FabScreen = () => {
   const [type, setType] = useState('first');
   return (
-    //If you're not using react-native-bars, you can remove these edges
+    //If you're not using react-native-edge-to-edge, you can remove these edges
     // and import SafeAreaView from react-native.
     <SafeAreaView style={styles.container} edges={['bottom', 'right', 'left']}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>

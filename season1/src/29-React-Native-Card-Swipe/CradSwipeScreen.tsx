@@ -12,8 +12,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import Card from './src/components/Card';
 import Activity from './src/components/Activity';
-import {SystemBars} from 'react-native-bars';
 import {data} from './src/data/data';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const CradSwipeScreen = () => {
   const [newData, setNewData] = useState([...data, ...data]);
@@ -43,8 +43,8 @@ const CradSwipeScreen = () => {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
-        {/* If you're not using react-native-bars, you can remove SystemBars */}
-        <SystemBars animated={true} barStyle={'light-content'} />
+        {/* If you're not using react-native-edge-to-edge, you can remove SystemBars */}
+        <SystemBars style={'light'} />
         <View style={styles.cardContainer}>
           {newData.map((item, index) => {
             if (index > currentIndex + MAX || index < currentIndex) {

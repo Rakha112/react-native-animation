@@ -34,7 +34,7 @@ const App = () => {
       </MotiView>
       <TouchableWithoutFeedback
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.goBack();
         }}>
         <MotiView
           style={[styles.button, {width: width * 0.8}]}

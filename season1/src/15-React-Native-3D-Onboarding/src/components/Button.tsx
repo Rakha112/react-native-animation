@@ -98,7 +98,7 @@ const Button = ({flatListRef, flatListIndex, dataLength, x}: Props) => {
         if (flatListIndex.value < dataLength - 1) {
           flatListRef.current?.scrollToIndex({index: flatListIndex.value + 1});
         } else {
-          navigation.navigate('Home');
+          navigation.goBack();
         }
       }}>
       <Animated.View

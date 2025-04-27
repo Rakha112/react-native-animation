@@ -16,7 +16,7 @@ import WatchNowButton from './src/components/WatchNowButton';
 import PlusButton from './src/components/PlusButton';
 import TextInfo from './src/components/TextInfo';
 import Pagination from './src/components/Pagination';
-import {SystemBars} from 'react-native-bars';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const CarouselDisneyScreen = () => {
   const x = useSharedValue(0);
@@ -79,8 +79,8 @@ const CarouselDisneyScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* If you're not using react-native-bars, you can remove SystemBars */}
-      <SystemBars animated={true} barStyle={'light-content'} />
+      {/* If you're not using react-native-edge-to-edge, you can remove SystemBars */}
+      <SystemBars style={'light'} />
 
       {/* <StatusBar translucent backgroundColor={'transparent'} /> */}
       {data.map((item, index) => {

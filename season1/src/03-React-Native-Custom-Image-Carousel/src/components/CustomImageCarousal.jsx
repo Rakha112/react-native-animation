@@ -1,12 +1,14 @@
+import React, {useEffect, useRef, useState} from 'react';
 import {View, useWindowDimensions} from 'react-native';
-import React, {useState, useEffect, useRef} from 'react';
 import Animated, {
-  useSharedValue,
-  useAnimatedScrollHandler,
   useAnimatedRef,
+  useAnimatedScrollHandler,
+  useDerivedValue,
+  useSharedValue,
 } from 'react-native-reanimated';
-import Pagination from './Pagination';
 import CustomImage from './CustomImage';
+import Pagination from './Pagination';
+
 const CustomImageCarousal = ({data, autoPlay, pagination}) => {
   const scrollViewRef = useAnimatedRef(null);
   const interval = useRef();
@@ -21,6 +23,7 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
   const SPACER = (width - SIZE) / 2;
   const x = useSharedValue(0);
   const offSet = useSharedValue(0);
+  const targetX = useSharedValue(0);
 
   // Update newData if data change
   useEffect(() => {
@@ -36,16 +39,17 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
     },
   });
 
+  useDerivedValue(() => {
+    targetX.value =
+      offSet.value >= Math.floor(SIZE * (data.length - 1) - 10)
+        ? 0
+        : Math.floor(offSet.value + SIZE);
+  });
+
   useEffect(() => {
     if (isAutoPlay === true) {
-      let _offSet = offSet.value;
       interval.current = setInterval(() => {
-        if (_offSet >= Math.floor(SIZE * (data.length - 1) - 10)) {
-          _offSet = 0;
-        } else {
-          _offSet = Math.floor(_offSet + SIZE);
-        }
-        scrollViewRef.current.scrollTo({x: _offSet, y: 0});
+        scrollViewRef.current.scrollTo({x: targetX.value, y: 0});
       }, 2000);
     } else {
       clearInterval(interval.current);
@@ -53,14 +57,15 @@ const CustomImageCarousal = ({data, autoPlay, pagination}) => {
     return () => {
       clearInterval(interval.current);
     };
-  }, [SIZE, SPACER, isAutoPlay, data.length, offSet.value, scrollViewRef]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAutoPlay, scrollViewRef]);
 
   return (
     <View>
       <Animated.ScrollView
         ref={scrollViewRef}
         onScroll={onScroll}
-        onScrollBeginDrag={e => {
+        onScrollBeginDrag={() => {
           setIsAutoPlay(false);
         }}
         onMomentumScrollEnd={() => {

@@ -1,11 +1,10 @@
 import React, {memo} from 'react';
 import Animated, {
-  useAnimatedProps,
   interpolateColor,
-  createAnimatedPropAdapter,
-  processColor,
+  useAnimatedProps,
 } from 'react-native-reanimated';
 import {Path} from 'react-native-svg';
+
 const AnimatedColor = memo(props => {
   const {
     progress,
@@ -16,33 +15,19 @@ const AnimatedColor = memo(props => {
   } = props;
   const AnimationColor = Animated.createAnimatedComponent(Path);
 
-  const animation = useAnimatedProps(
-    () => {
-      const fill = interpolateColor(
-        progress.value,
-        [0, 1],
-        [unCheckedBackgroundColor, checkedBackgroundColor],
-      );
-      const stroke = interpolateColor(
-        progress.value,
-        [0, 1],
-        [unCheckedBorderColor, checkedBorderColor],
-      );
-      return {fill, stroke};
-    },
-    [],
-    createAnimatedPropAdapter(
-      propss => {
-        if (Object.keys(propss).includes('fill')) {
-          propss.fill = {type: 0, payload: processColor(propss.fill)};
-        }
-        if (Object.keys(propss).includes('stroke')) {
-          propss.stroke = {type: 0, payload: processColor(propss.stroke)};
-        }
-      },
-      ['fill', 'stroke'],
-    ),
-  );
+  const animation = useAnimatedProps(() => {
+    const fill = interpolateColor(
+      progress.value,
+      [0, 1],
+      [unCheckedBackgroundColor, checkedBackgroundColor],
+    );
+    const stroke = interpolateColor(
+      progress.value,
+      [0, 1],
+      [unCheckedBorderColor, checkedBorderColor],
+    );
+    return {fill, stroke};
+  });
   return (
     <AnimationColor
       animatedProps={animation}

@@ -1,4 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import React from 'react';
 import {
   Pressable,
   StyleSheet,
@@ -6,11 +8,9 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native';
-import React from 'react';
-import {BottomTabBarProps} from '@react-navigation/bottom-tabs/lib/typescript/src/types';
 import Animated, {useAnimatedStyle, withSpring} from 'react-native-reanimated';
-import BottomTabIcon from './BottomTabIcon';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import BottomTabIcon from './BottomTabIcon';
 
 const CustomBottomTab = ({
   state,
@@ -76,7 +76,6 @@ const CustomBottomTab = ({
             accessibilityRole="button"
             accessibilityState={isFocused ? {selected: true} : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
-            testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
             style={{flex: 1}}>

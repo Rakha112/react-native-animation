@@ -1,5 +1,8 @@
 # React Native Onboarding Screen
 
+> [!CAUTION]
+> It seems that zIndex is not working as expected on iOS. I haven’t identified where the bug is yet. I will update this repo again once there is a fix or a workaround.
+
 Onboarding Screen in React Native using [Reanimated](https://docs.swmansion.com/react-native-reanimated/) and [Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 
 [Inspired by Cuberto](https://dribbble.com/shots/6654320-Animated-Onboarding-Screens)

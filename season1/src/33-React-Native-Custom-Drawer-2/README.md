@@ -1,5 +1,8 @@
 # React Native Custom Drawer
 
+> [!CAUTION]
+> It seems that zIndex is not working as expected on iOS. I haven’t identified where the bug is yet. I will update this repo again once there is a fix or a workaround.
+
 Custom Drawer in React Native using [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
 ## Demo

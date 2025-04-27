@@ -7,8 +7,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import Item from './src/components/Item';
 import {data} from './src/data/data';
-import {SystemBars} from 'react-native-bars';
 import Button from './src/components/Button';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const CarouselScreen = () => {
   const {width} = useWindowDimensions();
@@ -27,7 +27,7 @@ const CarouselScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SystemBars animated={true} barStyle={'light-content'} />
+      <SystemBars style={'light'} />
       <View style={styles.textContainer}>
         <Text style={styles.text}>Choose a style that perfectly</Text>
         <Text style={styles.text}>reflects your true self</Text>

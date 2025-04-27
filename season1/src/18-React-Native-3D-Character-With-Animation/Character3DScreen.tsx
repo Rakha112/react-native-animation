@@ -16,6 +16,7 @@ const Character3DScreen = () => {
       {loading && <Loader />}
       <View style={styles.modelContainer} {...events}>
         <Canvas
+          events={null as any}
           onCreated={state => {
             const _gl: any = state.gl.getContext();
             const pixelStorei = _gl.pixelStorei.bind(_gl);

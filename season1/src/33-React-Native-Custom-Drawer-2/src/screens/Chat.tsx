@@ -14,7 +14,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import Overlay from '../components/Overlay';
 import Drawer from '../components/Drawer';
-import {SystemBars} from 'react-native-bars';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const Chat = () => {
   const active = useSharedValue(false);
@@ -30,7 +30,7 @@ const Chat = () => {
     );
     return {
       transform: [
-        {perspective: 1000},
+        // {perspective: 1000},r
         {scale: active.value ? withTiming(0.8) : withTiming(1)},
         {translateX: active.value ? withSpring(240) : withTiming(0)},
         {
@@ -42,10 +42,9 @@ const Chat = () => {
   });
   return (
     <>
-      <Drawer active={active} />
       <Animated.View style={[styles.container, animatedStyle]}>
-        {/* If you're not using react-native-bars, you can remove SystemBars */}
-        <SystemBars animated={true} barStyle={'light-content'} />
+        {/* If you're not using react-native-edge-to-edge, you can remove SystemBars */}
+        <SystemBars style={'light'} />
         <Header active={active} />
         <FlatList
           showsVerticalScrollIndicator={false}
@@ -56,6 +55,7 @@ const Chat = () => {
         />
         <Overlay active={active} />
       </Animated.View>
+      <Drawer active={active} />
     </>
   );
 };
@@ -67,5 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1d2733',
     overflow: 'hidden',
+    zIndex: 1,
+    position: 'relative',
   },
 });

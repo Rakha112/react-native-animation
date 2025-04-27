@@ -3,6 +3,7 @@ import Svg from 'react-native-svg';
 import {useDerivedValue, withTiming} from 'react-native-reanimated';
 import AnimatedCheckMarkPath from './AnimatedCheckMarkPath';
 import AnimatedColor from './AnimatedColor';
+
 const CustomCheckBox = memo(props => {
   const {
     checked,
@@ -14,6 +15,7 @@ const CustomCheckBox = memo(props => {
     height,
     width,
   } = props;
+
   const progress = useDerivedValue(() => {
     return withTiming(checked ? 1 : 0);
   });

@@ -42,7 +42,7 @@ const OnboardingScreen = () => {
   const handlePress = async () => {
     if (currentIndex === data.length - 1 && !active) {
       console.log('END');
-      navigation.navigate('Home');
+      navigation.goBack();
       return;
     }
     if (!active) {
@@ -58,8 +58,10 @@ const OnboardingScreen = () => {
       await wait(1000);
 
       setOverlay(null);
-      mask.value = 0;
       setActive(false);
+
+      await wait(200);
+      mask.value = 0;
     }
   };
   return (

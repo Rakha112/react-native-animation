@@ -24,7 +24,7 @@ import {
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {SystemBars} from 'react-native-bars';
+import {SystemBars} from 'react-native-edge-to-edge';
 
 const ShopUI3DScreen = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -59,14 +59,14 @@ const ShopUI3DScreen = () => {
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      {/* If you're not using react-native-bars, you can remove SystemBars */}
-      <SystemBars animated={true} barStyle={'light-content'} />
+      {/* If you're not using react-native-edge-to-edge, you can remove SystemBars */}
+      <SystemBars style={'light'} />
       <SafeAreaView style={styles.container}>
         <Header handleChangeDirection={handleChangeDirection} rotate={rotate} />
         <ScrollView>
           <View style={styles.modelContainer}>
             {loading && <Loader />}
-            <Canvas camera={{fov: 20}}>
+            <Canvas camera={{fov: 20}} events={null as any}>
               <directionalLight position={[1, 0, 0]} args={['white', 2]} />
               <directionalLight position={[-1, 0, 0]} args={['white', 2]} />
               <directionalLight position={[0, 0, 1]} args={['white', 2]} />
