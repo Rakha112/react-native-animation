@@ -4,6 +4,8 @@
     <style name="AppTheme" parent="Theme.EdgeToEdge">
         <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <!-- disable the contrasting background of the navigation bar (optional) -->
+        <item name="enforceNavigationBarContrast">false</item>    
     </style>
 
 </resources>
