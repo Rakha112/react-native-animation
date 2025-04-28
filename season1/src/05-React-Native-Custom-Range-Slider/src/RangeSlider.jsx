@@ -135,13 +135,13 @@ const RangeSlider = ({sliderWidth, min, max, step, onValueChange}) => {
               style={styles.labelText}
               animatedProps={minLabelText}
               editable={false}
-              // defaultValue={`$${
-              //   min +
-              //   Math.floor(
-              //     position.value / (sliderWidth / ((max - min) / step)),
-              //   ) *
-              //     step
-              // }`}
+              defaultValue={`$${
+                min +
+                Math.floor(
+                  position.value / (sliderWidth / ((max - min) / step)),
+                ) *
+                  step
+              }`}
               textAlign="auto"
             />
           </Animated.View>
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     width: '100%',
-    marginHorizontal: 0.1,
+    marginHorizontal: 2,
     textAlign: 'center',
   },
 });
