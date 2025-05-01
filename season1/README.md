@@ -79,7 +79,7 @@ cd react-native-animation/season1
 Install dependencies
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 ```
 
 For iOS
