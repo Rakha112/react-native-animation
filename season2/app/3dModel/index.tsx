@@ -1,15 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { Suspense, useState } from "react";
-import { Canvas } from "@react-three/fiber/native";
-import Trigger from "@/components/3dModel/Trigger";
-import Loader from "@/components/3dModel/Loader";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Starlink from "@/components/3dModel/Starlink";
-import useControls from "r3f-native-orbitcontrols";
-import { StatusBar } from "expo-status-bar";
 import Gradient from "@/components/3dModel/Gradient";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import Loader from "@/components/3dModel/Loader";
+import Starlink from "@/components/3dModel/Starlink";
+import Trigger from "@/components/3dModel/Trigger";
+import { Canvas } from "@react-three/fiber/native";
 import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import useControls from "r3f-native-orbitcontrols";
+import React, { Suspense, useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Index = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,8 +27,6 @@ const Index = () => {
       <View style={styles.modelContainer} {...events}>
         <Gradient />
         {loading && <Loader />}
-        {/* events={null} workaround for new Architecture */}
-        {/* for new Architecture currently have to use react three fiber version 8.16.8 */}
         <Canvas
           gl={{ debug: { checkShaderErrors: false, onShaderError: null } }}
           events={null as any}
