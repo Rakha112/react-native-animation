@@ -1,5 +1,5 @@
-import React from "react";
 import { SkFont, Text as SKText } from "@shopify/react-native-skia";
+import React from "react";
 
 type Props = {
   number: number;

@@ -1,4 +1,6 @@
+import { Canvas, Group, Line, SkFont } from "@shopify/react-native-skia";
 import React from "react";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import {
   runOnJS,
   useAnimatedReaction,
@@ -8,10 +10,8 @@ import {
   withDecay,
   withSpring,
 } from "react-native-reanimated";
-import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import { Canvas, Group, Line, SkFont } from "@shopify/react-native-skia";
-import SliderText from "./SliderText";
 import Number from "./Number";
+import SliderText from "./SliderText";
 
 type Props = {
   font1: SkFont;

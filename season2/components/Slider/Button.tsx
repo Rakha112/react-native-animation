@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 const Button = () => {
   const handlePress = () => {

@@ -17,12 +17,6 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
-      if (Platform.OS === "android") {
-        // enables edge-to-edge mode
-        NavigationBar.setPositionAsync("absolute");
-        // transparent backgrounds to see through
-        NavigationBar.setBackgroundColorAsync("#ffffff00");
-      }
     }
   }, [loaded]);
 
