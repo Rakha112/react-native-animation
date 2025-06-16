@@ -27,10 +27,7 @@ const Index = () => {
       <View style={styles.modelContainer} {...events}>
         <Gradient />
         {loading && <Loader />}
-        <Canvas
-          gl={{ debug: { checkShaderErrors: false, onShaderError: null } }}
-          events={null as any}
-        >
+        <Canvas>
           <OrbitControls enablePan={false} enableZoom={false} />
           <directionalLight position={[1, 0, 0]} args={["white", 2]} />
           <directionalLight position={[-1, 0, 0]} args={["white", 2]} />

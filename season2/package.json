@@ -5,8 +5,8 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint"
@@ -18,7 +18,7 @@
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^7.1.6",
     "@react-three/drei": "^10.2.0",
-    "@react-three/fiber": "^9.1.2",
+    "@react-three/fiber": "file:react-three-fiber-9.1.2.tgz",
     "@shopify/react-native-skia": "v2.0.0-next.4",
     "expo": "^53.0.11",
     "expo-blur": "~14.1.5",
@@ -43,12 +43,12 @@
     "react-native-screens": "~4.11.1",
     "react-native-svg": "15.11.2",
     "react-native-web": "^0.20.0",
-    "three": "^0.176.0"
+    "three": "^0.177.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",
-    "@types/three": "^0.176.0",
+    "@types/three": "^0.177.0",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~9.2.0",
     "react-native-svg-transformer": "^1.5.1",
