@@ -2,17 +2,16 @@ import Gradient from "@/components/3dModel/Gradient";
 import Loader from "@/components/3dModel/Loader";
 import Starlink from "@/components/3dModel/Starlink";
 import Trigger from "@/components/3dModel/Trigger";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber/native";
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import useControls from "r3f-native-orbitcontrols";
 import React, { Suspense, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Index = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [OrbitControls, events] = useControls();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,7 +23,7 @@ const Index = () => {
           sed bibendum elit. Nam aliquet, mi eget ullamcorper tempor,
         </Text>
       </View>
-      <View style={styles.modelContainer} {...events}>
+      <View style={styles.modelContainer}>
         <Gradient />
         {loading && <Loader />}
         <Canvas>
